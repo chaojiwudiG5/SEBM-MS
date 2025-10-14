@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="sebm-device-service" />
+        <module name="sebm-user-service" />
+        <module name="sebm-borrow-service" />
+        <module name="sebm-common" />
+        <module name="sebm-gateway" />
+        <module name="sebm-notification-service" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel target="11">
+      <module name="gateway" target="17" />
+      <module name="sebm-model" target="17" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

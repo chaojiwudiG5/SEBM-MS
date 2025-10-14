@@ -1,0 +1,43 @@
+server:
+  port: 8090
+
+spring:
+  main:
+    web-application-type: reactive
+  application:
+    name: gateway
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+
+    gateway:
+      routes:
+        - id: user-service
+          uri: lb://user-service         # lb:// 表示负载均衡，通过 Nacos 找服务
+          predicates:
+            - Path=/api/user/**       # 前端请求 /api/users/** → 转发 user-service
+          filters:
+            - StripPrefix=1            # 去掉前缀 /api
+        - id: device-service
+          uri: lb://device-service
+          predicates:
+            - Path=/api/devices/**
+          filters:
+            - StripPrefix=1
+        - id: borrow-service
+          uri: lb://borrow-service
+          predicates:
+            - Path=/api/borrows/**
+          filters:
+            - StripPrefix=1
+        - id: notification-service
+          uri: lb://notification-service
+          predicates:
+            - Path=/api/notifications/**
+          filters:
+            - StripPrefix=1
+logging:
+  level:
+    org.springframework.cloud.gateway: DEBUG
+    com.netflix.loadbalancer: DEBUG

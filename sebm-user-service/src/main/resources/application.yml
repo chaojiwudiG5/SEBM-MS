@@ -1,0 +1,28 @@
+server:
+  port: 8081
+
+spring:
+  application:
+    name: user-service
+  datasource:
+    url: jdbc:mysql://trolley.proxy.rlwy.net:29578/railway?useSSL=false&serverTimezone=UTC
+    username: root
+    password: RxAHOOQJjTtBblTpadijgyIWmArpvibI
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+
+dubbo:
+  application:
+    name: user-service-dubbo
+  registry:
+    address: nacos://localhost:8848
+  protocol:
+    name: dubbo
+    port: -1
+
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: false
