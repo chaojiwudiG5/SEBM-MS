@@ -5,11 +5,84 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="37a8d32f-b840-4b4a-a84b-73762e9272e4" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/sebm-models/src/main/java/com/group5/sebmmodels/dto/notification/BatchDeleteDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sebm-models/src/main/java/com/group5/sebmmodels/dto/notification/NotificationRecordQueryDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sebm-models/src/main/java/com/group5/sebmmodels/dto/notification/TemplateDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sebm-models/src/main/java/com/group5/sebmmodels/dto/notification/UpdateTemplateDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sebm-models/src/main/java/com/group5/sebmmodels/entity/NotificationRecordPo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sebm-models/src/main/java/com/group5/sebmmodels/entity/TemplatePo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sebm-models/src/main/java/com/group5/sebmmodels/vo/NotificationRecordVo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sebm-models/src/main/java/com/group5/sebmmodels/vo/TemplateVo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sebm-notification-service/src/main/java/com/group5/sebmnotificationservice/config/ListTypeHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sebm-notification-service/src/main/java/com/group5/sebmnotificationservice/config/RabbitMQConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sebm-notification-service/src/main/java/com/group5/sebmnotificationservice/config/WebSocketConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sebm-notification-service/src/main/java/com/group5/sebmnotificationservice/controller/NotificationRecordController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sebm-notification-service/src/main/java/com/group5/sebmnotificationservice/controller/TemplateController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sebm-notification-service/src/main/java/com/group5/sebmnotificationservice/converter/NotificationConverter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sebm-notification-service/src/main/java/com/group5/sebmnotificationservice/converter/TemplateConverter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sebm-notification-service/src/main/java/com/group5/sebmnotificationservice/dao/NotificationRecordMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sebm-notification-service/src/main/java/com/group5/sebmnotificationservice/dao/TemplateMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sebm-notification-service/src/main/java/com/group5/sebmnotificationservice/enums/NotificationEventEnum.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sebm-notification-service/src/main/java/com/group5/sebmnotificationservice/enums/NotificationMethodEnum.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sebm-notification-service/src/main/java/com/group5/sebmnotificationservice/enums/NotificationNodeEnum.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sebm-notification-service/src/main/java/com/group5/sebmnotificationservice/enums/NotificationRecordStatusEnum.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sebm-notification-service/src/main/java/com/group5/sebmnotificationservice/enums/NotificationRoleEnum.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sebm-notification-service/src/main/java/com/group5/sebmnotificationservice/enums/NotificationTypeEnum.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sebm-notification-service/src/main/java/com/group5/sebmnotificationservice/mq/MessageConsumer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sebm-notification-service/src/main/java/com/group5/sebmnotificationservice/mq/MessageProcessor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sebm-notification-service/src/main/java/com/group5/sebmnotificationservice/mq/MessageProducer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sebm-notification-service/src/main/java/com/group5/sebmnotificationservice/mq/NotificationMessage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sebm-notification-service/src/main/java/com/group5/sebmnotificationservice/sender/ChannelMsgSender.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sebm-notification-service/src/main/java/com/group5/sebmnotificationservice/sender/EmailSender.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sebm-notification-service/src/main/java/com/group5/sebmnotificationservice/sender/InternalMsgSender.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sebm-notification-service/src/main/java/com/group5/sebmnotificationservice/service/MessageSenderService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sebm-notification-service/src/main/java/com/group5/sebmnotificationservice/service/NotificationRateLimiter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sebm-notification-service/src/main/java/com/group5/sebmnotificationservice/service/NotificationRecordService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sebm-notification-service/src/main/java/com/group5/sebmnotificationservice/service/TemplateService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sebm-notification-service/src/main/java/com/group5/sebmnotificationservice/service/impl/NotificationRecordServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sebm-notification-service/src/main/java/com/group5/sebmnotificationservice/service/impl/NotificationServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sebm-notification-service/src/main/java/com/group5/sebmnotificationservice/service/impl/TemplateServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sebm-notification-service/src/main/java/com/group5/sebmnotificationservice/websocket/LoggingHandshakeInterceptor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sebm-notification-service/src/main/java/com/group5/sebmnotificationservice/websocket/NotificationWebSocketHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sebm-notification-service/src/main/resources/mapper/NotificationRecordMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sebm-notification-service/src/main/resources/mapper/TemplateMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sebm-borrow-service/src/main/java/com/group5/sebmborrowservice/controller/BorrowRecordController.java" beforeDir="false" afterPath="$PROJECT_DIR$/sebm-borrow-service/src/main/java/com/group5/sebmborrowservice/controller/BorrowRecordController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sebm-borrow-service/src/main/java/com/group5/sebmborrowservice/services/BorrowRecordService.java" beforeDir="false" afterPath="$PROJECT_DIR$/sebm-borrow-service/src/main/java/com/group5/sebmborrowservice/services/BorrowRecordService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sebm-borrow-service/src/main/java/com/group5/sebmborrowservice/services/serviceImpl/BorrowRecordServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/sebm-borrow-service/src/main/java/com/group5/sebmborrowservice/services/serviceImpl/BorrowRecordServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sebm-service-client/src/main/java/com/group5/sebmserviceclient/service/UserFeignClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/sebm-service-client/src/main/java/com/group5/sebmserviceclient/service/UserFeignClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sebm-common/src/main/java/com/group5/sebmcommon/constant/NotificationConstant.java" beforeDir="false" afterPath="$PROJECT_DIR$/sebm-common/src/main/java/com/group5/sebmcommon/constant/NotificationConstant.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sebm-common/src/main/java/com/group5/sebmcommon/enums/NotificationEventEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/sebm-common/src/main/java/com/group5/sebmcommon/enums/NotificationEventEnum.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sebm-common/src/main/java/com/group5/sebmcommon/enums/NotificationMethodEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/sebm-common/src/main/java/com/group5/sebmcommon/enums/NotificationMethodEnum.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sebm-common/src/main/java/com/group5/sebmcommon/enums/NotificationNodeEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/sebm-common/src/main/java/com/group5/sebmcommon/enums/NotificationNodeEnum.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sebm-common/src/main/java/com/group5/sebmcommon/enums/NotificationRoleEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/sebm-common/src/main/java/com/group5/sebmcommon/enums/NotificationRoleEnum.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sebm-common/src/main/java/com/group5/sebmcommon/enums/NotificationTypeEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/sebm-common/src/main/java/com/group5/sebmcommon/enums/NotificationTypeEnum.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sebm-common/src/main/java/com/group5/sebmcommon/exception/ErrorCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/sebm-common/src/main/java/com/group5/sebmcommon/exception/ErrorCode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sebm-gateway/target/classes/application.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sebm-gateway/target/classes/com/group5/gateway/GatewayApplication.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sebm-gateway/target/classes/com/group5/gateway/config/CorsConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sebm-gateway/target/classes/com/group5/gateway/filter/GlobalAuthFilter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sebm-gateway/target/classes/com/group5/gateway/utils/JwtUtils.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sebm-models/src/main/java/com/group5/sebmmodels/dto/notification/CreateTemplateDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/sebm-models/src/main/java/com/group5/sebmmodels/dto/notification/CreateTemplateDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sebm-models/src/main/java/com/group5/sebmmodels/dto/notification/TemplateQueryDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/sebm-models/src/main/java/com/group5/sebmmodels/dto/notification/TemplateQueryDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sebm-notification-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/sebm-notification-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sebm-notification-service/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sebm-service-client/src/main/java/com/group5/sebmserviceclient/service/NotificationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/sebm-notification-service/src/main/java/com/group5/sebmnotificationservice/service/NotificationService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sebm-user-service/target/classes/com/group5/user/UserServiceApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/sebm-user-service/target/classes/com/group5/user/UserServiceApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sebm-user-service/target/classes/com/group5/user/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/sebm-user-service/target/classes/com/group5/user/controller/UserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sebm-user-service/target/classes/com/group5/user/controller/inner/UserInnerController.class" beforeDir="false" afterPath="$PROJECT_DIR$/sebm-user-service/target/classes/com/group5/user/controller/inner/UserInnerController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sebm-user-service/target/classes/com/group5/user/services/BorrowerService.class" beforeDir="false" afterPath="$PROJECT_DIR$/sebm-user-service/target/classes/com/group5/user/services/BorrowerService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sebm-user-service/target/classes/com/group5/user/services/ManagerService.class" beforeDir="false" afterPath="$PROJECT_DIR$/sebm-user-service/target/classes/com/group5/user/services/ManagerService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sebm-user-service/target/classes/com/group5/user/services/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/sebm-user-service/target/classes/com/group5/user/services/UserService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sebm-user-service/target/classes/com/group5/user/services/serviceImpl/BorrowerServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/sebm-user-service/target/classes/com/group5/user/services/serviceImpl/BorrowerServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sebm-user-service/target/classes/com/group5/user/services/serviceImpl/ManagerServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/sebm-user-service/target/classes/com/group5/user/services/serviceImpl/ManagerServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sebm-user-service/target/classes/com/group5/user/services/serviceImpl/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/sebm-user-service/target/classes/com/group5/user/services/serviceImpl/UserServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sebm-user-service/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/sebm-user-service/target/maven-archiver/pom.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sebm-user-service/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/sebm-user-service/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sebm-user-service/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/sebm-user-service/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sebm-user-service/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sebm-user-service/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sebm-user-service/target/sebm-user-service-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/sebm-user-service/target/sebm-user-service-1.0-SNAPSHOT.jar" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,6 +102,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="HttpClientOnboardingState"><![CDATA[{
+  "isOnboardingCommentShown": true
+}]]></component>
   <component name="KubernetesApiPersistence">{}</component>
   <component name="KubernetesApiProvider">{
   &quot;isMigrated&quot;: true
@@ -59,6 +135,8 @@
     "Docker.sebm-user-service/Dockerfile.executor": "Run",
     "JUnit.BorrowServiceImplTest.getUserById (1).executor": "Run",
     "JUnit.BorrowServiceImplTest.getUserById.executor": "Run",
+    "Maven.SEBM-MS [clean].executor": "Run",
+    "Maven.SEBM-MS [compile].executor": "Run",
     "Maven.sebm-common [clean].executor": "Run",
     "Maven.sebm-common [compile].executor": "Run",
     "Maven.sebm-common [package].executor": "Run",
@@ -72,7 +150,7 @@
     "RunOnceActivity.git.unshallow": "true",
     "Spring Boot.BorrowServiceApplication.executor": "Run",
     "Spring Boot.GatewayApplication (1).executor": "Run",
-    "Spring Boot.GatewayApplication.executor": "Debug",
+    "Spring Boot.GatewayApplication.executor": "Run",
     "Spring Boot.SebmBorrowServiceApplication.executor": "Debug",
     "Spring Boot.SebmDeviceServiceApplication.executor": "Debug",
     "Spring Boot.SebmMaintenanceServiceApplication.executor": "Debug",
@@ -82,17 +160,17 @@
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "G:/java-code/SEBM-MS/sebm-common/src/main/java/com/group5/sebmcommon",
+    "last_opened_file_path": "/Users/mac/Desktop/Project/SEBM-MS/sebm-notification-service/src/main/resources/mapper",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
+    "project.structure.last.edited": "SDKs",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
     "run.configurations.included.in.services": "true",
-    "settings.editor.selected.configurable": "reference.settings.project.maven.runner",
+    "settings.editor.selected.configurable": "MavenSettings",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
@@ -106,11 +184,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/sebm-notification-service/src/main/resources/mapper" />
+      <recent name="$PROJECT_DIR$/sebm-notification-service/src/main/java/com/group5/sebmnotificationservice" />
       <recent name="G:\java-code\SEBM-MS\sebm-common\src\main\java\com\group5\sebmcommon" />
       <recent name="G:\java-code\SEBM-MS\sebm-maintenance-service\src\main\resources\mapper" />
       <recent name="G:\java-code\SEBM-MS\sebm-maintenance-service\src\main\resources" />
-      <recent name="G:\java-code\SEBM-MS\sebm-maintenance-service\src\main\java\com\group5\sebmmaintenanceservice" />
-      <recent name="G:\java-code\SEBM-MS\sebm-models\src\main\java\com\group5\sebmmodels\entity" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
@@ -138,6 +216,17 @@
         <option value="QuarkusRunConfigurationType" />
         <option value="SpringBootApplicationConfigurationType" />
       </set>
+    </option>
+    <option name="configurationStatuses">
+      <map>
+        <entry key="SpringBootApplicationConfigurationType">
+          <value>
+            <map>
+              <entry key="GatewayApplication" value="FAILED" />
+            </map>
+          </value>
+        </entry>
+      </map>
     </option>
   </component>
   <component name="RunManager" selected="Spring Boot.GatewayApplication">
@@ -214,6 +303,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="SebmNotificationServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="sebm-notification-service" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.group5.sebmnotificationservice.SebmNotificationServiceApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="UserServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="sebm-user-service" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.group5.user.UserServiceApplication" />
@@ -235,6 +331,7 @@
     </configuration>
     <list>
       <item itemvalue="JUnit.BorrowServiceImplTest.getUserById (1)" />
+      <item itemvalue="Spring Boot.SebmNotificationServiceApplication" />
       <item itemvalue="Spring Boot.SebmMaintenanceServiceApplication" />
       <item itemvalue="Spring Boot.SebmBorrowServiceApplication" />
       <item itemvalue="Spring Boot.SebmDeviceServiceApplication" />
@@ -243,8 +340,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Spring Boot.SebmBorrowServiceApplication" />
         <item itemvalue="Spring Boot.GatewayApplication" />
+        <item itemvalue="Spring Boot.SebmBorrowServiceApplication" />
         <item itemvalue="Spring Boot.UserServiceApplication" />
         <item itemvalue="Spring Boot.SebmDeviceServiceApplication" />
         <item itemvalue="JUnit.BorrowServiceImplTest.getUserById (1)" />
@@ -310,6 +407,15 @@
           <url>file://$PROJECT_DIR$/sebm-common/src/main/java/com/group5/sebmcommon/aop/AuthInterceptor.java</url>
           <line>37</line>
           <option name="timeStamp" value="16" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/sebm-service-client/src/main/java/com/group5/sebmserviceclient/service/BorrowRecordFeignClient.java</url>
+          <line>18</line>
+          <properties class="com.group5.sebmserviceclient.service.BorrowRecordFeignClient" method="getBorrowRecordById">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="17" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

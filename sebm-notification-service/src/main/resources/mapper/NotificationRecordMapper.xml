@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.group5.sebmnotificationservice.dao.NotificationRecordMapper">
+
+    <resultMap id="BaseResultMap" type="com.group5.sebmmodels.entity.NotificationRecordPo">
+        <id property="id" column="id" jdbcType="BIGINT"/>
+        <result property="userId" column="userId" jdbcType="BIGINT"/>
+        <result property="title" column="title" jdbcType="VARCHAR"/>
+        <result property="content" column="content" jdbcType="LONGVARCHAR"/>
+        <result property="status" column="status" jdbcType="INTEGER"/>
+        <result property="readStatus" column="readStatus" jdbcType="INTEGER"/>
+        <result property="sendTime" column="sendTime" jdbcType="TIMESTAMP"/>
+        <result property="isDelete" column="isDelete" jdbcType="TINYINT"/>
+        <result property="createTime" column="createTime" jdbcType="TIMESTAMP"/>
+        <result property="updateTime" column="updateTime" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id, userId, title, content, status, readStatus,sendTime, isDelete, createTime, updateTime
+    </sql>
+
+</mapper>
+

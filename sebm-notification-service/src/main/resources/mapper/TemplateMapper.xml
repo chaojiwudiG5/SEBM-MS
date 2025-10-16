@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.group5.sebmnotificationservice.dao.TemplateMapper">
+
+    <resultMap id="BaseResultMap" type="com.group5.sebmmodels.entity.TemplatePo">
+        <id property="id" column="id" jdbcType="BIGINT"/>
+        <result property="templateTitle" column="templateTitle" jdbcType="VARCHAR"/>
+        <result property="notificationMethod" column="notificationMethod" jdbcType="VARCHAR"
+                typeHandler="com.group5.sebmnotificationservice.config.ListTypeHandler"/>
+        <result property="notificationNode" column="notificationNode" jdbcType="VARCHAR"/>
+        <result property="notificationRole" column="notificationRole" jdbcType="VARCHAR"/>
+        <result property="notificationType" column="notificationType" jdbcType="INTEGER"/>
+        <result property="notificationEvent" column="notificationEvent" jdbcType="INTEGER"/>
+        <result property="relateTimeOffset" column="relateTimeOffset" jdbcType="BIGINT"/>
+        <result property="userId" column="userId" jdbcType="BIGINT"/>
+        <result property="templateContent" column="templateContent" jdbcType="LONGVARCHAR"/>
+        <result property="templateDesc" column="templateDesc" jdbcType="VARCHAR"/>
+        <result property="status" column="status" jdbcType="INTEGER"/>
+        <result property="isDelete" column="isDelete" jdbcType="TINYINT"/>
+        <result property="createTime" column="createTime" jdbcType="TIMESTAMP"/>
+        <result property="updateTime" column="updateTime" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id, templateTitle, notificationMethod, notificationNode, notificationRole,
+        notificationType, notificationEvent, relateTimeOffset, userId, templateContent,
+        templateDesc, status, isDelete, createTime, updateTime
+    </sql>
+
+</mapper>

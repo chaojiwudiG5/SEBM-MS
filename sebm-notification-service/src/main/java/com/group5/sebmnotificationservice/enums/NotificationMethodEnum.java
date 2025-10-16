@@ -1,13 +1,16 @@
-package com.group5.sebmcommon.enums;
+package com.group5.sebmnotificationservice.enums;
 
 import cn.hutool.core.collection.CollectionUtil;
-import java.util.List;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+
+import java.util.List;
 
 /**
  * 通知方式枚举
  */
 @Getter
+@AllArgsConstructor
 public enum NotificationMethodEnum {
 
     EMAIL(1, "邮件"),
@@ -17,12 +20,6 @@ public enum NotificationMethodEnum {
 
     private final Integer code;
     private final String description;
-
-    // 枚举必须手动编写构造函数
-    NotificationMethodEnum(Integer code, String description) {
-        this.code = code;
-        this.description = description;
-    }
 
     /**
      * 根据code获取枚举

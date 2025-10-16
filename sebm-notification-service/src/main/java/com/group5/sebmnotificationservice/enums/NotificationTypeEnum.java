@@ -1,5 +1,6 @@
-package com.group5.sebmcommon.enums;
+package com.group5.sebmnotificationservice.enums;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 
 /**
@@ -8,6 +9,7 @@ import lombok.Getter;
  * 每个模板创建时用户自己填写event code，event类型决定时间偏移的方向
  */
 @Getter
+@AllArgsConstructor
 public enum NotificationTypeEnum {
     /**
      * 提前通知类型（目标时间 = 节点时间戳 - 偏移量）
@@ -34,12 +36,6 @@ public enum NotificationTypeEnum {
      * 事件类型描述
      */
     private final String description;
-
-    // 枚举必须手动编写构造函数
-    NotificationTypeEnum(Integer typeCode, String description) {
-        this.typeCode = typeCode;
-        this.description = description;
-    }
 
     /**
      * 根据类型代码获取枚举

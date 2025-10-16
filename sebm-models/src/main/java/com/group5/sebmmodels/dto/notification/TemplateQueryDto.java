@@ -46,12 +46,28 @@ public class TemplateQueryDto {
     private Integer notificationMethod;
 
     /**
-     * 模板状态
+     * 通知事件
      */
-    private String status;
+    private Integer notificationEvent;
+
+    /**
+     * 通知类型
+     */
+    private Integer notificationType;
+
+    /**
+     * 通知角色
+     */
+    private Integer notificationRole;
+
+    /**
+     * 状态，0-禁用，1-启用
+     */
+    private Integer status;
 
     /**
      * 创建者ID
      */
     private Long userId;
 }
+

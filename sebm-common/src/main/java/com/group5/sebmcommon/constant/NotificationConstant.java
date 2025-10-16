@@ -16,8 +16,14 @@ public class NotificationConstant {
      */
     public static final int MIN_TIME_OFFSET = 0;
 
+    /**
+     * 时间偏移量最大值（7天的秒数）
+     */
+    public static final long MAX_TIME_OFFSET_SECONDS = 7 * 24 * 60 * 60;
+
     // Business status constants
-    public static final String TEMPLATE_STATUS_ACTIVE = "active";
+    public static final Integer TEMPLATE_STATUS_ACTIVE = 1;
+    public static final Integer TEMPLATE_STATUS_DISABLED = 0;
 
     public static final Integer NOT_DELETED = 0;
 
