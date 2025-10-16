@@ -5,10 +5,20 @@
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/demo/pom.xml" />
+        <option value="$PROJECT_DIR$/sebm-service-client/pom.xml" />
+        <option value="$PROJECT_DIR$/sebm-common/pom.xml" />
+        <option value="$PROJECT_DIR$/sebm-models/pom.xml" />
+        <option value="$PROJECT_DIR$/sebm-borrrow-service/pom.xml" />
+        <option value="$PROJECT_DIR$/sebm-borrow-service/pom.xml" />
+        <option value="$PROJECT_DIR$/sebm-device-service/pom.xml" />
+        <option value="$PROJECT_DIR$/sebm-notification-service/pom.xml" />
+        <option value="$PROJECT_DIR$/sebm-maintenance-service/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">
       <set>
+        <option value="$PROJECT_DIR$/demo/pom.xml" />
         <option value="$PROJECT_DIR$/gateway/pom.xml" />
       </set>
     </option>

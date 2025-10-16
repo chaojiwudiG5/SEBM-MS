@@ -1,14 +1,12 @@
 package com.group5.user.services;
 
-import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.group5.sebm.common.models.dto.DeleteDto;
-import com.group5.sebm.common.models.dto.PageDto;
-import com.group5.user.models.dto.UserLoginDto;
-import com.group5.user.models.dto.UserRegisterDto;
-import com.group5.user.models.dto.UserUpdateDto;
-import com.group5.user.models.po.UserPo;
-import com.group5.user.models.vo.UserVo;
+import com.group5.sebmmodels.dto.user.LoginDto;
+import com.group5.sebmmodels.dto.user.RegisterDto;
+import com.group5.sebmmodels.dto.user.UpdateDto;
+import com.group5.sebmmodels.dto.user.UserDto;
+import com.group5.sebmmodels.entity.UserPo;
+import com.group5.sebmmodels.vo.UserVo;
 import jakarta.servlet.http.HttpServletRequest;
 
 /**
@@ -18,19 +16,19 @@ import jakarta.servlet.http.HttpServletRequest;
  */
 public interface UserService extends IService<UserPo> {
 
-  Page<UserVo> getAllUsers(PageDto pageDto);
+//  Page<UserVo> getAllUsers(PageDto pageDto);
 
 //  UserVo getDiscountUserById(Long id);
 
-  UserVo getLoginUser(HttpServletRequest request);
+  UserVo getCurrentUser(HttpServletRequest request);
 
-  Boolean deleteUser(DeleteDto deleteDto);
+  UserDto getCurrentUserDtoFromHttp(HttpServletRequest request);
 
-  Long userRegister(UserRegisterDto userRegisterDto);
+  UserDto getCurrentUserDtoFromID(Long id);
 
-  UserVo userLogin(UserLoginDto userLoginDto,HttpServletRequest request);
+  Long userRegister(RegisterDto registerDto);
 
-  Boolean userLogout(HttpServletRequest request);
+  UserVo userLogin(LoginDto loginDto);
 
-  UserVo updateUser(UserUpdateDto userUpdateDto);
+  UserVo updateUser(UpdateDto updateDto,HttpServletRequest request);
 }

@@ -1,0 +1,27 @@
+server:
+  port: 8083
+  servlet:
+    context-path: /api/device
+spring:
+  application:
+    name: sebm-device-service
+  datasource:
+    url: jdbc:mysql://trolley.proxy.rlwy.net:29578/railway?useSSL=false&serverTimezone=UTC
+    username: root
+    password: RxAHOOQJjTtBblTpadijgyIWmArpvibI
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: false
+
+aliyun:
+  oss:
+    endpoint: oss-ap-southeast-1.aliyuncs.com
+    accessKeyId: ${OSS_ACCESS_KEY_ID}
+    accessKeySecret: ${OSS_ACCESS_KEY_SECRET}
+    bucketName: sebm

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.group5.sebmborrowservice.dao.BorrowRecordMapper">
+
+    <resultMap id="BaseResultMap" type="com.group5.sebmmodels.entity.BorrowRecordPo">
+            <id property="id" column="id" jdbcType="BIGINT"/>
+            <result property="userId" column="userId" jdbcType="BIGINT"/>
+            <result property="deviceId" column="deviceId" jdbcType="BIGINT"/>
+            <result property="borrowTime" column="borrowTime" jdbcType="TIMESTAMP"/>
+            <result property="dueTime" column="dueTime" jdbcType="TIMESTAMP"/>
+            <result property="returnTime" column="returnTime" jdbcType="TIMESTAMP"/>
+            <result property="status" column="status" jdbcType="INTEGER"/>
+            <result property="remarks" column="remarks" jdbcType="VARCHAR"/>
+            <result property="isDelete" column="isDelete" jdbcType="TINYINT"/>
+            <result property="updateTime" column="updateTime" jdbcType="TIMESTAMP"/>
+            <result property="createTime" column="createTime" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,userId,deviceId,
+        borrowTime,dueTime,returnTime,
+        status,remarks,isDelete,
+        updateTime,createTime
+    </sql>
+</mapper>

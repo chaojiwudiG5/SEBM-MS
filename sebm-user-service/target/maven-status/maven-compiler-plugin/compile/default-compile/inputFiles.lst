@@ -1,0 +1,13 @@
+G:\java-code\SEBM-MS\sebm-user-service\src\main\java\com\group5\user\models\vo\UserVo.java
+G:\java-code\SEBM-MS\sebm-user-service\src\main\java\com\group5\user\services\UserService.java
+G:\java-code\SEBM-MS\sebm-user-service\src\main\java\com\group5\user\controller\UserController.java
+G:\java-code\SEBM-MS\sebm-user-service\src\main\java\com\group5\user\dao\UserMapper.java
+G:\java-code\SEBM-MS\sebm-user-service\src\main\java\com\group5\user\models\dto\UserLoginDto.java
+G:\java-code\SEBM-MS\sebm-user-service\src\main\java\com\group5\user\services\serviceImpl\UserServiceImpl.java
+G:\java-code\SEBM-MS\sebm-user-service\src\main\java\com\group5\user\services\serviceImpl\IUserServiceImpl.java
+G:\java-code\SEBM-MS\sebm-user-service\src\main\java\com\group5\user\models\dto\UserRegisterDto.java
+G:\java-code\SEBM-MS\sebm-user-service\src\main\java\com\group5\user\models\bo\UserBo.java
+G:\java-code\SEBM-MS\sebm-user-service\src\main\java\com\group5\user\models\dto\UserUpdateDto.java
+G:\java-code\SEBM-MS\sebm-user-service\src\main\java\com\group5\user\models\po\UserPo.java
+G:\java-code\SEBM-MS\sebm-user-service\src\main\java\com\group5\user\UserServiceApplication.java
+G:\java-code\SEBM-MS\sebm-user-service\src\main\java\com\group5\user\models\bo\BorrowerBo.java

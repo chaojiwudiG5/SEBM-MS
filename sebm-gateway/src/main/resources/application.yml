@@ -10,33 +10,29 @@ spring:
     nacos:
       discovery:
         server-addr: localhost:8848
-
+      
     gateway:
       routes:
         - id: user-service
-          uri: lb://user-service         # lb:// 表示负载均衡，通过 Nacos 找服务
+          uri: lb://sebm-user-service         # lb:// 表示负载均衡，通过 Nacos 找服务
           predicates:
             - Path=/api/user/**       # 前端请求 /api/users/** → 转发 user-service
-          filters:
-            - StripPrefix=1            # 去掉前缀 /api
         - id: device-service
-          uri: lb://device-service
+          uri: lb://sebm-device-service
           predicates:
-            - Path=/api/devices/**
-          filters:
-            - StripPrefix=1
+            - Path=/api/device/**
         - id: borrow-service
-          uri: lb://borrow-service
+          uri: lb://sebm-borrow-service
           predicates:
-            - Path=/api/borrows/**
-          filters:
-            - StripPrefix=1
+            - Path=/api/borrow/**
         - id: notification-service
           uri: lb://notification-service
           predicates:
-            - Path=/api/notifications/**
-          filters:
-            - StripPrefix=1
+            - Path=/api/notification/**
+        - id: maintenance-service
+          uri: lb://sebm-maintenance-service
+          predicates:
+            - Path=/api/maintenance/**
 logging:
   level:
     org.springframework.cloud.gateway: DEBUG

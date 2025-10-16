@@ -1,9 +1,10 @@
 server:
   port: 8081
-
+  servlet:
+    context-path: /api/user
 spring:
   application:
-    name: user-service
+    name: sebm-user-service
   datasource:
     url: jdbc:mysql://trolley.proxy.rlwy.net:29578/railway?useSSL=false&serverTimezone=UTC
     username: root
@@ -14,15 +15,13 @@ spring:
       discovery:
         server-addr: localhost:8848
 
-dubbo:
-  application:
-    name: user-service-dubbo
-  registry:
-    address: nacos://localhost:8848
-  protocol:
-    name: dubbo
-    port: -1
-
 mybatis-plus:
   configuration:
     map-underscore-to-camel-case: false
+
+aliyun:
+  oss:
+    endpoint: oss-ap-southeast-1.aliyuncs.com
+    accessKeyId: ${OSS_ACCESS_KEY_ID}
+    accessKeySecret: ${OSS_ACCESS_KEY_SECRET}
+    bucketName: sebm
