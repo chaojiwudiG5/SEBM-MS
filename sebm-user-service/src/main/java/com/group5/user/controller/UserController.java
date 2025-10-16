@@ -106,14 +106,6 @@ public class UserController {
     return ResultUtils.success(currentUser); // 返回VO
   }
 
-  @GetMapping("/getCurrentUserDto")
-  public UserDto getCurrentUserDto() {
-    Long userId = UserContext.getUserId();
-    UserDto userDto = userServiceImpl.getCurrentUserDtoFromID(userId);
-    log.info("GetCurrentUserDto called with userDto: {}", userDto);
-    return userDto;
-  }
-
   @GetMapping("/test")
   public BaseResponse<String> test() {
     String test = "test";

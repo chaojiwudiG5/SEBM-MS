@@ -49,31 +49,12 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, UserPo> implements 
    */
   @Override
   public UserVo getCurrentUser(HttpServletRequest request) {
-    Long userId = (Long) request.getAttribute("userId");
-    if (userId == null) {
-      ThrowUtils.throwIf(true, ErrorCode.NOT_LOGIN_ERROR, "Not login");
-    }
+    Long userId = Long.parseLong(request.getHeader("userId"));
+    ThrowUtils.throwIf(userId == null, ErrorCode.NOT_LOGIN_ERROR, "Not login");
     UserPo userPo = baseMapper.selectById(userId);
     UserVo userVo = new UserVo();
     BeanUtils.copyProperties(userPo, userVo);
     return userVo;
-  }
-  /**
-   * 获取当前登录用户
-   *
-   * @param request http 请求
-   * @return 当前登录用户
-   */
-  @Override
-  public UserDto getCurrentUserDtoFromHttp(HttpServletRequest request) {
-    Long userId = (Long) request.getAttribute("userId");
-    if (userId == null) {
-      ThrowUtils.throwIf(true, ErrorCode.NOT_LOGIN_ERROR, "Not login");
-    }
-    UserPo userPo = baseMapper.selectById(userId);
-    UserDto userDto = new UserDto();
-    BeanUtils.copyProperties(userPo, userDto);
-    return userDto;
   }
     /**
      * 根据用户id获取用户信息
@@ -83,15 +64,11 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, UserPo> implements 
      */
     @Override
     public UserDto getCurrentUserDtoFromID(Long userId) {
-      if (userId == null) {
-        ThrowUtils.throwIf(true, ErrorCode.NOT_LOGIN_ERROR, "Not login");
-      }
+      ThrowUtils.throwIf(userId == null, ErrorCode.NOT_LOGIN_ERROR, "Not login");
 
       UserPo userPo = baseMapper.selectById(userId);
       // 数据库没查到用户
-      if (userPo == null) {
-        ThrowUtils.throwIf(true, ErrorCode.NOT_FOUND_ERROR, "User not found");
-      }
+      ThrowUtils.throwIf(userPo == null, ErrorCode.NOT_FOUND_ERROR, "User not exists");
       UserDto userDto = new UserDto();
       BeanUtils.copyProperties(userPo, userDto);
       return userDto;

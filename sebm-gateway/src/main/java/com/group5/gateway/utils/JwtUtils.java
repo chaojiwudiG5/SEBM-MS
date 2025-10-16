@@ -1,4 +1,4 @@
-package com.group5.sebmcommon.utils;
+package com.group5.gateway.utils;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
@@ -13,6 +13,7 @@ import java.util.Date;
  */
 public class JwtUtils {
 
+    // HS256 秘钥（可存配置文件或环境变量）
     private static final String SECRET = "To say a goodbye is to die a little";
 
     private static final Key SECRET_KEY = Keys.hmacShaKeyFor(SECRET.getBytes(StandardCharsets.UTF_8));

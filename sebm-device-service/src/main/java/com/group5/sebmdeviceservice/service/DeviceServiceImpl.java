@@ -43,7 +43,7 @@ public class DeviceServiceImpl extends ServiceImpl<DeviceMapper, DevicePo>
    * @return Page<DeviceVo>
    */
   @Override
-  @Cacheable(value = "deviceList", key = "#deviceQueryDto.toString()+ '_' + #deviceQueryDto.pageNumber + '_' + #deviceQueryDto.pageSize")
+//  @Cacheable(value = "deviceList", key = "#deviceQueryDto.toString()+ '_' + #deviceQueryDto.pageNumber + '_' + #deviceQueryDto.pageSize")
   public Page<DeviceVo> getDeviceList(DeviceQueryDto deviceQueryDto) {
     // 1. 获取分页参数
     int pageNum = deviceQueryDto.getPageNumber();
@@ -92,7 +92,7 @@ public class DeviceServiceImpl extends ServiceImpl<DeviceMapper, DevicePo>
    * @return DeviceVo
    */
   @Override
-  @Cacheable(value = "deviceById", key = "#id")
+//  @Cacheable(value = "deviceById", key = "#id")
   public DeviceVo getDeviceById(Long id) {
     //1. 根据id查询设备
     DevicePo device = deviceMapper.selectById(id);
@@ -109,9 +109,9 @@ public class DeviceServiceImpl extends ServiceImpl<DeviceMapper, DevicePo>
    * @return 成功返回id，失败返回null
    */
   @Override
-  @Caching(evict = {
-      @CacheEvict(value = "deviceList", allEntries = true) // 清除列表缓存
-  })
+//  @Caching(evict = {
+//      @CacheEvict(value = "deviceList", allEntries = true) // 清除列表缓存
+//  })
   public Long addDevice(DeviceAddDto deviceAddDto) {
     //1. 转换为实体对象
     DevicePo device = new DevicePo();
@@ -129,14 +129,14 @@ public class DeviceServiceImpl extends ServiceImpl<DeviceMapper, DevicePo>
    * @return 成功返回id，失败返回null
    */
   @Override
-  @Caching(
-      put = {
-          @CachePut(value = "deviceById", key = "#deviceUpdateDto.id")
-      },
-      evict = {
-          @CacheEvict(value = "deviceList", allEntries = true)
-      }
-  )
+//  @Caching(
+//      put = {
+//          @CachePut(value = "deviceById", key = "#deviceUpdateDto.id")
+//      },
+//      evict = {
+//          @CacheEvict(value = "deviceList", allEntries = true)
+//      }
+//  )
   public DeviceVo updateDevice(DeviceUpdateDto deviceUpdateDto) {
     //1. 转换为实体对象
     DevicePo device = new DevicePo();
@@ -156,10 +156,10 @@ public class DeviceServiceImpl extends ServiceImpl<DeviceMapper, DevicePo>
    * @return 成功返回true，失败返回false
    */
   @Override
-  @Caching(evict = {
-      @CacheEvict(value = "deviceById", key = "#deviceUpdateDto.id"),
-      @CacheEvict(value = "deviceList", allEntries = true) // 清除列表缓存
-  })
+//  @Caching(evict = {
+//      @CacheEvict(value = "deviceById", key = "#deviceUpdateDto.id"),
+//      @CacheEvict(value = "deviceList", allEntries = true) // 清除列表缓存
+//  })
   public Boolean deleteDevice(DeleteDto deleteDto) {
     //1. 根据id删除设备
     try {
@@ -179,14 +179,14 @@ public class DeviceServiceImpl extends ServiceImpl<DeviceMapper, DevicePo>
    * @return
    */
   @Override
-  @Caching(
-      put = {
-          @CachePut(value = "deviceById", key = "#deviceId")
-      },
-      evict = {
-          @CacheEvict(value = "deviceList", allEntries = true)
-      }
-  )
+//  @Caching(
+//      put = {
+//          @CachePut(value = "deviceById", key = "#deviceId")
+//      },
+//      evict = {
+//          @CacheEvict(value = "deviceList", allEntries = true)
+//      }
+//  )
   public DeviceVo updateDeviceStatus(Long deviceId, Integer status) {
     //1. 根据id查询设备
     DevicePo device = deviceMapper.selectById(deviceId);

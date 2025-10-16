@@ -5,188 +5,34 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="37a8d32f-b840-4b4a-a84b-73762e9272e4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/sebm-borrow-service/src/main/java/com/group5/sebmborrowservice/controller/BorrowRecordController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sebm-borrow-service/src/main/java/com/group5/sebmborrowservice/controller/inner/BorrowRecordInnerController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sebm-borrow-service/src/main/java/com/group5/sebmborrowservice/dao/BorrowRecordMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sebm-borrow-service/src/main/java/com/group5/sebmborrowservice/services/BorrowRecordService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sebm-borrow-service/src/main/java/com/group5/sebmborrowservice/services/serviceImpl/BorrowRecordServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sebm-borrow-service/src/main/resources/mapper/BorrowrecordMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sebm-common/src/main/java/com/group5/sebmcommon/annotation/AuthCheck.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sebm-common/src/main/java/com/group5/sebmcommon/config/MybatisPlusConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sebm-common/src/main/java/com/group5/sebmcommon/config/RedisConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sebm-common/src/main/java/com/group5/sebmcommon/constant/BorrowConstant.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sebm-common/src/main/java/com/group5/sebmcommon/constant/NotificationConstant.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sebm-common/src/main/java/com/group5/sebmcommon/enums/BorrowStatusEnum.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sebm-common/src/main/java/com/group5/sebmcommon/enums/DeviceStatusEnum.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sebm-common/src/main/java/com/group5/sebmcommon/enums/NotificationEventEnum.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sebm-common/src/main/java/com/group5/sebmcommon/enums/NotificationMethodEnum.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sebm-common/src/main/java/com/group5/sebmcommon/enums/NotificationNodeEnum.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sebm-common/src/main/java/com/group5/sebmcommon/enums/NotificationRoleEnum.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sebm-common/src/main/java/com/group5/sebmcommon/enums/NotificationTypeEnum.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sebm-common/src/main/java/com/group5/sebmcommon/enums/ReservationStatusEnum.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sebm-common/src/main/java/com/group5/sebmcommon/enums/UserRoleEnum.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sebm-common/src/main/java/com/group5/sebmcommon/utils/GeoFenceUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sebm-common/src/main/java/com/group5/sebmcommon/utils/JwtUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sebm-common/src/main/java/com/group5/sebmcommon/utils/OssService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sebm-common/src/main/java/com/group5/sebmcommon/utils/UserContext.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sebm-device-service/src/main/java/com/group5/sebmdeviceservice/controller/DeviceController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sebm-device-service/src/main/java/com/group5/sebmdeviceservice/controller/inner/DeviceInnerController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sebm-device-service/src/main/java/com/group5/sebmdeviceservice/dao/DeviceMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sebm-device-service/src/main/java/com/group5/sebmdeviceservice/service/DeviceServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sebm-device-service/src/main/java/com/group5/sebmdeviceservice/service/services/DeviceService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sebm-device-service/src/main/resources/application.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sebm-device-service/src/main/resources/mapper/DeviceMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sebm-maintenance-service/src/main/java/com/group5/sebmmaintenanceservice/controller/MechanicanMaintenanceRecordController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sebm-maintenance-service/src/main/java/com/group5/sebmmaintenanceservice/controller/UserMaintenanceRecordController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sebm-maintenance-service/src/main/java/com/group5/sebmmaintenanceservice/dao/MechanicanMaintenanceRecordMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sebm-maintenance-service/src/main/java/com/group5/sebmmaintenanceservice/dao/UserMaintenanceRecordMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sebm-maintenance-service/src/main/java/com/group5/sebmmaintenanceservice/service/MechanicanMaintenanceRecordServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sebm-maintenance-service/src/main/java/com/group5/sebmmaintenanceservice/service/UserMaintenanceRecordServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sebm-maintenance-service/src/main/java/com/group5/sebmmaintenanceservice/service/services/MechanicanMaintenanceRecordService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sebm-maintenance-service/src/main/java/com/group5/sebmmaintenanceservice/service/services/UserMaintenanceRecordService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sebm-maintenance-service/src/main/resources/application.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sebm-maintenance-service/src/main/resources/mapper/MechanicanMaintenanceRecordMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sebm-maintenance-service/src/main/resources/mapper/UserMaintenanceRecordMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sebm-models/src/main/java/com/group5/sebmmodels/bo/Borrower.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sebm-models/src/main/java/com/group5/sebmmodels/bo/Manager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sebm-models/src/main/java/com/group5/sebmmodels/bo/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sebm-models/src/main/java/com/group5/sebmmodels/dto/borrow/BorrowRecordAddDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sebm-models/src/main/java/com/group5/sebmmodels/dto/borrow/BorrowRecordDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sebm-models/src/main/java/com/group5/sebmmodels/dto/borrow/BorrowRecordQueryDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sebm-models/src/main/java/com/group5/sebmmodels/dto/borrow/BorrowRecordQueryWithStatusDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sebm-models/src/main/java/com/group5/sebmmodels/dto/borrow/BorrowRecordReturnDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sebm-models/src/main/java/com/group5/sebmmodels/dto/device/DeviceAddDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sebm-models/src/main/java/com/group5/sebmmodels/dto/device/DeviceDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sebm-models/src/main/java/com/group5/sebmmodels/dto/device/DeviceQueryDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sebm-models/src/main/java/com/group5/sebmmodels/dto/device/DeviceUpdateDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sebm-models/src/main/java/com/group5/sebmmodels/dto/maintenance/MechanicRecordQueryDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sebm-models/src/main/java/com/group5/sebmmodels/dto/maintenance/MechanicanClaimDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sebm-models/src/main/java/com/group5/sebmmodels/dto/maintenance/MechanicanQueryDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sebm-models/src/main/java/com/group5/sebmmodels/dto/maintenance/MechanicanUpdateDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sebm-models/src/main/java/com/group5/sebmmodels/dto/maintenance/UserCreateDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sebm-models/src/main/java/com/group5/sebmmodels/dto/maintenance/UserMaintenanceRecordDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sebm-models/src/main/java/com/group5/sebmmodels/dto/maintenance/UserQueryDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sebm-models/src/main/java/com/group5/sebmmodels/dto/notification/CreateTemplateDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sebm-models/src/main/java/com/group5/sebmmodels/dto/notification/SendNotificationDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sebm-models/src/main/java/com/group5/sebmmodels/dto/notification/TemplateQueryDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sebm-models/src/main/java/com/group5/sebmmodels/dto/user/UserDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sebm-models/src/main/java/com/group5/sebmmodels/entity/BorrowRecordPo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sebm-models/src/main/java/com/group5/sebmmodels/entity/DevicePo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sebm-models/src/main/java/com/group5/sebmmodels/entity/MechanicanMaintenanceRecordPo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sebm-models/src/main/java/com/group5/sebmmodels/entity/UserMaintenanceRecordPo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sebm-models/src/main/java/com/group5/sebmmodels/vo/BorrowRecordVo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sebm-models/src/main/java/com/group5/sebmmodels/vo/DeviceVo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sebm-models/src/main/java/com/group5/sebmmodels/vo/MechanicanMaintenanceRecordVo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sebm-models/src/main/java/com/group5/sebmmodels/vo/UserMaintenanceRecordVo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sebm-models/src/main/java/com/group5/sebmmodels/vo/UserVo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sebm-service-client/src/main/java/com/group5/sebmserviceclient/service/BorrowRecordFeignClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sebm-service-client/src/main/java/com/group5/sebmserviceclient/service/DeviceFeignClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sebm-service-client/src/main/java/com/group5/sebmserviceclient/service/NotificationService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sebm-service-client/src/main/java/com/group5/sebmserviceclient/service/UserFeignClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sebm-service-client/src/main/resources/application.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sebm-user-service/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sebm-user-service/src/main/java/com/group5/user/controller/inner/UserInnerController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sebm-user-service/src/main/java/com/group5/user/services/BorrowerService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sebm-user-service/src/main/java/com/group5/user/services/ManagerService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sebm-user-service/src/main/java/com/group5/user/services/serviceImpl/BorrowerServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sebm-user-service/src/main/java/com/group5/user/services/serviceImpl/ManagerServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sebm-common/src/main/java/com/group5/sebmcommon/aop/AuthInterceptor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sebm-gateway/src/main/java/com/group5/gateway/config/CorsConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sebm-gateway/src/main/java/com/group5/gateway/filter/GlobalAuthFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sebm-gateway/src/main/java/com/group5/gateway/utils/JwtUtils.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sebm-borrow-service/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sebm-borrow-service/src/main/java/com/group5/borrow/BorrowServiceApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sebm-borrow-service/src/main/java/com/group5/borrow/controller/BorrowController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sebm-borrow-service/src/main/java/com/group5/borrow/service/BorrowService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sebm-borrow-service/src/main/java/com/group5/borrow/service/serviceImpl/BorrowServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sebm-borrow-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/sebm-borrow-service/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sebm-borrow-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/sebm-borrow-service/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sebm-borrow-service/src/test/java/com/group5/borrow/service/serviceImpl/BorrowServiceImplTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sebm-borrow-service/src/test/java/com/group5/borrow/service/serviceImpl/test.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sebm-borrow-service/target/classes/application.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sebm-borrow-service/target/classes/com/group5/borrow/BorrowServiceApplication.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sebm-borrow-service/target/classes/com/group5/borrow/controller/BorrowController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sebm-borrow-service/target/classes/com/group5/borrow/service/BorrowService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sebm-borrow-service/target/classes/com/group5/borrow/service/serviceImpl/BorrowServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sebm-borrow-service/target/test-classes/com/group5/borrow/service/serviceImpl/BorrowServiceImplTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sebm-borrow-service/target/test-classes/com/group5/borrow/service/serviceImpl/test.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sebm-common/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sebm-common/src/main/java/com/group5/sebm/common/common/BaseResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/sebm-common/src/main/java/com/group5/sebmcommon/BaseResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sebm-common/src/main/java/com/group5/sebm/common/common/ResultUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/sebm-common/src/main/java/com/group5/sebmcommon/ResultUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sebm-common/src/main/java/com/group5/sebm/common/common/constant/UserConstant.java" beforeDir="false" afterPath="$PROJECT_DIR$/sebm-common/src/main/java/com/group5/sebmcommon/constant/UserConstant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sebm-common/src/main/java/com/group5/sebm/common/config/CorsConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/sebm-common/src/main/java/com/group5/sebmcommon/config/CorsConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sebm-common/src/main/java/com/group5/sebm/common/enums/UserRoleEnum.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sebm-common/src/main/java/com/group5/sebm/common/exception/BusinessException.java" beforeDir="false" afterPath="$PROJECT_DIR$/sebm-common/src/main/java/com/group5/sebmcommon/exception/BusinessException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sebm-common/src/main/java/com/group5/sebm/common/exception/ErrorCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/sebm-common/src/main/java/com/group5/sebmcommon/exception/ErrorCode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sebm-common/src/main/java/com/group5/sebm/common/exception/GlobalExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/sebm-common/src/main/java/com/group5/sebmcommon/exception/GlobalExceptionHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sebm-common/src/main/java/com/group5/sebm/common/exception/ThrowUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/sebm-common/src/main/java/com/group5/sebmcommon/exception/ThrowUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sebm-common/src/main/java/com/group5/sebm/common/models/dto/DeleteDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/sebm-models/src/main/java/com/group5/sebmmodels/dto/common/DeleteDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sebm-common/src/main/java/com/group5/sebm/common/models/dto/PageDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/sebm-models/src/main/java/com/group5/sebmmodels/dto/common/PageDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sebm-common/src/main/java/com/group5/sebm/common/models/vo/UserVo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sebm-common/src/main/java/com/group5/sebm/common/service/IUserService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sebm-common/target/classes/com/group5/sebm/common/common/BaseResponse.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sebm-common/target/classes/com/group5/sebm/common/common/ResultUtils.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sebm-common/target/classes/com/group5/sebm/common/common/constant/UserConstant.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sebm-common/target/classes/com/group5/sebm/common/config/CorsConfig.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sebm-common/target/classes/com/group5/sebm/common/enums/UserRoleEnum.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sebm-common/target/classes/com/group5/sebm/common/exception/BusinessException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sebm-common/target/classes/com/group5/sebm/common/exception/ErrorCode.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sebm-common/target/classes/com/group5/sebm/common/exception/GlobalExceptionHandler.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sebm-common/target/classes/com/group5/sebm/common/exception/ThrowUtils.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sebm-common/target/classes/com/group5/sebm/common/models/dto/DeleteDto.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sebm-common/target/classes/com/group5/sebm/common/models/dto/PageDto$PageDtoBuilder.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sebm-common/target/classes/com/group5/sebm/common/models/dto/PageDto.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sebm-common/target/classes/com/group5/sebm/common/models/vo/UserVo$UserVoBuilder.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sebm-common/target/classes/com/group5/sebm/common/models/vo/UserVo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sebm-common/target/classes/com/group5/sebm/common/service/IUserService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sebm-common/target/maven-archiver/pom.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sebm-common/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sebm-common/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sebm-common/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sebm-common/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sebm-common/target/sebm-common-1.0-SNAPSHOT.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sebm-device-service/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sebm-device-service/src/main/java/com/group5/device/DeviceServiceApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sebm-common/src/main/java/com/group5/sebmcommon/config/CorsConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sebm-common/src/main/java/com/group5/sebmcommon/utils/JwtUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/sebm-common/src/main/java/com/group5/sebmcommon/utils/JwtUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sebm-device-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/sebm-device-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sebm-device-service/src/main/java/com/group5/sebmdeviceservice/service/DeviceServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/sebm-device-service/src/main/java/com/group5/sebmdeviceservice/service/DeviceServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sebm-device-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/sebm-device-service/src/main/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sebm-gateway/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/sebm-gateway/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sebm-gateway/src/main/java/com/group5/gateway/GatewayApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/sebm-gateway/src/main/java/com/group5/gateway/GatewayApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sebm-gateway/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/sebm-gateway/src/main/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sebm-gateway/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/sebm-gateway/target/classes/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sebm-notification-service/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sebm-maintenance-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/sebm-maintenance-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sebm-maintenance-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/sebm-maintenance-service/src/main/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sebm-user-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/sebm-user-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sebm-user-service/src/main/java/com/group5/user/UserServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/sebm-user-service/src/main/java/com/group5/user/UserServiceApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sebm-user-service/src/main/java/com/group5/user/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/sebm-user-service/src/main/java/com/group5/user/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sebm-user-service/src/main/java/com/group5/user/dao/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/sebm-user-service/src/main/java/com/group5/user/dao/UserMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sebm-user-service/src/main/java/com/group5/user/models/bo/BorrowerBo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sebm-user-service/src/main/java/com/group5/user/models/bo/UserBo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sebm-user-service/src/main/java/com/group5/user/models/dto/UserLoginDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/sebm-models/src/main/java/com/group5/sebmmodels/dto/user/LoginDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sebm-user-service/src/main/java/com/group5/user/models/dto/UserRegisterDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/sebm-models/src/main/java/com/group5/sebmmodels/dto/user/RegisterDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sebm-user-service/src/main/java/com/group5/user/models/dto/UserUpdateDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/sebm-models/src/main/java/com/group5/sebmmodels/dto/user/UpdateDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sebm-user-service/src/main/java/com/group5/user/models/po/UserPo.java" beforeDir="false" afterPath="$PROJECT_DIR$/sebm-models/src/main/java/com/group5/sebmmodels/entity/UserPo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sebm-user-service/src/main/java/com/group5/user/models/vo/UserVo.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/sebm-user-service/src/main/java/com/group5/user/services/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/sebm-user-service/src/main/java/com/group5/user/services/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sebm-user-service/src/main/java/com/group5/user/services/serviceImpl/IUserServiceImpl.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/sebm-user-service/src/main/java/com/group5/user/services/serviceImpl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/sebm-user-service/src/main/java/com/group5/user/services/serviceImpl/UserServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sebm-user-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/sebm-user-service/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sebm-user-service/src/main/resources/mapper/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/sebm-user-service/src/main/resources/mapper/UserMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sebm-user-service/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/sebm-user-service/target/classes/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sebm-user-service/target/classes/com/group5/user/UserServiceApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/sebm-user-service/target/classes/com/group5/user/UserServiceApplication.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sebm-user-service/target/classes/com/group5/user/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/sebm-user-service/target/classes/com/group5/user/controller/UserController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sebm-user-service/target/classes/com/group5/user/dao/UserMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/sebm-user-service/target/classes/com/group5/user/dao/UserMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sebm-user-service/target/classes/com/group5/user/models/bo/BorrowerBo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sebm-user-service/target/classes/com/group5/user/models/bo/UserBo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sebm-user-service/target/classes/com/group5/user/models/dto/UserLoginDto.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sebm-user-service/target/classes/com/group5/user/models/dto/UserRegisterDto.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sebm-user-service/target/classes/com/group5/user/models/dto/UserUpdateDto$UserUpdateDtoBuilder.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sebm-user-service/target/classes/com/group5/user/models/dto/UserUpdateDto.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sebm-user-service/target/classes/com/group5/user/models/po/UserPo$UserPoBuilder.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sebm-user-service/target/classes/com/group5/user/models/po/UserPo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sebm-user-service/target/classes/com/group5/user/models/vo/UserVo$UserVoBuilder.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sebm-user-service/target/classes/com/group5/user/models/vo/UserVo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sebm-user-service/target/classes/com/group5/user/controller/inner/UserInnerController.class" beforeDir="false" afterPath="$PROJECT_DIR$/sebm-user-service/target/classes/com/group5/user/controller/inner/UserInnerController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sebm-user-service/target/classes/com/group5/user/services/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/sebm-user-service/target/classes/com/group5/user/services/UserService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sebm-user-service/target/classes/com/group5/user/services/serviceImpl/IUserServiceImpl.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/sebm-user-service/target/classes/com/group5/user/services/serviceImpl/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/sebm-user-service/target/classes/com/group5/user/services/serviceImpl/UserServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sebm-user-service/target/classes/mapper/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/sebm-user-service/target/classes/mapper/UserMapper.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -249,7 +95,7 @@
     "RunOnceActivity.git.unshallow": "true",
     "Spring Boot.BorrowServiceApplication.executor": "Run",
     "Spring Boot.GatewayApplication (1).executor": "Run",
-    "Spring Boot.GatewayApplication.executor": "Run",
+    "Spring Boot.GatewayApplication.executor": "Debug",
     "Spring Boot.SebmBorrowServiceApplication.executor": "Debug",
     "Spring Boot.SebmDeviceServiceApplication.executor": "Debug",
     "Spring Boot.SebmMaintenanceServiceApplication.executor": "Debug",
@@ -259,7 +105,7 @@
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "G:/java-code/SEBM-MS/sebm-maintenance-service/src/main/resources/mapper",
+    "last_opened_file_path": "G:/java-code/SEBM-MS/sebm-common/src/main/java/com/group5/sebmcommon",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -300,11 +146,11 @@
       <recent name="group5.com.service.serviceImpl" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.group5.gateway.utils" />
       <recent name="com.group5.sebmserviceclient" />
       <recent name="com.group5.sebmserviceclient.service" />
       <recent name="com.group5.device.services" />
       <recent name="com.group5.device.services.serviceImpl" />
-      <recent name="com.group5.device.service.services" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -317,7 +163,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.SebmBorrowServiceApplication">
+  <component name="RunManager" selected="Spring Boot.GatewayApplication">
     <configuration name="BorrowServiceImplTest.getUserById (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="sebm-borrow-service" />
       <extension name="coverage">
@@ -345,9 +191,15 @@
       <option name="filePath" />
       <method v="2" />
     </configuration>
-    <configuration name="GatewayApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+    <configuration name="GatewayApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="sebm-gateway" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.group5.gateway.GatewayApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.group5.gateway.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -404,31 +256,21 @@
       </deployment>
       <method v="2" />
     </configuration>
-    <configuration name="sebm-user-service/Dockerfile" type="docker-deploy" factoryName="dockerfile" temporary="true" server-name="Docker">
-      <deployment type="dockerfile">
-        <settings>
-          <option name="containerName" value="" />
-          <option name="sourceFilePath" value="sebm-user-service/Dockerfile" />
-        </settings>
-      </deployment>
-      <method v="2" />
-    </configuration>
     <list>
-      <item itemvalue="Docker.sebm-user-service/Dockerfile" />
       <item itemvalue="JUnit.BorrowServiceImplTest.getUserById (1)" />
       <item itemvalue="Spring Boot.SebmMaintenanceServiceApplication" />
-      <item itemvalue="Spring Boot.GatewayApplication" />
       <item itemvalue="Spring Boot.SebmBorrowServiceApplication" />
       <item itemvalue="Spring Boot.SebmDeviceServiceApplication" />
+      <item itemvalue="Spring Boot.GatewayApplication" />
       <item itemvalue="Spring Boot.UserServiceApplication" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Spring Boot.GatewayApplication" />
+        <item itemvalue="Spring Boot.UserServiceApplication" />
         <item itemvalue="Spring Boot.SebmDeviceServiceApplication" />
         <item itemvalue="Spring Boot.SebmBorrowServiceApplication" />
-        <item itemvalue="Spring Boot.UserServiceApplication" />
         <item itemvalue="JUnit.BorrowServiceImplTest.getUserById (1)" />
-        <item itemvalue="Docker.sebm-user-service/Dockerfile" />
       </list>
     </recent_temporary>
   </component>
@@ -461,7 +303,8 @@
       <workItem from="1760544719646" duration="1163000" />
       <workItem from="1760545892706" duration="264000" />
       <workItem from="1760546167737" duration="2384000" />
-      <workItem from="1760584554986" duration="18753000" />
+      <workItem from="1760584554986" duration="26827000" />
+      <workItem from="1760621212123" duration="2813000" />
     </task>
     <servers />
   </component>

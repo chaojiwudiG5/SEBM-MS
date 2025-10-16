@@ -25,3 +25,8 @@ aliyun:
     accessKeyId: ${OSS_ACCESS_KEY_ID}
     accessKeySecret: ${OSS_ACCESS_KEY_SECRET}
     bucketName: sebm
+
+knife4j:
+  enable: true
+  setting:
+    language: zh_cn
