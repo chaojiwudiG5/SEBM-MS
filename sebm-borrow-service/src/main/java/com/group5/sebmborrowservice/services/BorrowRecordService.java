@@ -27,6 +27,4 @@ public interface BorrowRecordService extends IService<BorrowRecordPo> {
 
   Page<BorrowRecordVo> getBorrowRecordListWithStatus(
       BorrowRecordQueryWithStatusDto borrowRecordQueryWithStatusDto);
-
-  DevicePo test();
 }

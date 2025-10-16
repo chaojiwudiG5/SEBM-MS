@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
  * @description 针对表【user(用户)】的数据库操作Service
  * @createDate 2025-09-16 13:06:33
  */
-@FeignClient(name = "user-service", path = "/api/user/inner")
+@FeignClient(name = "sebm-user-service", path = "/api/user/inner")
 public interface UserFeignClient{
   @GetMapping("/getUser/id")
   UserDto getCurrentUserDtoFromID(@RequestParam("id") Long id);

@@ -38,7 +38,7 @@ public class BorrowRecordController {
       @RequestBody BorrowRecordAddDto borrowRecordAddDto,
       HttpServletRequest request) {
     BorrowRecordVo borrowRecordVo = borrowRecordService.borrowDevice(borrowRecordAddDto,
-        (Long) request.getAttribute("userId"));
+        Long.parseLong(request.getHeader("userId")));
     log.info("addBorrowRecord success, borrowRecordVo: {}", borrowRecordVo);
     return ResultUtils.success(borrowRecordVo);
   }
@@ -48,7 +48,7 @@ public class BorrowRecordController {
       @RequestBody BorrowRecordReturnDto borrowRecordReturnDto,
       HttpServletRequest request) {
     BorrowRecordVo borrowRecordVo = borrowRecordService.returnDevice(borrowRecordReturnDto,
-        (Long) request.getAttribute("userId"));
+        Long.parseLong(request.getHeader("userId")));
     log.info("returnDevice success, borrowRecordVo: {}", borrowRecordVo);
     return ResultUtils.success(borrowRecordVo);
   }
@@ -72,12 +72,6 @@ public class BorrowRecordController {
         "getBorrowRecordListWithStatus called with borrowRecordQueryWithStatusDto: {}, borrowRecordPage: {}",
         borrowRecordQueryWithStatusDto, borrowRecordPage);
     return ResultUtils.success(borrowRecordPage.getRecords());
-  }
-
-  @GetMapping("/test")
-  public BaseResponse<DevicePo> test() {
-    DevicePo po = borrowRecordService.test();
-    return ResultUtils.success(po);
   }
 
 }

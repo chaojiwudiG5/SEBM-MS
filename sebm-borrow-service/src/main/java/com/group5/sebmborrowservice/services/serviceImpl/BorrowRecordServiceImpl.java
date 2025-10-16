@@ -176,12 +176,6 @@ public class BorrowRecordServiceImpl extends ServiceImpl<BorrowRecordMapper, Bor
   }
 
   @Override
-  public DevicePo test() {
-    DevicePo devicePo = deviceService.getById(4L);
-    return devicePo;
-  }
-
-  @Override
   @Transactional(rollbackFor = BusinessException.class)
   public BorrowRecordVo returnDevice(BorrowRecordReturnDto borrowRecordReturnDto,
       Long userId) {
