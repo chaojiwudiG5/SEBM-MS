@@ -5,8 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="37a8d32f-b840-4b4a-a84b-73762e9272e4" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/sebm-user-service/.gitattributes" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sebm-user-service/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sebm-user-service/mvnw" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sebm-user-service/mvnw.cmd" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sebm-borrow-service/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/sebm-borrow-service/Dockerfile" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -89,7 +92,7 @@
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "G:/java-code/SEBM-MS/sebm-gateway",
+    "last_opened_file_path": "G:/java-code/SEBM-MS/sebm-user-service",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -113,11 +116,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="G:\java-code\SEBM-MS\sebm-user-service" />
       <recent name="G:\java-code\SEBM-MS\sebm-gateway" />
       <recent name="G:\java-code\SEBM-MS\sebm-borrow-service" />
       <recent name="G:\java-code\SEBM-MS\sebm-device-service" />
       <recent name="G:\java-code\SEBM-MS\sebm-maintenance-service" />
-      <recent name="G:\java-code\SEBM-MS\sebm-common\src\main\java\com\group5\sebmcommon" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
@@ -291,7 +294,7 @@
       <workItem from="1760584554986" duration="26827000" />
       <workItem from="1760621212123" duration="5311000" />
       <workItem from="1760678066734" duration="21365000" />
-      <workItem from="1760710748472" duration="4819000" />
+      <workItem from="1760710748472" duration="6407000" />
     </task>
     <servers />
   </component>
