@@ -5,11 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="37a8d32f-b840-4b4a-a84b-73762e9272e4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/sebm-user-service/.gitattributes" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sebm-user-service/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sebm-user-service/mvnw" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sebm-user-service/mvnw.cmd" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sebm-borrow-service/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/sebm-borrow-service/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sebm-device-service/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/sebm-device-service/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sebm-gateway/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/sebm-gateway/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sebm-maintenance-service/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/sebm-maintenance-service/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sebm-user-service/.github/workflows/CICD.yml" beforeDir="false" afterPath="$PROJECT_DIR$/sebm-user-service/.github/workflows/CICD.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sebm-user-service/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/sebm-user-service/Dockerfile" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -294,7 +296,7 @@
       <workItem from="1760584554986" duration="26827000" />
       <workItem from="1760621212123" duration="5311000" />
       <workItem from="1760678066734" duration="21365000" />
-      <workItem from="1760710748472" duration="6407000" />
+      <workItem from="1760710748472" duration="7173000" />
     </task>
     <servers />
   </component>
