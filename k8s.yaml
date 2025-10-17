@@ -1,0 +1,543 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: sebm-system
+---
+# ===================== NACOS =====================
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nacos
+  namespace: sebm-system
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nacos
+  template:
+    metadata:
+      labels:
+        app: nacos
+    spec:
+      containers:
+        - name: nacos
+          image: nacos/nacos-server:v2.5.1
+          ports:
+            - containerPort: 8848
+            - containerPort: 9848
+          env:
+            - name: MODE
+              value: "standalone"
+            - name: NACOS_GRPC_PORT
+              value: "9848"
+          resources:
+            requests:
+              cpu: "250m"
+              memory: "512Mi"
+            limits:
+              cpu: "500m"
+              memory: "1Gi"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: nacos
+  namespace: sebm-system
+spec:
+  selector:
+    app: nacos
+  ports:
+    - name: http
+      port: 8848
+      targetPort: 8848
+    - name: grpc
+      port: 9848
+      targetPort: 9848
+---
+# ===================== Borrow Service =====================
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sebm-borrow-service
+  namespace: sebm-system
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: sebm-borrow-service
+  template:
+    metadata:
+      labels:
+        app: sebm-borrow-service
+    spec:
+      containers:
+        - name: sebm-borrow-service
+          image: sebm-borrow-service:latest
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 8082
+          env:
+            - name: NACOS_ADDR
+              value: "nacos.sebm-system.svc.cluster.local:8848"
+            - name: OSS_ACCESS_KEY_ID
+              value: "LTAI5tDnz64Y9RLEy4xUP1m5"
+            - name: OSS_ACCESS_KEY_SECRET
+              value: "jbN3NsBqHa9a06UUvcUrn5N4R8zRGA"
+          resources:
+            requests:
+              cpu: "250m"
+              memory: "512Mi"
+            limits:
+              cpu: "500m"
+              memory: "1Gi"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: sebm-borrow-service
+  namespace: sebm-system
+  annotations:
+    prometheus.io/scrape: "true"
+    prometheus.io/port: "8082"
+    prometheus.io/path: "/actuator/prometheus"
+spec:
+  selector:
+    app: sebm-borrow-service
+  ports:
+    - port: 8082
+      targetPort: 8082
+---
+apiVersion: autoscaling/v2
+kind: HorizontalPodAutoscaler
+metadata:
+  name: sebm-borrow-service-hpa
+  namespace: sebm-system
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: sebm-borrow-service
+  minReplicas: 1
+  maxReplicas: 5
+  metrics:
+    - type: Resource
+      resource:
+        name: cpu
+        target:
+          type: Utilization
+          averageUtilization: 60
+---
+# ===================== Device Service =====================
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sebm-device-service
+  namespace: sebm-system
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: sebm-device-service
+  template:
+    metadata:
+      labels:
+        app: sebm-device-service
+    spec:
+      containers:
+        - name: sebm-device-service
+          image: sebm-device-service:latest
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 8083
+          env:
+            - name: NACOS_ADDR
+              value: "nacos.sebm-system.svc.cluster.local:8848"
+            - name: OSS_ACCESS_KEY_ID
+              value: "LTAI5tDnz64Y9RLEy4xUP1m5"
+            - name: OSS_ACCESS_KEY_SECRET
+              value: "jbN3NsBqHa9a06UUvcUrn5N4R8zRGA"
+          resources:
+            requests:
+              cpu: "250m"
+              memory: "512Mi"
+            limits:
+              cpu: "500m"
+              memory: "1Gi"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: sebm-device-service
+  namespace: sebm-system
+  annotations:
+    prometheus.io/scrape: "true"
+    prometheus.io/port: "8083"
+    prometheus.io/path: "/actuator/prometheus"
+spec:
+  selector:
+    app: sebm-device-service
+  ports:
+    - port: 8083
+      targetPort: 8083
+---
+apiVersion: autoscaling/v2
+kind: HorizontalPodAutoscaler
+metadata:
+  name: sebm-device-service-hpa
+  namespace: sebm-system
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: sebm-device-service
+  minReplicas: 1
+  maxReplicas: 5
+  metrics:
+    - type: Resource
+      resource:
+        name: cpu
+        target:
+          type: Utilization
+          averageUtilization: 60
+---
+# ===================== Maintenance Service =====================
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sebm-maintenance-service
+  namespace: sebm-system
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: sebm-maintenance-service
+  template:
+    metadata:
+      labels:
+        app: sebm-maintenance-service
+    spec:
+      containers:
+        - name: sebm-maintenance-service
+          image: sebm-maintenance-service:latest
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 8084
+          env:
+            - name: NACOS_ADDR
+              value: "nacos.sebm-system.svc.cluster.local:8848"
+            - name: OSS_ACCESS_KEY_ID
+              value: "LTAI5tDnz64Y9RLEy4xUP1m5"
+            - name: OSS_ACCESS_KEY_SECRET
+              value: "jbN3NsBqHa9a06UUvcUrn5N4R8zRGA"
+          resources:
+            requests:
+              cpu: "250m"
+              memory: "512Mi"
+            limits:
+              cpu: "500m"
+              memory: "1Gi"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: sebm-maintenance-service
+  namespace: sebm-system
+  annotations:
+    prometheus.io/scrape: "true"
+    prometheus.io/port: "8084"
+    prometheus.io/path: "/actuator/prometheus"
+spec:
+  selector:
+    app: sebm-maintenance-service
+  ports:
+    - port: 8084
+      targetPort: 8084
+---
+apiVersion: autoscaling/v2
+kind: HorizontalPodAutoscaler
+metadata:
+  name: sebm-maintenance-service-hpa
+  namespace: sebm-system
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: sebm-maintenance-service
+  minReplicas: 1
+  maxReplicas: 5
+  metrics:
+    - type: Resource
+      resource:
+        name: cpu
+        target:
+          type: Utilization
+          averageUtilization: 60
+---
+# ===================== User Service =====================
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sebm-user-service
+  namespace: sebm-system
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: sebm-user-service
+  template:
+    metadata:
+      labels:
+        app: sebm-user-service
+    spec:
+      containers:
+        - name: sebm-user-service
+          image: sebm-user-service:latest
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 8081
+          env:
+            - name: NACOS_ADDR
+              value: "nacos.sebm-system.svc.cluster.local:8848"
+            - name: OSS_ACCESS_KEY_ID
+              value: "LTAI5tDnz64Y9RLEy4xUP1m5"
+            - name: OSS_ACCESS_KEY_SECRET
+              value: "jbN3NsBqHa9a06UUvcUrn5N4R8zRGA"
+          resources:
+            requests:
+              cpu: "250m"
+              memory: "512Mi"
+            limits:
+              cpu: "500m"
+              memory: "1Gi"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: sebm-user-service
+  namespace: sebm-system
+  annotations:
+    prometheus.io/scrape: "true"
+    prometheus.io/port: "8081"
+    prometheus.io/path: "/actuator/prometheus"
+spec:
+  selector:
+    app: sebm-user-service
+  ports:
+    - port: 8081
+      targetPort: 8081
+---
+apiVersion: autoscaling/v2
+kind: HorizontalPodAutoscaler
+metadata:
+  name: sebm-user-service-hpa
+  namespace: sebm-system
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: sebm-user-service
+  minReplicas: 1
+  maxReplicas: 5
+  metrics:
+    - type: Resource
+      resource:
+        name: cpu
+        target:
+          type: Utilization
+          averageUtilization: 60
+---
+# ===================== Gateway =====================
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sebm-gateway
+  namespace: sebm-system
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: sebm-gateway
+  template:
+    metadata:
+      labels:
+        app: sebm-gateway
+    spec:
+      containers:
+        - name: sebm-gateway
+          image: sebm-gateway:latest
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 8090
+          env:
+            - name: NACOS_ADDR
+              value: "nacos.sebm-system.svc.cluster.local:8848"
+            - name: OSS_ACCESS_KEY_ID
+              value: "LTAI5tDnz64Y9RLEy4xUP1m5"
+            - name: OSS_ACCESS_KEY_SECRET
+              value: "jbN3NsBqHa9a06UUvcUrn5N4R8zRGA"
+          resources:
+            requests:
+              cpu: "250m"
+              memory: "512Mi"
+            limits:
+              cpu: "500m"
+              memory: "1Gi"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: sebm-gateway
+  namespace: sebm-system
+  annotations:
+    prometheus.io/scrape: "true"
+    prometheus.io/port: "8090"
+    prometheus.io/path: "/actuator/prometheus"
+spec:
+  selector:
+    app: sebm-gateway
+  type: NodePort
+  ports:
+    - port: 8090
+      targetPort: 8090
+      nodePort: 30080
+---
+apiVersion: autoscaling/v2
+kind: HorizontalPodAutoscaler
+metadata:
+  name: sebm-gateway-hpa
+  namespace: sebm-system
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: sebm-gateway
+  minReplicas: 1
+  maxReplicas: 5
+  metrics:
+    - type: Resource
+      resource:
+        name: cpu
+        target:
+          type: Utilization
+          averageUtilization: 60
+---
+# ===================== Prometheus =====================
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: prometheus
+  namespace: sebm-system
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: prometheus
+  template:
+    metadata:
+      labels:
+        app: prometheus
+    spec:
+      containers:
+        - name: prometheus
+          image: prom/prometheus:v2.45.0
+          args:
+            - "--config.file=/etc/prometheus/prometheus.yml"
+          ports:
+            - containerPort: 9090
+          volumeMounts:
+            - name: config
+              mountPath: /etc/prometheus
+      volumes:
+        - name: config
+          configMap:
+            name: prometheus-config
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: prometheus
+  namespace: sebm-system
+  annotations:
+    prometheus.io/scrape: "true"
+    prometheus.io/port: "9090"
+    prometheus.io/path: "/metrics"
+spec:
+  selector:
+    app: prometheus
+  ports:
+    - port: 9090
+      targetPort: 9090
+      nodePort: 30082
+  type: NodePort
+---
+# ===================== Grafana =====================
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: grafana
+  namespace: sebm-system
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: grafana
+  template:
+    metadata:
+      labels:
+        app: grafana
+    spec:
+      containers:
+        - name: grafana
+          image: grafana/grafana:10.1.10
+          ports:
+            - containerPort: 3000
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: grafana
+  namespace: sebm-system
+spec:
+  selector:
+    app: grafana
+  type: NodePort
+  ports:
+    - port: 3000
+      targetPort: 3000
+      nodePort: 30081
+---
+# ===================== Prometheus ConfigMap =====================
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: prometheus-config
+  namespace: sebm-system
+data:
+  prometheus.yml: |
+    global:
+      scrape_interval: 15s
+    scrape_configs:
+      - job_name: 'sebmsystem-user'
+        metrics_path: /api/user/actuator/prometheus
+        static_configs:
+          - targets: ['sebm-user-service.sebm-system.svc.cluster.local:8081']
+      
+      - job_name: 'sebmsystem-borrow'
+        metrics_path: /api/borrow/actuator/prometheus
+        static_configs:
+          - targets: ['sebm-borrow-service.sebm-system.svc.cluster.local:8082']
+      
+      - job_name: 'sebmsystem-device'
+        metrics_path: /api/device/actuator/prometheus
+        static_configs:
+          - targets: ['sebm-device-service.sebm-system.svc.cluster.local:8083']
+      
+      - job_name: 'sebmsystem-maintenance'
+        metrics_path: /api/maintenance/actuator/prometheus
+        static_configs:
+          - targets: ['sebm-maintenance-service.sebm-system.svc.cluster.local:8084']
+      
+      - job_name: 'sebmsystem-gateway'
+        metrics_path: /actuator/prometheus
+        static_configs:
+          - targets: ['sebm-gateway.sebm-system.svc.cluster.local:8090']

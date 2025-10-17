@@ -1,0 +1,5 @@
+kubectl rollout restart deployment sebm-borrow-service -n sebm-system
+kubectl rollout restart deployment sebm-device-service -n sebm-system
+kubectl rollout restart deployment sebm-gateway -n sebm-system
+kubectl rollout restart deployment sebm-maintenance-service -n sebm-system
+kubectl rollout restart deployment sebm-user-service -n sebm-system

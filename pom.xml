@@ -26,6 +26,7 @@
     <module>sebm-device-service</module>
     <module>sebm-gateway</module>
     <module>sebm-service-client</module>
+    <module>sebm-maintenance-service</module>
   </modules>
   <!-- 父级 Spring Boot POM -->
   <dependencyManagement>

@@ -13,7 +13,7 @@ spring:
   cloud:
     nacos:
       discovery:
-        server-addr: localhost:8848
+        server-addr: ${NACOS_ADDR}
   cache:
     type: redis
   data:
@@ -38,3 +38,16 @@ knife4j:
   enable: true
   setting:
     language: zh_cn
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"          # 允许暴露所有 actuator 端点
+  endpoint:
+    prometheus:
+      enabled: true           # 启用 prometheus 端点
+  prometheus:
+    metrics:
+      export:
+        enabled: true

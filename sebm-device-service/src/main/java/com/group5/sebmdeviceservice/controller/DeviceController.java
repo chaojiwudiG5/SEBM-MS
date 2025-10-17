@@ -1,5 +1,7 @@
 package com.group5.sebmdeviceservice.controller;
 
+import com.alibaba.csp.sentinel.annotation.SentinelResource;
+import com.alibaba.csp.sentinel.slots.block.BlockException;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.group5.sebmcommon.BaseResponse;
 import com.group5.sebmcommon.ResultUtils;
@@ -33,6 +35,7 @@ public class DeviceController {
   private DeviceService deviceService;
 
   @PostMapping("/getDeviceList")
+  @SentinelResource(value = "getDeviceList", blockHandler = "handleException")
   public BaseResponse<List<DeviceVo>> getDeviceList(@RequestBody @Valid DeviceQueryDto deviceQueryDto) {
     Page<DeviceVo> deviceVoPage = deviceService.getDeviceList(deviceQueryDto);
     log.info("GetDeviceList called with pageDto: {}, deviceVoPage: {}", deviceQueryDto, deviceVoPage);
@@ -76,5 +79,11 @@ public class DeviceController {
     Boolean result = deviceService.deleteDevice(deleteDto);
     log.info("DeleteDevice called with deleteDto: {}, result: {}", deleteDto, result);
     return ResultUtils.success(result); // 返回删除的id
+  }
+
+  public BaseResponse<List<DeviceVo>> handleException(BlockException ex) {
+    log.error("Sentinel block exception: {}", ex.getClass().getName());
+    //返回空列表
+    return ResultUtils.success(null);
   }
 }

@@ -1,0 +1,16 @@
+services:
+  sebm-borrow-service:
+    build: ./sebm-borrow-service
+    image: sebm-borrow-service:latest
+  sebm-device-service:
+    build: ./sebm-device-service
+    image: sebm-device-service:latest
+  sebm-gateway:
+    build: ./sebm-gateway
+    image: sebm-gateway:latest
+  sebm-maintenance-service:
+    build: ./sebm-maintenance-service
+    image: sebm-maintenance-service:latest
+  sebm-user-service:
+    build: ./sebm-user-service
+    image: sebm-user-service:latest

@@ -15,13 +15,14 @@
         <module name="sebm-common" />
         <module name="sebm-borrow-service" />
         <module name="sebm-service-client" />
-        <module name="sebm-notification-service" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="11">
       <module name="demo" target="17" />
       <module name="gateway" target="17" />
       <module name="sebm-model" target="17" />
+      <module name="SEBM-MS" target="17" />
+      <module name="sebm-notification-service" target="17" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
