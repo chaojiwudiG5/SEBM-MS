@@ -5,42 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="37a8d32f-b840-4b4a-a84b-73762e9272e4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/k8s.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rollout.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sebm-borrow-service/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sebm-device-service/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sebm-gateway/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sebm-maintenance-service/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sebm-borrow-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/sebm-borrow-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sebm-borrow-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/sebm-borrow-service/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sebm-common/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/sebm-common/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sebm-device-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/sebm-device-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sebm-device-service/src/main/java/com/group5/sebmdeviceservice/controller/DeviceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/sebm-device-service/src/main/java/com/group5/sebmdeviceservice/controller/DeviceController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sebm-device-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/sebm-device-service/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sebm-gateway/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/sebm-gateway/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sebm-gateway/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/sebm-gateway/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sebm-gateway/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/sebm-gateway/target/classes/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sebm-maintenance-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/sebm-maintenance-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sebm-maintenance-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/sebm-maintenance-service/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sebm-models/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/sebm-models/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sebm-models/src/main/java/com/group5/sebmmodels/dto/borrow/BorrowRecordQueryWithStatusDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/sebm-models/src/main/java/com/group5/sebmmodels/dto/borrow/BorrowRecordQueryWithStatusDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sebm-models/src/main/java/com/group5/sebmmodels/dto/device/DeviceQueryDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/sebm-models/src/main/java/com/group5/sebmmodels/dto/device/DeviceQueryDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sebm-models/src/test/java/com/group5/sebmmodels/SebmModelsApplicationTests.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sebm-service-client/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/sebm-service-client/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sebm-device-service/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/sebm-device-service/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sebm-gateway/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/sebm-gateway/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sebm-maintenance-service/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/sebm-maintenance-service/Dockerfile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sebm-user-service/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/sebm-user-service/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sebm-user-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/sebm-user-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sebm-user-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/sebm-user-service/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sebm-user-service/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/sebm-user-service/target/classes/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sebm-user-service/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/sebm-user-service/target/maven-archiver/pom.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sebm-user-service/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/sebm-user-service/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sebm-user-service/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/sebm-user-service/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sebm-user-service/target/sebm-user-service-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/sebm-user-service/target/sebm-user-service-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test.puml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -329,7 +298,7 @@
       <workItem from="1760584554986" duration="26827000" />
       <workItem from="1760621212123" duration="5311000" />
       <workItem from="1760678066734" duration="21365000" />
-      <workItem from="1760710748472" duration="1360000" />
+      <workItem from="1760710748472" duration="4504000" />
     </task>
     <servers />
   </component>
