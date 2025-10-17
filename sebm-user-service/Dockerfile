@@ -1,8 +1,7 @@
 # 基础镜像
 # 国内服务器会被墙
 #FROM openjdk:17-jdk-alpine
-FROM registry.cn-hangzhou.aliyuncs.com/openjdk/openjdk:17-jdk-alpine
-
+FROM swr.cn-north-4.myhuaweicloud.com/ddn-k8s/docker.io/openjdk:17-jdk-alpine
 
 # 设置工作目录
 WORKDIR /app

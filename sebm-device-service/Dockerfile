@@ -1,6 +1,5 @@
 # 基础镜像
-FROM registry.cn-hangzhou.aliyuncs.com/openjdk/openjdk:17-jdk-alpine
-
+FROM swr.cn-north-4.myhuaweicloud.com/ddn-k8s/docker.io/openjdk:17-jdk-alpine
 # 设置工作目录
 WORKDIR /app
 
