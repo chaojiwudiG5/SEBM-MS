@@ -49,11 +49,10 @@ jobs:
           modules="sebm-borrow-service sebm-user-service sebm-device-service sebm-gateway sebm-maintenance-service"
           for module in $modules; do
             echo "=== Building Docker image for $module ==="
-            # 构建镜像
             docker build \
-              -t $ACR_REGISTRY/$module:latest \
+              -t $ACR_REGISTRY/sebm/$module:latest \
               -f ./$module/Dockerfile \
               ./$module
-            # 推送镜像
             docker push $ACR_REGISTRY/sebm/$module:latest
           done
+
