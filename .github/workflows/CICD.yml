@@ -45,7 +45,7 @@ jobs:
                   git config user.email "github-actions[bot]@users.noreply.github.com"
 
                   # 添加 target 目录（只添加 jar、war 文件）
-                  git add **/target/*.jar **/target/*.war || true
+                  git add -f **/target/*.jar **/target/*.war || true
 
                   # 如果有改动才提交
                   if ! git diff --cached --quiet; then
