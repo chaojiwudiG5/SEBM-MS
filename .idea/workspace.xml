@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="37a8d32f-b840-4b4a-a84b-73762e9272e4" name="Changes" comment="" />
+    <list default="true" id="37a8d32f-b840-4b4a-a84b-73762e9272e4" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.github/workflows/CICD.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/CICD.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -288,7 +291,7 @@
       <workItem from="1760678066734" duration="21365000" />
       <workItem from="1760710748472" duration="11250000" />
       <workItem from="1760756911261" duration="1305000" />
-      <workItem from="1760758243470" duration="1150000" />
+      <workItem from="1760758243470" duration="1790000" />
     </task>
     <servers />
   </component>

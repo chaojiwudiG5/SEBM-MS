@@ -1,21 +1,26 @@
-name: Build and Commit Artifacts
+name: Build, Dockerize and Push to ACR
 
 on:
     push:
         branches:
             - main
-    workflow_dispatch: # 允许手动触发
+    workflow_dispatch:
 
 jobs:
-    build:
+    build-and-docker:
         runs-on: ubuntu-latest
+
+        env:
+            ACR_REGISTRY: crpi-vqzgcvtc07egicyr.ap-southeast-1.personal.cr.aliyuncs.com# 例如 registry.cn-shanghai.aliyuncs.com/your-namespace
+            ACR_USERNAME: ${{ secrets.ACR_USERNAME }}
+            ACR_PASSWORD: ${{ secrets.ACR_PASSWORD }}
 
         steps:
             # === 1️⃣ 检出代码 ===
             - name: Checkout repository
               uses: actions/checkout@v4
               with:
-                  fetch-depth: 0 # 需要完整历史记录才能提交代码
+                  fetch-depth: 0
 
             # === 2️⃣ 设置 JDK 环境 ===
             - name: Set up JDK 17
@@ -29,28 +34,21 @@ jobs:
             - name: Build all modules
               run: mvn -B clean package -DskipTests
 
-            # === 4️⃣ 将生成的 jar 文件提交回仓库 ===
-            - name: Commit built JARs
+            # === 4️⃣ 登录阿里云 ACR ===
+            - name: Login to Alibaba Cloud ACR
+              uses: docker/login-action@v2
+              with:
+                  username: ${{ env.ACR_USERNAME }}
+                  password: ${{ env.ACR_PASSWORD }}
+                  registry: ${{ env.ACR_REGISTRY }}
+
+            # === 5️⃣ 构建并推送 Docker 镜像 ===
+            - name: Build and Push Docker images
               run: |
-                  echo "📦 Copying built artifacts..."
-                  # 确保 target 目录存在
-                  find . -type d -name "target" | while read dir; do
-                    if [ -d "$dir" ]; then
-                      echo "✅ Found $dir"
-                    fi
+                  modules=("sebm-borrow-service" "sebm-user-service" "sebm-device-service" "sebm-gateway" "sebm-maintenance-service")
+                  for module in "${modules[@]}"; do
+                    echo "=== Building Docker image for $module ==="
+                    docker build -t $ACR_REGISTRY/$module:latest ./$module
+                    echo "=== Pushing Docker image for $module ==="
+                    docker push $ACR_REGISTRY/$module:latest
                   done
-
-                  echo "📝 Commit build outputs..."
-                  git config user.name "github-actions[bot]"
-                  git config user.email "github-actions[bot]@users.noreply.github.com"
-
-                  # 添加 target 目录（只添加 jar、war 文件）
-                  git add -f **/target/*.jar **/target/*.war || true
-
-                  # 如果有改动才提交
-                  if ! git diff --cached --quiet; then
-                    git commit -m "🤖 [CI] Add built JARs to target directories"
-                    git push
-                  else
-                    echo "No new artifacts to commit."
-                  fi
