@@ -45,10 +45,13 @@ jobs:
             # === 5️⃣ 构建并推送 Docker 镜像 ===
             - name: Build and Push Docker images
               run: |
-                for module in sebm-borrow-service sebm-user-service sebm-device-service sebm-gateway sebm-maintenance-service; do
+                set -e  # 任何命令失败就停止
+                modules="sebm-borrow-service sebm-user-service sebm-device-service sebm-gateway sebm-maintenance-service"
+                for module in $modules; do
                   echo "=== Building Docker image for $module ==="
-                  docker build ./$module -t $ACR_REGISTRY/$module:latest
+                  docker build -t $ACR_REGISTRY/$module:latest "./$module"
                   echo "=== Pushing Docker image for $module ==="
                   docker push $ACR_REGISTRY/$module:latest
                 done
+
 
