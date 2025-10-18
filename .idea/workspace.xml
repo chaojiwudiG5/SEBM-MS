@@ -6,10 +6,14 @@
   <component name="ChangeListManager">
     <list default="true" id="37a8d32f-b840-4b4a-a84b-73762e9272e4" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sebm-borrow-service/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/sebm-borrow-service/Dockerfile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sebm-device-service/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/sebm-device-service/Dockerfile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sebm-gateway/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/sebm-gateway/Dockerfile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sebm-maintenance-service/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/sebm-maintenance-service/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sebm-user-service/.github/workflows/CICD.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/CICD.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sebm-user-service/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/sebm-user-service/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sebm-user-service/target/sebm-user-service-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/sebm-user-service/target/sebm-user-service-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sebm-user-service/target/sebm-user-service-1.0-SNAPSHOT.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/sebm-user-service/target/sebm-user-service-1.0-SNAPSHOT.jar.original" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,60 +63,63 @@
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
+    <option name="showMembers" value="true" />
+    <option name="showVisibilityIcons" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Docker.docker-compose.yml: Compose Deployment.executor": "Run",
-    "Docker.sebm-borrow-service/Dockerfile build.executor": "Run",
-    "Docker.sebm-borrow-service/Dockerfile.executor": "Run",
-    "Docker.sebm-gateway/Dockerfile build.executor": "Run",
-    "Docker.sebm-user-service/Dockerfile.executor": "Run",
-    "JUnit.BorrowServiceImplTest.getUserById (1).executor": "Run",
-    "JUnit.BorrowServiceImplTest.getUserById.executor": "Run",
-    "Maven.SEBM-MS [clean].executor": "Run",
-    "Maven.SEBM-MS [package].executor": "Run",
-    "Maven.sebm-common [clean].executor": "Run",
-    "Maven.sebm-common [compile].executor": "Run",
-    "Maven.sebm-common [package].executor": "Run",
-    "Maven.sebm-user-service [package].executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "Spring Boot.BorrowServiceApplication.executor": "Run",
-    "Spring Boot.GatewayApplication (1).executor": "Run",
-    "Spring Boot.GatewayApplication.executor": "Debug",
-    "Spring Boot.SebmBorrowServiceApplication.executor": "Debug",
-    "Spring Boot.SebmDeviceServiceApplication.executor": "Debug",
-    "Spring Boot.SebmMaintenanceServiceApplication.executor": "Debug",
-    "Spring Boot.SebmServiceClientApplication.executor": "Run",
-    "Spring Boot.UserServiceApplication.executor": "Debug",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "G:/java-code/SEBM-MS/sebm-user-service",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "run.configurations.included.in.services": "true",
-    "settings.editor.selected.configurable": "reference.settings.project.maven.runner",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Docker.docker-compose.yml: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.sebm-borrow-service/Dockerfile build.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.sebm-borrow-service/Dockerfile.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.sebm-gateway/Dockerfile build.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.sebm-user-service/Dockerfile build.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.sebm-user-service/Dockerfile.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.BorrowServiceImplTest.getUserById (1).executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.BorrowServiceImplTest.getUserById.executor&quot;: &quot;Run&quot;,
+    &quot;Maven.SEBM-MS [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.SEBM-MS [package].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.sebm-common [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.sebm-common [compile].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.sebm-common [package].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.sebm-user-service [package].executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;Spring Boot.BorrowServiceApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.GatewayApplication (1).executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.GatewayApplication.executor&quot;: &quot;Debug&quot;,
+    &quot;Spring Boot.SebmBorrowServiceApplication.executor&quot;: &quot;Debug&quot;,
+    &quot;Spring Boot.SebmDeviceServiceApplication.executor&quot;: &quot;Debug&quot;,
+    &quot;Spring Boot.SebmMaintenanceServiceApplication.executor&quot;: &quot;Debug&quot;,
+    &quot;Spring Boot.SebmServiceClientApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.UserServiceApplication.executor&quot;: &quot;Debug&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;G:/java-code/SEBM-MS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;run.configurations.included.in.services&quot;: &quot;true&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.runner&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mysql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="ReactorSettings">
     <option name="notificationShown" value="true" />
   </component>
@@ -128,6 +135,7 @@
       <recent name="" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="G:\java-code\SEBM-MS" />
       <recent name="G:\java-code\SEBM-MS\sebm-borrow-service\src\main\resources\mapper" />
       <recent name="G:\java-code\SEBM-MS\sebm-gateway\src\main\resources" />
     </key>
@@ -152,7 +160,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Docker.sebm-gateway/Dockerfile build">
+  <component name="RunManager" selected="Docker.sebm-borrow-service/Dockerfile">
     <configuration default="true" type="JetRunConfigurationType">
       <module name="sebm-borrow-service" />
       <method v="2">
@@ -163,19 +171,6 @@
       <module name="sebm-borrow-service" />
       <option name="filePath" />
       <method v="2" />
-    </configuration>
-    <configuration name="SebmBorrowServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
-      <module name="sebm-borrow-service" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.group5.sebmborrowservice.SebmBorrowServiceApplication" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.group5.sebmborrowservice.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
     </configuration>
     <configuration name="SebmMaintenanceServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="sebm-maintenance-service" />
@@ -233,10 +228,19 @@
     <configuration name="sebm-gateway/Dockerfile build" type="docker-deploy" factoryName="dockerfile" temporary="true" server-name="Docker">
       <deployment type="dockerfile">
         <settings>
+          <option name="containerName" value="" />
+          <option name="sourceFilePath" value="sebm-gateway/Dockerfile" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration name="sebm-user-service/Dockerfile build" type="docker-deploy" factoryName="dockerfile" temporary="true" server-name="Docker">
+      <deployment type="dockerfile">
+        <settings>
           <option name="imageTag" value="maven3.9.2-eclipse-temurin-17_build" />
           <option name="buildCliOptions" value="--target build" />
           <option name="buildOnly" value="true" />
-          <option name="sourceFilePath" value="sebm-gateway/Dockerfile" />
+          <option name="sourceFilePath" value="sebm-user-service/Dockerfile" />
         </settings>
       </deployment>
       <method v="2" />
@@ -245,18 +249,18 @@
       <item itemvalue="Docker.sebm-borrow-service/Dockerfile" />
       <item itemvalue="Docker.sebm-borrow-service/Dockerfile build" />
       <item itemvalue="Docker.sebm-gateway/Dockerfile build" />
+      <item itemvalue="Docker.sebm-user-service/Dockerfile build" />
       <item itemvalue="Docker.docker-compose.yml: Compose Deployment" />
       <item itemvalue="Spring Boot.SebmNotificationServiceApplication" />
       <item itemvalue="Spring Boot.SebmMaintenanceServiceApplication" />
-      <item itemvalue="Spring Boot.SebmBorrowServiceApplication" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Docker.sebm-borrow-service/Dockerfile" />
         <item itemvalue="Docker.sebm-gateway/Dockerfile build" />
         <item itemvalue="Docker.sebm-borrow-service/Dockerfile build" />
-        <item itemvalue="Docker.sebm-borrow-service/Dockerfile" />
+        <item itemvalue="Docker.sebm-user-service/Dockerfile build" />
         <item itemvalue="Docker.docker-compose.yml: Compose Deployment" />
-        <item itemvalue="Spring Boot.SebmBorrowServiceApplication" />
       </list>
     </recent_temporary>
   </component>
@@ -292,7 +296,9 @@
       <workItem from="1760584554986" duration="26827000" />
       <workItem from="1760621212123" duration="5311000" />
       <workItem from="1760678066734" duration="21365000" />
-      <workItem from="1760710748472" duration="8783000" />
+      <workItem from="1760710748472" duration="11250000" />
+      <workItem from="1760756911261" duration="1305000" />
+      <workItem from="1760758243470" duration="954000" />
     </task>
     <servers />
   </component>

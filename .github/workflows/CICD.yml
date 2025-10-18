@@ -1,0 +1,56 @@
+name: Build and Commit Artifacts
+
+on:
+    push:
+        branches:
+            - main
+    workflow_dispatch: # 允许手动触发
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+
+        steps:
+            # === 1️⃣ 检出代码 ===
+            - name: Checkout repository
+              uses: actions/checkout@v4
+              with:
+                  fetch-depth: 0 # 需要完整历史记录才能提交代码
+
+            # === 2️⃣ 设置 JDK 环境 ===
+            - name: Set up JDK 17
+              uses: actions/setup-java@v4
+              with:
+                  distribution: 'temurin'
+                  java-version: '17'
+                  cache: maven
+
+            # === 3️⃣ 一键打包所有模块 ===
+            - name: Build all modules
+              run: mvn -B clean package -DskipTests
+
+            # === 4️⃣ 将生成的 jar 文件提交回仓库 ===
+            - name: Commit built JARs
+              run: |
+                  echo "📦 Copying built artifacts..."
+                  # 确保 target 目录存在
+                  find . -type d -name "target" | while read dir; do
+                    if [ -d "$dir" ]; then
+                      echo "✅ Found $dir"
+                    fi
+                  done
+
+                  echo "📝 Commit build outputs..."
+                  git config user.name "github-actions[bot]"
+                  git config user.email "github-actions[bot]@users.noreply.github.com"
+
+                  # 添加 target 目录（只添加 jar、war 文件）
+                  git add **/target/*.jar **/target/*.war || true
+
+                  # 如果有改动才提交
+                  if ! git diff --cached --quiet; then
+                    git commit -m "🤖 [CI] Add built JARs to target directories"
+                    git push
+                  else
+                    echo "No new artifacts to commit."
+                  fi
