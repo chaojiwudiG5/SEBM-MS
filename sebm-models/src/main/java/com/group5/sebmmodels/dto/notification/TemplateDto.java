@@ -37,9 +37,9 @@ public class TemplateDto {
     private String notificationNode;
 
     /**
-     * 通知角色
+     * 通知角色 (0-管理员, 1-用户, 2-技工)
      */
-    private String notificationRole;
+    private Integer notificationRole;
 
     /**
      * 通知类型

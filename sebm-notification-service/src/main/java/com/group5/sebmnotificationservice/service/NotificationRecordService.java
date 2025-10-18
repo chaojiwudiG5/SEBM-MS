@@ -83,5 +83,15 @@ public interface NotificationRecordService extends IService<NotificationRecordPo
      */
     boolean markAllAsRead(Long userId);
 
+    /**
+     * 创建通知记录（新版本 - 任务记录分离）
+     * @param notificationTaskId 通知任务ID
+     * @param userId 用户ID
+     * @param notificationMethod 通知方式
+     * @param status 发送状态
+     * @return 是否创建成功
+     */
+    boolean createRecord(Long notificationTaskId, Long userId, Integer notificationMethod, Integer status);
+
 }
 

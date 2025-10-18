@@ -154,8 +154,7 @@ public class TemplateServiceImpl extends ServiceImpl<TemplateMapper, TemplatePo>
         updatePo.setTemplateTitle(updateTemplateDto.getTemplateTitle());
         updatePo.setNotificationMethod(updateTemplateDto.getNotificationMethod());
         updatePo.setNotificationNode(updateTemplateDto.getNotificationNode().toString());
-        updatePo.setNotificationRole(updateTemplateDto.getNotificationRole() != null ? 
-                updateTemplateDto.getNotificationRole().toString() : null);
+        updatePo.setNotificationRole(updateTemplateDto.getNotificationRole());
         updatePo.setNotificationType(updateTemplateDto.getNotificationType());
         updatePo.setNotificationEvent(updateTemplateDto.getNotificationEvent());
         updatePo.setRelateTimeOffset(updateTemplateDto.getRelateTimeOffset() != null ? 
@@ -240,7 +239,7 @@ public class TemplateServiceImpl extends ServiceImpl<TemplateMapper, TemplatePo>
         templateDto.setTemplateTitle("测试模板");
         templateDto.setNotificationMethod(List.of(1, 3)); // 邮件和站内信
         templateDto.setNotificationNode("BORROW_REQUEST_SUCCESS");
-        templateDto.setNotificationRole("Borrower");
+        templateDto.setNotificationRole(1); // Borrower
         templateDto.setNotificationType(0); // 即时通知
         templateDto.setNotificationEvent(NotificationEventEnum.BORROW_APPLICATION_APPROVED.getCode());
         templateDto.setRelateTimeOffset(0L);

@@ -60,7 +60,7 @@ public class NotificationMessage implements Serializable {
     private LocalDateTime createTime;
     
     /**
-     * 通知记录ID（用于延时通知更新状态）
+     * 通知任务ID（用于延时通知关联任务）
      */
-    private Long recordId;
+    private Long taskId;
 }

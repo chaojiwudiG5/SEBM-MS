@@ -1,4 +1,4 @@
-package com.group5.sebmmodels.entity;
+package com.group5.sebmnotificationservice.entity;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;
@@ -89,3 +89,4 @@ public class NotificationRecordPo {
     @TableField("updateTime")
     private LocalDateTime updateTime;
 }
+

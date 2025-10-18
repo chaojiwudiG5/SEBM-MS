@@ -6,6 +6,7 @@ import com.group5.sebmnotificationservice.enums.NotificationMethodEnum;
 import com.group5.sebmnotificationservice.enums.NotificationRecordStatusEnum;
 import com.group5.sebmnotificationservice.service.MessageSenderService;
 import com.group5.sebmnotificationservice.service.NotificationRecordService;
+import com.group5.sebmnotificationservice.service.NotificationTaskService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -21,6 +22,9 @@ public class MessageProcessor {
 
     @Autowired
     private MessageSenderService messageSenderService;
+    
+    @Autowired
+    private NotificationTaskService notificationTaskService;
     
     @Autowired
     private NotificationRecordService notificationRecordService;
@@ -81,6 +85,7 @@ public class MessageProcessor {
     
     /**
      * 根据通知方式处理消息
+     * 在消费时创建通知记录，并实际发送通知
      * @param message 消息
      * @return 是否处理成功
      */
@@ -91,41 +96,57 @@ public class MessageProcessor {
             return;
         }
         
-        // 记录通知发送状态（默认为成功）
-        NotificationRecordStatusEnum recordStatus = NotificationRecordStatusEnum.SUCCESS;
+        Long taskId = message.getTaskId();
         
-        try {
-            for (Integer notificationMethod : notificationMethods) {
-                NotificationMethodEnum method = NotificationMethodEnum.parseMethod(notificationMethod);
-                if (method == null) {
-                    continue;
-                }
-                messageSenderService.sendNotification(method, message.getUserId(), template.getTemplateTitle(), template.getTemplateContent());
-            }
-        } catch (Exception e) {
-            log.error("发送通知失败: messageId={}, error={}", message.getMessageId(), e.getMessage(), e);
-            recordStatus = NotificationRecordStatusEnum.FAILED;
-        }
-        
-        // 保存或更新通知记录
-        if (message.getRecordId() != null) {
-            // 延时通知：更新已有记录的状态
-            boolean updated = notificationRecordService.updateRecordStatus(
-                    message.getRecordId(),
-                    recordStatus.getCode()
-            );
-            if (updated) {
-                log.info("延迟通知状态已更新: recordId={}, status={}", 
-                        message.getRecordId(), recordStatus.getDesc());
-            }
-        } else {
-            // 即时通知：创建新记录
-            notificationRecordService.saveNotificationRecord(
-                    message.getUserId(),
+        // 如果没有taskId，说明是即时消息，需要先创建任务
+        if (taskId == null) {
+            taskId = notificationTaskService.createTask(
                     template.getTemplateTitle(),
                     template.getTemplateContent(),
+                    template.getNotificationRole()
+            );
+            if (taskId == null) {
+                log.error("创建通知任务失败: messageId={}", message.getMessageId());
+                return;
+            }
+            log.info("即时通知任务已创建: taskId={}, messageId={}", taskId, message.getMessageId());
+        }
+        
+        // 遍历所有通知方式，为每种方式创建记录并发送
+        for (Integer notificationMethod : notificationMethods) {
+            NotificationMethodEnum method = NotificationMethodEnum.parseMethod(notificationMethod);
+            if (method == null) {
+                log.warn("无效的通知方式: method={}, messageId={}", notificationMethod, message.getMessageId());
+                continue;
+            }
+            
+            // 记录通知发送状态
+            NotificationRecordStatusEnum recordStatus;
+            
+            try {
+                // 实际发送通知
+                messageSenderService.sendNotification(method, message.getUserId(), 
+                        template.getTemplateTitle(), template.getTemplateContent());
+                recordStatus = NotificationRecordStatusEnum.SUCCESS;
+            } catch (Exception e) {
+                recordStatus = NotificationRecordStatusEnum.FAILED;
+            }
+            
+            // 创建通知记录
+            boolean recordResult = notificationRecordService.createRecord(
+                    taskId, 
+                    message.getUserId(), 
+                    notificationMethod, 
                     recordStatus.getCode()
             );
+            
+            if (recordResult) {
+                log.info("通知记录已创建: taskId={}, userId={}, status={}",
+                        taskId, message.getUserId(), recordStatus.getDesc());
+            } else {
+                log.error("创建通知记录失败: taskId={}, userId={}",
+                        taskId, message.getUserId());
+            }
         }
     }
 }

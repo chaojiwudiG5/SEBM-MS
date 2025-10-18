@@ -1,8 +1,7 @@
 package com.group5.sebmnotificationservice.mq;
 
-import com.group5.sebmnotificationservice.enums.NotificationRecordStatusEnum;
 import com.group5.sebmnotificationservice.service.NotificationRateLimiter;
-import com.group5.sebmnotificationservice.service.NotificationRecordService;
+import com.group5.sebmnotificationservice.service.NotificationTaskService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,13 +23,14 @@ public class MessageProducer {
     private RabbitTemplate rabbitTemplate;
     
     @Autowired
-    private NotificationRecordService notificationRecordService;
+    private NotificationTaskService notificationTaskService;
 
     @Autowired
     private NotificationRateLimiter rateLimiter;
 
     /**
      * 发送即时通知消息
+     * 即时消息不预先创建任务和记录，在消费时创建
      * @param message 通知消息
      * @return 是否发送成功
      */
@@ -50,6 +50,7 @@ public class MessageProducer {
                 message.setCreateTime(LocalDateTime.now());
             }
 
+            // 即时消息不创建任务和记录，直接发送到MQ
             // 发送消息到RabbitMQ
             rabbitTemplate.convertAndSend(
                     NOTIFICATION_TOPIC,
@@ -70,6 +71,7 @@ public class MessageProducer {
 
     /**
      * 发送延迟通知消息 - 使用延迟消息插件实现高精度延迟
+     * 延迟消息会先创建通知任务，在消费时创建记录
      * @param message 通知消息
      * @param delaySeconds 延迟时间（秒）
      * @return 是否发送成功
@@ -90,17 +92,19 @@ public class MessageProducer {
                 message.setCreateTime(LocalDateTime.now());
             }
 
-            // 先创建通知记录，状态为"待发送"
-            Long recordId = notificationRecordService.createNotificationRecord(
-                    message.getUserId(),
+            // 先创建通知任务（不创建记录，记录在消费时创建）
+            Long taskId = notificationTaskService.createTask(
                     message.getTemplate().getTemplateTitle(),
                     message.getTemplate().getTemplateContent(),
-                    NotificationRecordStatusEnum.PENDING.getCode()
+                    message.getTemplate().getNotificationRole()
             );
             
-            if (recordId != null) {
-                message.setRecordId(recordId);
-                log.info("延迟通知记录已创建: recordId={}, messageId={}", recordId, message.getMessageId());
+            if (taskId != null) {
+                message.setTaskId(taskId);
+                log.info("延迟通知任务已创建: taskId={}, messageId={}", taskId, message.getMessageId());
+            } else {
+                log.error("创建延迟通知任务失败: messageId={}", message.getMessageId());
+                return false;
             }
 
             // 使用延迟消息插件发送消息
@@ -118,8 +122,8 @@ public class MessageProducer {
                     }
             );
 
-            log.info("延迟通知消息发送成功: messageId={}, userId={}, delaySeconds={}, delayMillis={}",
-                    message.getMessageId(), message.getUserId(), delaySeconds, delayMillis);
+            log.info("延迟通知消息发送成功: messageId={}, userId={}, taskId={}, delaySeconds={}, delayMillis={}",
+                    message.getMessageId(), message.getUserId(), taskId, delaySeconds, delayMillis);
             return true;
 
         } catch (Exception e) {

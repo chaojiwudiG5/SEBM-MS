@@ -6,20 +6,51 @@
 
     <resultMap id="BaseResultMap" type="com.group5.sebmmodels.entity.NotificationRecordPo">
         <id property="id" column="id" jdbcType="BIGINT"/>
+        <result property="notificationTaskId" column="notificationTaskId" jdbcType="BIGINT"/>
         <result property="userId" column="userId" jdbcType="BIGINT"/>
-        <result property="title" column="title" jdbcType="VARCHAR"/>
-        <result property="content" column="content" jdbcType="LONGVARCHAR"/>
+        <result property="notificationMethod" column="notificationMethod" jdbcType="INTEGER"/>
         <result property="status" column="status" jdbcType="INTEGER"/>
         <result property="readStatus" column="readStatus" jdbcType="INTEGER"/>
-        <result property="sendTime" column="sendTime" jdbcType="TIMESTAMP"/>
         <result property="isDelete" column="isDelete" jdbcType="TINYINT"/>
+        <result property="sendTime" column="sendTime" jdbcType="TIMESTAMP"/>
+        <result property="errorMsg" column="errorMsg" jdbcType="VARCHAR"/>
         <result property="createTime" column="createTime" jdbcType="TIMESTAMP"/>
         <result property="updateTime" column="updateTime" jdbcType="TIMESTAMP"/>
     </resultMap>
 
     <sql id="Base_Column_List">
-        id, userId, title, content, status, readStatus,sendTime, isDelete, createTime, updateTime
+        id, notificationTaskId, userId, notificationMethod, status, readStatus, 
+        isDelete, sendTime, errorMsg, createTime, updateTime
     </sql>
 
-</mapper>
+    <!-- 查询用户的未读记录数量 -->
+    <select id="countUnreadByUserId" resultType="java.lang.Long">
+        SELECT COUNT(*)
+        FROM notificationRecord
+        WHERE userId = #{userId}
+          AND status = 1
+          AND readStatus = 0
+          AND isDelete = 0
+    </select>
 
+    <!-- 查询用户的所有未读记录 -->
+    <select id="selectUnreadByUserId" resultMap="BaseResultMap">
+        SELECT <include refid="Base_Column_List"/>
+        FROM notificationRecord
+        WHERE userId = #{userId}
+          AND status = 1
+          AND readStatus = 0
+          AND isDelete = 0
+        ORDER BY createTime DESC
+    </select>
+
+    <!-- 查询通知任务的所有记录 -->
+    <select id="selectByTaskId" resultMap="BaseResultMap">
+        SELECT <include refid="Base_Column_List"/>
+        FROM notificationRecord
+        WHERE notificationTaskId = #{notificationTaskId}
+          AND isDelete = 0
+        ORDER BY userId, notificationMethod
+    </select>
+
+</mapper>
