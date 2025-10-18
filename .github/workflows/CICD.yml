@@ -55,5 +55,5 @@ jobs:
               -f ./$module/Dockerfile \
               ./$module
             # 推送镜像
-            docker push $ACR_REGISTRY/$module:latest
+            docker push $ACR_REGISTRY/sebm/$module:latest
           done
