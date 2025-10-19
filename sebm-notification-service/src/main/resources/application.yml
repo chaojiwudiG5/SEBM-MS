@@ -14,8 +14,8 @@ spring:
   mail:
     host: smtp.gmail.com
     port: 587
-    username: ${MAIL_USERNAME:sebm.notification@gmail.com}
-    password: ${MAIL_PASSWORD:vuxi nfwf jpmc koow}
+    username: ${MAIL_USERNAME:sebm.notifications@gmail.com}
+    password: ${MAIL_PASSWORD:mysr cwqu lybt mdmv}
     default-encoding: UTF-8
     properties:
       mail:
