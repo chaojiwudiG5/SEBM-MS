@@ -1,6 +1,5 @@
 package com.group5.sebmcommon.enums;
 
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 
 /**
@@ -8,7 +7,6 @@ import lombok.Getter;
  * 定义具体的通知场景及其对应的通知节点
  */
 @Getter
-@AllArgsConstructor
 public enum NotificationEventEnum {
     /**
      * 租借审批通过
@@ -18,12 +16,17 @@ public enum NotificationEventEnum {
     /**
      * 即将逾期通知
      */
-    UPCOMING_OVERDUE_NOTICE(1003, "即将逾期通知", NotificationNodeEnum.DUE_DATE_REMINDER),
+   // UPCOMING_OVERDUE_NOTICE(1003, "即将逾期通知", NotificationNodeEnum.DUE_DATE_REMINDER),
 
     /**
      * 到期通知
      */
-    DUE_DATE_NOTICE(1004, "到期通知", NotificationNodeEnum.DUE_DATE_REMINDER);
+    DUE_DATE_NOTICE(1004, "到期通知", NotificationNodeEnum.DUE_DATE_REMINDER),
+
+    /**
+     * 归还成功
+     */
+    RETURN_SUCCESS(1005, "归还成功", NotificationNodeEnum.RETURN_SUCCESS);
 
     /**
      * 事件代码
@@ -39,6 +42,13 @@ public enum NotificationEventEnum {
      * 通知节点代码
      */
     private final NotificationNodeEnum notificationNode;
+
+    // 枚举必须手动编写构造函数
+    NotificationEventEnum(Integer code, String description, NotificationNodeEnum notificationNode) {
+        this.code = code;
+        this.description = description;
+        this.notificationNode = notificationNode;
+    }
 
     /**
      * 根据代码获取枚举

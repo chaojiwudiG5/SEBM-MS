@@ -14,19 +14,13 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class CreateTemplateDto {
-    
+
     /**
      * 模板标题
      */
     @NotBlank(message = "模板标题不能为空")
     private String templateTitle;
-    
-    /**
-     * 模板类型
-     */
-    @NotBlank(message = "模板类型不能为空")
-    private String templateType;
-    
+
     /**
      * 通知节点 (使用NotificationNodeEnum的code值)
      */
@@ -59,6 +53,7 @@ public class CreateTemplateDto {
      * 通知code(使用NotificationEventEnum的code值)
      */
     private Integer notificationEvent;
+
     /**
      * 通知事件类型枚举(使用NotificationTypeEnum的code值)
      * 用于定义通知的时间偏移类型

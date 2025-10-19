@@ -1,0 +1,79 @@
+server:
+  port: 8085
+  servlet:
+    context-path: /api/notification
+spring:
+  application:
+    name: sebm-notification-service
+  datasource:
+    url: jdbc:mysql://trolley.proxy.rlwy.net:29578/railway?useSSL=false&serverTimezone=UTC
+    username: root
+    password: RxAHOOQJjTtBblTpadijgyIWmArpvibI
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  # Mail configuration
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: ${MAIL_USERNAME:sebm.notifications@gmail.com}
+    password: ${MAIL_PASSWORD:mysr cwqu lybt mdmv}
+    default-encoding: UTF-8
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+            required: true
+          ssl:
+            trust: smtp.gmail.com
+
+  # RabbitMQ configuration for Railway deployment
+  rabbitmq:
+    host: hopper.proxy.rlwy.net
+    port: 50343
+    username: test
+    password: test
+    virtual-host: /
+    ssl:
+      enabled: false
+    connection-timeout: 15000
+    publisher-confirm-type: correlated
+    publisher-returns: true
+    listener:
+      simple:
+        acknowledge-mode: manual
+        retry:
+          enabled: true
+          max-attempts: 3
+          initial-interval: 1000
+          max-interval: 10000
+          multiplier: 2
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+  # Redis configuration
+  data:
+    redis:
+      host: caboose.proxy.rlwy.net
+      port: 13462
+      username: default
+      password: ekseulHMMJJMoAFIOLchTXsnRDbpMHff
+      database: 0
+      timeout: 3000ms
+      lettuce:
+        pool:
+          max-active: 8
+          max-wait: -1ms
+          max-idle: 8
+          min-idle: 0
+
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: false
+
+knife4j:
+  enable: true
+  setting:
+    language: zh_cn
+

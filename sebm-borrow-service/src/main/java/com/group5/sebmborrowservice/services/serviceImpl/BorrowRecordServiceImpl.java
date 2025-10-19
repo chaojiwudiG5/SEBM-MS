@@ -22,6 +22,7 @@ import com.group5.sebmmodels.entity.BorrowRecordPo;
 import com.group5.sebmmodels.entity.DevicePo;
 import com.group5.sebmmodels.vo.BorrowRecordVo;
 import com.group5.sebmserviceclient.service.DeviceFeignClient;
+import com.group5.sebmserviceclient.service.NotificationFeignClient;
 import com.group5.sebmserviceclient.service.UserFeignClient;
 import jakarta.annotation.Resource;
 import java.util.List;
@@ -49,9 +50,10 @@ public class BorrowRecordServiceImpl extends ServiceImpl<BorrowRecordMapper, Bor
 
   @Resource
   private DeviceFeignClient deviceService;
-//
-//  @Resource
-//  private NotificationService notificationService;
+
+  @Resource
+  private NotificationFeignClient notificationService;
+
 
   @Override
   public BorrowRecordDto getBorrowRecordById(Long borrowRecordId) {
@@ -106,7 +108,7 @@ public class BorrowRecordServiceImpl extends ServiceImpl<BorrowRecordMapper, Bor
     BorrowRecordVo borrowRecordVo = new BorrowRecordVo();
     BeanUtils.copyProperties(borrowRecord, borrowRecordVo);
     //TODO 7. 发送通知
-//    sendBorrowSuccessNotification(borrowRecord, device, currentUser);
+    sendBorrowSuccessNotification(borrowRecord, device, currentUser);
     return borrowRecordVo;
   }
 
@@ -210,114 +212,86 @@ public class BorrowRecordServiceImpl extends ServiceImpl<BorrowRecordMapper, Bor
     BorrowRecordVo borrowRecordVo = new BorrowRecordVo();
     BeanUtils.copyProperties(borrowRecord, borrowRecordVo);
     //TODO发送通知
-//    sendReturnSuccessNotification(borrowRecord, device, currentUser);
+    sendReturnSuccessNotification(borrowRecord, device, currentUser);
     return borrowRecordVo;
   }
 
-//  /**
-//   * 延迟发送即将到期通知
-//   */
-//  private void sendDelayNotification(BorrowRecordPo borrowRecord, DevicePo device, UserDto user) {
-//    try {
-//      // 构建模板变量
-//      Map<String, Object> templateVars = new HashMap<>();
-//      templateVars.put("userName", user.getUsername());
-//      templateVars.put("deviceName", device.getDeviceName());
-//      templateVars.put("deviceId", device.getId());
-//      templateVars.put("borrowTime", borrowRecord.getBorrowTime());
-//      templateVars.put("dueTime", borrowRecord.getDueTime());
-//      templateVars.put("borrowRecordId", borrowRecord.getId());
-//
-//      // 构建发送通知DTO
-//      SendNotificationDto sendNotificationDto = SendNotificationDto.builder()
-//          .notificationEvent(
-//              NotificationEventEnum.UPCOMING_OVERDUE_NOTICE.getCode()) // 使用借用即将到期提醒事件
-//          .userId(user.getId())
-//          .templateVars(templateVars)
-//          .nodeTimestamp(System.currentTimeMillis() / 1000) // 当前时间戳（秒）
-//          .build();
-//      // 发送通知
-//      Boolean success = notificationService.sendNotification(sendNotificationDto);
-//      log.info("即将到期通知发送结果: {}, userId: {}, deviceId: {}, borrowRecordId: {}",
-//          success, user.getId(), device.getId(), borrowRecord.getId());
-//
-//    } catch (Exception e) {
-//      log.error("发送即将到期通知失败: userId={}, deviceId={}, borrowRecordId={}, error={}",
-//          user.getId(), device.getId(), borrowRecord.getId(), e.getMessage(), e);
-//      // 通知发送失败不影响主业务流程，只记录日志
-//    }
-//  }
-//
-//  /**
-//   * 发送借用成功通知
-//   */
-//  private void sendBorrowSuccessNotification(BorrowRecordPo borrowRecord, DevicePo device,
-//      UserDto user) {
-//    try {
-//      // 构建模板变量
-//      Map<String, Object> templateVars = new HashMap<>();
-//      templateVars.put("userName", user.getUsername());
-//      templateVars.put("deviceName", device.getDeviceName());
-//      templateVars.put("deviceId", device.getId());
-//      templateVars.put("borrowTime", borrowRecord.getBorrowTime());
-//      templateVars.put("dueTime", borrowRecord.getDueTime());
-//      templateVars.put("borrowRecordId", borrowRecord.getId());
-//
-//      // 构建发送通知DTO
-//      SendNotificationDto sendNotificationDto = SendNotificationDto.builder()
-//          .notificationEvent(
-//              NotificationEventEnum.BORROW_APPLICATION_APPROVED.getCode()) // 使用借用申请提交成功事件
-//          .userId(user.getId())
-//          .templateVars(templateVars)
-//          .nodeTimestamp(System.currentTimeMillis() / 1000) // 当前时间戳（秒）
-//          .build();
-//
-//      // 发送通知
-//      Boolean success = notificationService.sendNotification(sendNotificationDto);
-//      log.info("借用成功通知发送结果: {}, userId: {}, deviceId: {}, borrowRecordId: {}",
-//          success, user.getId(), device.getId(), borrowRecord.getId());
-//
-//    } catch (Exception e) {
-//      log.error("发送借用成功通知失败: userId={}, deviceId={}, error={}",
-//          user.getId(), device.getId(), e.getMessage(), e);
-//      throw new BusinessException(ErrorCode.SYSTEM_ERROR, "发送借用成功通知失败");
-//    }
-//  }
-//
-//  /**
-//   * 发送归还成功通知
-//   */
-//  private void sendReturnSuccessNotification(BorrowRecordPo borrowRecord, DevicePo device,
-//      UserDto user) {
-//    try {
-//      // 构建模板变量
-//      Map<String, Object> templateVars = new HashMap<>();
-//      templateVars.put("userName", user.getUsername());
-//      templateVars.put("deviceName", device.getDeviceName());
-//      templateVars.put("deviceId", device.getId());
-//      templateVars.put("borrowTime", borrowRecord.getBorrowTime());
-//      templateVars.put("returnTime", borrowRecord.getReturnTime());
-//      templateVars.put("borrowRecordId", borrowRecord.getId());
-//
-//      // 构建发送通知DTO - 这里可以创建一个新的归还成功事件
-//      SendNotificationDto sendNotificationDto = SendNotificationDto.builder()
-//          .notificationEvent(
-//              NotificationEventEnum.BORROW_APPLICATION_APPROVED.getCode()) // 暂时使用审批通过事件
-//          .userId(user.getId())
-//          .templateVars(templateVars)
-//          .nodeTimestamp(System.currentTimeMillis() / 1000)
-//          .build();
-//
-//      // 发送通知
-//      Boolean success = notificationService.sendNotification(sendNotificationDto);
-//      log.info("归还成功通知发送结果: {}, userId: {}, deviceId: {}, borrowRecordId: {}",
-//          success, user.getId(), device.getId(), borrowRecord.getId());
-//
-//    } catch (Exception e) {
-//      log.error("发送归还成功通知失败, userId: {}, deviceId: {}, borrowRecordId: {}, error: {}",
-//          user.getId(), device.getId(), borrowRecord.getId(), e.getMessage());
-//    }
-//  }
+  /**
+   * 发送借用成功通知
+   */
+  private void sendBorrowSuccessNotification(BorrowRecordPo borrowRecord, DevicePo device,
+      UserDto user) {
+    try {
+      // 构建模板变量
+      java.util.Map<String, Object> templateVars = new java.util.HashMap<>();
+      templateVars.put("userName", user.getUsername());
+      templateVars.put("deviceName", device.getDeviceName());
+      templateVars.put("deviceId", device.getId());
+      templateVars.put("borrowTime", borrowRecord.getBorrowTime());
+      templateVars.put("dueTime", borrowRecord.getDueTime());
+      templateVars.put("borrowRecordId", borrowRecord.getId());
+
+      // 构建发送通知DTO
+      com.group5.sebmmodels.dto.notification.SendNotificationDto sendNotificationDto = 
+          com.group5.sebmmodels.dto.notification.SendNotificationDto.builder()
+              .notificationEvent(
+                  com.group5.sebmcommon.enums.NotificationEventEnum.BORROW_APPLICATION_APPROVED.getCode())
+              .userId(user.getId())
+              .templateVars(templateVars)
+                  // 即时通知不需要传入时间戳
+             // .nodeTimestamp(System.currentTimeMillis() / 1000) // 当前时间戳（秒）
+              .build();
+
+      // 发送通知
+      Boolean success = notificationService.sendNotification(sendNotificationDto);
+      log.info("借用成功通知发送结果: {}, userId: {}, deviceId: {}, borrowRecordId: {}",
+          success, user.getId(), device.getId(), borrowRecord.getId());
+
+    } catch (Exception e) {
+      log.error("发送借用成功通知失败: userId={}, deviceId={}, error={}",
+          user.getId(), device.getId(), e.getMessage(), e);
+      // 通知发送失败不影响主业务流程，只记录日志
+    }
+  }
+
+  /**
+   * 发送归还成功通知
+   */
+  private void sendReturnSuccessNotification(BorrowRecordPo borrowRecord, DevicePo device,
+      UserDto user) {
+    try {
+      // 构建模板变量
+      java.util.Map<String, Object> templateVars = new java.util.HashMap<>();
+      templateVars.put("userName", user.getUsername());
+      templateVars.put("deviceName", device.getDeviceName());
+      templateVars.put("deviceId", device.getId());
+      templateVars.put("borrowTime", borrowRecord.getBorrowTime());
+      templateVars.put("returnTime", borrowRecord.getReturnTime());
+      templateVars.put("borrowRecordId", borrowRecord.getId());
+
+      // 构建发送通知DTO
+      com.group5.sebmmodels.dto.notification.SendNotificationDto sendNotificationDto = 
+          com.group5.sebmmodels.dto.notification.SendNotificationDto.builder()
+              .notificationEvent(
+                  com.group5.sebmcommon.enums.NotificationEventEnum.RETURN_SUCCESS.getCode())
+              .userId(user.getId())
+              .templateVars(templateVars)
+                  // 即时通知不需要传入时间戳
+              //.nodeTimestamp(System.currentTimeMillis() / 1000)
+              .build();
+
+      // 发送通知
+      Boolean success = notificationService.sendNotification(sendNotificationDto);
+      log.info("归还成功通知发送结果: {}, userId: {}, deviceId: {}, borrowRecordId: {}",
+          success, user.getId(), device.getId(), borrowRecord.getId());
+
+    } catch (Exception e) {
+      log.error("发送归还成功通知失败, userId: {}, deviceId: {}, borrowRecordId: {}, error: {}",
+          user.getId(), device.getId(), borrowRecord.getId(), e.getMessage(), e);
+      // 通知发送失败不影响主业务流程，只记录日志
+    }
+  }
+
 }
 
 

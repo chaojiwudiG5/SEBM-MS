@@ -7,13 +7,21 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+      </profile>
+      <profile name="Annotation profile for SEBM-MS" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.34/lombok-1.18.34.jar" />
+        </processorPath>
         <module name="sebm-device-service" />
         <module name="sebm-gateway" />
         <module name="sebm-models" />
         <module name="sebm-maintenance-service" />
         <module name="sebm-user-service" />
         <module name="sebm-common" />
-        <module name="sebm-borrow-service" />
+        <module name="sebm-notification-service" />
         <module name="sebm-service-client" />
       </profile>
     </annotationProcessing>
@@ -21,17 +29,21 @@
       <module name="demo" target="17" />
       <module name="gateway" target="17" />
       <module name="sebm-model" target="17" />
-      <module name="SEBM-MS" target="17" />
-      <module name="sebm-notification-service" target="17" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="SEBM-MS" options="-parameters" />
       <module name="demo" options="-parameters" />
-      <module name="sebm-borrow-service" options="" />
-      <module name="sebm-maintenance-service" options="" />
-      <module name="sebm-models" options="" />
-      <module name="sebm-service-client" options="" />
+      <module name="sebm-borrow-service" options="-parameters" />
+      <module name="sebm-common" options="-parameters" />
+      <module name="sebm-device-service" options="-parameters" />
+      <module name="sebm-gateway" options="-parameters" />
+      <module name="sebm-maintenance-service" options="-parameters" />
+      <module name="sebm-models" options="-parameters" />
+      <module name="sebm-notification-service" options="-parameters" />
+      <module name="sebm-service-client" options="-parameters" />
+      <module name="sebm-user-service" options="-parameters" />
     </option>
   </component>
 </project>

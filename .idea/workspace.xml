@@ -4,7 +4,46 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="37a8d32f-b840-4b4a-a84b-73762e9272e4" name="Changes" comment="" />
+    <list default="true" id="37a8d32f-b840-4b4a-a84b-73762e9272e4" name="Changes" comment="commit notification">
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sebm-common/src/main/java/com/group5/sebmcommon/constant/NotificationConstant.java" beforeDir="false" afterPath="$PROJECT_DIR$/sebm-common/src/main/java/com/group5/sebmcommon/constant/NotificationConstant.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sebm-gateway/target/classes/application.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sebm-gateway/target/classes/com/group5/gateway/GatewayApplication.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sebm-gateway/target/classes/com/group5/gateway/config/CorsConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sebm-gateway/target/classes/com/group5/gateway/filter/GlobalAuthFilter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sebm-gateway/target/classes/com/group5/gateway/utils/JwtUtils.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sebm-models/src/main/java/com/group5/sebmmodels/dto/notification/TemplateDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/sebm-models/src/main/java/com/group5/sebmmodels/dto/notification/TemplateDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sebm-models/src/main/java/com/group5/sebmmodels/entity/NotificationRecordPo.java" beforeDir="false" afterPath="$PROJECT_DIR$/sebm-models/src/main/java/com/group5/sebmmodels/entity/NotificationRecordPo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sebm-models/src/main/java/com/group5/sebmmodels/entity/TemplatePo.java" beforeDir="false" afterPath="$PROJECT_DIR$/sebm-models/src/main/java/com/group5/sebmmodels/entity/TemplatePo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sebm-notification-service/src/main/java/com/group5/sebmnotificationservice/converter/NotificationConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/sebm-notification-service/src/main/java/com/group5/sebmnotificationservice/converter/NotificationConverter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sebm-notification-service/src/main/java/com/group5/sebmnotificationservice/dao/NotificationRecordMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/sebm-notification-service/src/main/java/com/group5/sebmnotificationservice/dao/NotificationRecordMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sebm-notification-service/src/main/java/com/group5/sebmnotificationservice/mq/MessageProcessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/sebm-notification-service/src/main/java/com/group5/sebmnotificationservice/mq/MessageProcessor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sebm-notification-service/src/main/java/com/group5/sebmnotificationservice/mq/MessageProducer.java" beforeDir="false" afterPath="$PROJECT_DIR$/sebm-notification-service/src/main/java/com/group5/sebmnotificationservice/mq/MessageProducer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sebm-notification-service/src/main/java/com/group5/sebmnotificationservice/mq/NotificationMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/sebm-notification-service/src/main/java/com/group5/sebmnotificationservice/mq/NotificationMessage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sebm-notification-service/src/main/java/com/group5/sebmnotificationservice/service/NotificationRecordService.java" beforeDir="false" afterPath="$PROJECT_DIR$/sebm-notification-service/src/main/java/com/group5/sebmnotificationservice/service/NotificationRecordService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sebm-notification-service/src/main/java/com/group5/sebmnotificationservice/service/impl/NotificationRecordServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/sebm-notification-service/src/main/java/com/group5/sebmnotificationservice/service/impl/NotificationRecordServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sebm-notification-service/src/main/java/com/group5/sebmnotificationservice/service/impl/TemplateServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/sebm-notification-service/src/main/java/com/group5/sebmnotificationservice/service/impl/TemplateServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sebm-notification-service/src/main/resources/mapper/NotificationRecordMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/sebm-notification-service/src/main/resources/mapper/NotificationRecordMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sebm-user-service/target/classes/application.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sebm-user-service/target/classes/com/group5/user/UserServiceApplication.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sebm-user-service/target/classes/com/group5/user/controller/UserController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sebm-user-service/target/classes/com/group5/user/controller/inner/UserInnerController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sebm-user-service/target/classes/com/group5/user/dao/UserMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sebm-user-service/target/classes/com/group5/user/services/BorrowerService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sebm-user-service/target/classes/com/group5/user/services/ManagerService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sebm-user-service/target/classes/com/group5/user/services/UserService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sebm-user-service/target/classes/com/group5/user/services/serviceImpl/BorrowerServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sebm-user-service/target/classes/com/group5/user/services/serviceImpl/ManagerServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sebm-user-service/target/classes/com/group5/user/services/serviceImpl/UserServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sebm-user-service/target/classes/mapper/UserMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sebm-user-service/target/maven-archiver/pom.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sebm-user-service/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sebm-user-service/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sebm-user-service/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sebm-user-service/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sebm-user-service/target/sebm-user-service-1.0-SNAPSHOT.jar" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -15,22 +54,36 @@
       <list>
         <option value="Interface" />
         <option value="JUnit5 Test Class" />
-        <option value="Class" />
         <option value="Dockerfile" />
+        <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "mattina010"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/chaojiwudiG5/SEBM-MS.git",
+    "accountId": "7e4277f5-a81a-4531-a6d5-242dcf2f3775"
+  }
+}]]></component>
+  <component name="HttpClientOnboardingState">{
+  &quot;isOnboardingCommentShown&quot;: true
+}</component>
   <component name="KubernetesApiPersistence">{}</component>
   <component name="KubernetesApiProvider">{
-  &quot;configuredContexts&quot;: [
-    {
-      &quot;name&quot;: &quot;docker-desktop&quot;,
-      &quot;kubeConfigUrl&quot;: &quot;file://C:/Users/Luoimo/.kube/config&quot;
-    }
-  ],
   &quot;isMigrated&quot;: true
 }</component>
   <component name="MavenImportPreferences">
@@ -53,79 +106,72 @@
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
-    <option name="showMembers" value="true" />
-    <option name="showVisibilityIcons" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Docker.docker-compose.yml: Compose Deployment.executor&quot;: &quot;Run&quot;,
-    &quot;Docker.sebm-borrow-service/Dockerfile build.executor&quot;: &quot;Run&quot;,
-    &quot;Docker.sebm-borrow-service/Dockerfile.executor&quot;: &quot;Run&quot;,
-    &quot;Docker.sebm-gateway/Dockerfile build.executor&quot;: &quot;Run&quot;,
-    &quot;Docker.sebm-user-service/Dockerfile build.executor&quot;: &quot;Run&quot;,
-    &quot;Docker.sebm-user-service/Dockerfile.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.BorrowServiceImplTest.getUserById (1).executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.BorrowServiceImplTest.getUserById.executor&quot;: &quot;Run&quot;,
-    &quot;Maven.SEBM-MS [clean].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.SEBM-MS [package].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.sebm-common [clean].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.sebm-common [compile].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.sebm-common [package].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.sebm-user-service [package].executor&quot;: &quot;Run&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;Spring Boot.BorrowServiceApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.GatewayApplication (1).executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.GatewayApplication.executor&quot;: &quot;Debug&quot;,
-    &quot;Spring Boot.SebmBorrowServiceApplication.executor&quot;: &quot;Debug&quot;,
-    &quot;Spring Boot.SebmDeviceServiceApplication.executor&quot;: &quot;Debug&quot;,
-    &quot;Spring Boot.SebmMaintenanceServiceApplication.executor&quot;: &quot;Debug&quot;,
-    &quot;Spring Boot.SebmServiceClientApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.UserServiceApplication.executor&quot;: &quot;Debug&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;G:/java-code/SEBM-MS&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;run.configurations.included.in.services&quot;: &quot;true&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.runner&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Docker.sebm-user-service/Dockerfile.executor": "Run",
+    "JUnit.BorrowServiceImplTest.getUserById (1).executor": "Run",
+    "JUnit.BorrowServiceImplTest.getUserById.executor": "Run",
+    "Maven.SEBM-MS [clean].executor": "Run",
+    "Maven.SEBM-MS [compile].executor": "Run",
+    "Maven.sebm-common [clean].executor": "Run",
+    "Maven.sebm-common [compile].executor": "Run",
+    "Maven.sebm-common [package].executor": "Run",
+    "Maven.sebm-user-service [package].executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "Spring Boot.BorrowServiceApplication.executor": "Run",
+    "Spring Boot.GatewayApplication (1).executor": "Run",
+    "Spring Boot.GatewayApplication.executor": "Run",
+    "Spring Boot.SebmBorrowServiceApplication.executor": "Debug",
+    "Spring Boot.SebmDeviceServiceApplication.executor": "Debug",
+    "Spring Boot.SebmMaintenanceServiceApplication.executor": "Debug",
+    "Spring Boot.SebmServiceClientApplication.executor": "Run",
+    "Spring Boot.UserServiceApplication.executor": "Debug",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "git-widget-placeholder": "mattina",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/Users/mac/Desktop/Project/SEBM-MS/sebm-notification-service/src/main/resources/mapper",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "SDKs",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "run.configurations.included.in.services": "true",
+    "settings.editor.selected.configurable": "MavenSettings",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;mysql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql"
     ]
   }
-}</component>
+}]]></component>
   <component name="ReactorSettings">
     <option name="notificationShown" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="G:\java-code\SEBM-MS\sebm-user-service" />
-      <recent name="G:\java-code\SEBM-MS\sebm-gateway" />
-      <recent name="G:\java-code\SEBM-MS\sebm-borrow-service" />
-      <recent name="G:\java-code\SEBM-MS\sebm-device-service" />
-      <recent name="G:\java-code\SEBM-MS\sebm-maintenance-service" />
+      <recent name="$PROJECT_DIR$/sebm-notification-service/src/main/resources/mapper" />
+      <recent name="$PROJECT_DIR$/sebm-notification-service/src/main/java/com/group5/sebmnotificationservice" />
+      <recent name="G:\java-code\SEBM-MS\sebm-common\src\main\java\com\group5\sebmcommon" />
+      <recent name="G:\java-code\SEBM-MS\sebm-maintenance-service\src\main\resources\mapper" />
+      <recent name="G:\java-code\SEBM-MS\sebm-maintenance-service\src\main\resources" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="G:\java-code\SEBM-MS" />
       <recent name="G:\java-code\SEBM-MS\sebm-borrow-service\src\main\resources\mapper" />
       <recent name="G:\java-code\SEBM-MS\sebm-gateway\src\main\resources" />
     </key>
@@ -149,8 +195,35 @@
         <option value="SpringBootApplicationConfigurationType" />
       </set>
     </option>
+    <option name="configurationStatuses">
+      <map>
+        <entry key="SpringBootApplicationConfigurationType">
+          <value>
+            <map>
+              <entry key="GatewayApplication" value="FAILED" />
+            </map>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
-  <component name="RunManager" selected="Docker.sebm-borrow-service/Dockerfile">
+  <component name="RunManager" selected="Spring Boot.GatewayApplication">
+    <configuration name="BorrowServiceImplTest.getUserById (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="sebm-borrow-service" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.group5.borrow.service.serviceImpl.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.group5.borrow.service.serviceImpl" />
+      <option name="MAIN_CLASS_NAME" value="com.group5.borrow.service.serviceImpl.BorrowServiceImplTest" />
+      <option name="METHOD_NAME" value="getUserById" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="JetRunConfigurationType">
       <module name="sebm-borrow-service" />
       <method v="2">
@@ -161,6 +234,45 @@
       <module name="sebm-borrow-service" />
       <option name="filePath" />
       <method v="2" />
+    </configuration>
+    <configuration name="GatewayApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="sebm-gateway" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.group5.gateway.GatewayApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.group5.gateway.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SebmBorrowServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="sebm-borrow-service" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.group5.sebmborrowservice.SebmBorrowServiceApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.group5.sebmborrowservice.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SebmDeviceServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="sebm-device-service" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.group5.sebmdeviceservice.SebmDeviceServiceApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.group5.sebmdeviceservice.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <configuration name="SebmMaintenanceServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="sebm-maintenance-service" />
@@ -176,11 +288,18 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="docker-deploy" factoryName="docker-compose.yml" temporary="true">
-      <deployment type="docker-compose.yml">
-        <settings />
-      </deployment>
-      <method v="2" />
+    <configuration name="UserServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="sebm-user-service" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.group5.user.UserServiceApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.group5.user.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <configuration default="true" type="docker-deploy" factoryName="dockerfile" temporary="true">
       <deployment type="dockerfile">
@@ -188,77 +307,30 @@
       </deployment>
       <method v="2" />
     </configuration>
-    <configuration name="docker-compose.yml: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
-      <deployment type="docker-compose.yml">
-        <settings>
-          <option name="sourceFilePath" value="docker-compose.yml" />
-        </settings>
-      </deployment>
-      <method v="2" />
-    </configuration>
-    <configuration name="sebm-borrow-service/Dockerfile build" type="docker-deploy" factoryName="dockerfile" temporary="true" server-name="Docker">
-      <deployment type="dockerfile">
-        <settings>
-          <option name="imageTag" value="registry.cn-hangzhou.aliyuncs.comgoogle_containersmaven3.9.2-jdk-17_build" />
-          <option name="buildCliOptions" value="--target build" />
-          <option name="buildOnly" value="true" />
-          <option name="sourceFilePath" value="sebm-borrow-service/Dockerfile" />
-        </settings>
-      </deployment>
-      <method v="2" />
-    </configuration>
-    <configuration name="sebm-borrow-service/Dockerfile" type="docker-deploy" factoryName="dockerfile" temporary="true" server-name="Docker">
-      <deployment type="dockerfile">
-        <settings>
-          <option name="sourceFilePath" value="sebm-borrow-service/Dockerfile" />
-        </settings>
-      </deployment>
-      <method v="2" />
-    </configuration>
-    <configuration name="sebm-gateway/Dockerfile build" type="docker-deploy" factoryName="dockerfile" temporary="true" server-name="Docker">
-      <deployment type="dockerfile">
-        <settings>
-          <option name="containerName" value="" />
-          <option name="sourceFilePath" value="sebm-gateway/Dockerfile" />
-        </settings>
-      </deployment>
-      <method v="2" />
-    </configuration>
-    <configuration name="sebm-user-service/Dockerfile build" type="docker-deploy" factoryName="dockerfile" temporary="true" server-name="Docker">
-      <deployment type="dockerfile">
-        <settings>
-          <option name="imageTag" value="maven3.9.2-eclipse-temurin-17_build" />
-          <option name="buildCliOptions" value="--target build" />
-          <option name="buildOnly" value="true" />
-          <option name="sourceFilePath" value="sebm-user-service/Dockerfile" />
-        </settings>
-      </deployment>
-      <method v="2" />
-    </configuration>
     <list>
-      <item itemvalue="Docker.sebm-borrow-service/Dockerfile" />
-      <item itemvalue="Docker.sebm-borrow-service/Dockerfile build" />
-      <item itemvalue="Docker.sebm-gateway/Dockerfile build" />
-      <item itemvalue="Docker.sebm-user-service/Dockerfile build" />
-      <item itemvalue="Docker.docker-compose.yml: Compose Deployment" />
+      <item itemvalue="JUnit.BorrowServiceImplTest.getUserById (1)" />
       <item itemvalue="Spring Boot.SebmNotificationServiceApplication" />
       <item itemvalue="Spring Boot.SebmMaintenanceServiceApplication" />
+      <item itemvalue="Spring Boot.SebmBorrowServiceApplication" />
+      <item itemvalue="Spring Boot.SebmDeviceServiceApplication" />
+      <item itemvalue="Spring Boot.GatewayApplication" />
+      <item itemvalue="Spring Boot.UserServiceApplication" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Docker.sebm-borrow-service/Dockerfile" />
-        <item itemvalue="Docker.sebm-gateway/Dockerfile build" />
-        <item itemvalue="Docker.sebm-borrow-service/Dockerfile build" />
-        <item itemvalue="Docker.sebm-user-service/Dockerfile build" />
-        <item itemvalue="Docker.docker-compose.yml: Compose Deployment" />
+        <item itemvalue="Spring Boot.GatewayApplication" />
+        <item itemvalue="Spring Boot.SebmBorrowServiceApplication" />
+        <item itemvalue="Spring Boot.UserServiceApplication" />
+        <item itemvalue="Spring Boot.SebmDeviceServiceApplication" />
+        <item itemvalue="JUnit.BorrowServiceImplTest.getUserById (1)" />
       </list>
     </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9823dce3aa75-fbdcb00ec9e3-intellij.indexing.shared.core-IU-251.23774.435" />
-        <option value="bundled-js-predefined-d6986cc7102b-f27c65a3e318-JavaScript-IU-251.23774.435" />
+        <option value="bundled-jdk-9823dce3aa75-bf35d07a577b-intellij.indexing.shared.core-IU-252.25557.131" />
+        <option value="bundled-js-predefined-d6986cc7102b-b598e85cdad2-JavaScript-IU-252.25557.131" />
       </set>
     </attachedChunks>
   </component>
@@ -284,12 +356,26 @@
       <workItem from="1760545892706" duration="264000" />
       <workItem from="1760546167737" duration="2384000" />
       <workItem from="1760584554986" duration="26827000" />
-      <workItem from="1760621212123" duration="5311000" />
-      <workItem from="1760678066734" duration="21365000" />
-      <workItem from="1760710748472" duration="11250000" />
-      <workItem from="1760756911261" duration="1305000" />
-      <workItem from="1760758243470" duration="6236000" />
+      <workItem from="1760621212123" duration="3715000" />
+      <workItem from="1760793675811" duration="1802000" />
     </task>
+    <task id="LOCAL-00001" summary="commit notification">
+      <option name="closed" value="true" />
+      <created>1760640894693</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1760640894693</updated>
+    </task>
+    <task id="LOCAL-00002" summary="commit notification">
+      <option name="closed" value="true" />
+      <created>1760640921829</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1760640921829</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -306,6 +392,10 @@
       </map>
     </option>
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="commit notification" />
+    <option name="LAST_COMMIT_MESSAGE" value="commit notification" />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
@@ -317,6 +407,15 @@
           <url>file://$PROJECT_DIR$/sebm-common/src/main/java/com/group5/sebmcommon/aop/AuthInterceptor.java</url>
           <line>37</line>
           <option name="timeStamp" value="16" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/sebm-service-client/src/main/java/com/group5/sebmserviceclient/service/BorrowRecordFeignClient.java</url>
+          <line>18</line>
+          <properties class="com.group5.sebmserviceclient.service.BorrowRecordFeignClient">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="17" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

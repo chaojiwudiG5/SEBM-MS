@@ -1,7 +1,7 @@
-package com.group5.sebmserviceclient.service;
-
+package com.group5.sebmnotificationservice.service;
 
 import com.group5.sebmmodels.dto.notification.SendNotificationDto;
+
 
 /**
  * 通知相关接口

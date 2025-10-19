@@ -1,13 +1,8 @@
 package com.group5.sebmcommon.enums;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-
 /**
  * 通知节点枚举
  */
-@Getter
-@AllArgsConstructor
 public enum NotificationNodeEnum {
     
     /**
@@ -18,7 +13,12 @@ public enum NotificationNodeEnum {
     /**
      * 到期提醒
      */
-    DUE_DATE_REMINDER(3, "到期提醒");
+    DUE_DATE_REMINDER(3, "到期提醒"),
+    
+    /**
+     * 归还成功
+     */
+    RETURN_SUCCESS(4, "归还成功");
     
     /**
      * 租借审批不成功
@@ -34,6 +34,22 @@ public enum NotificationNodeEnum {
      * 节点描述
      */
     private final String description;
+    
+    /**
+     * 构造函数
+     */
+    NotificationNodeEnum(Integer code, String description) {
+        this.code = code;
+        this.description = description;
+    }
+    
+    public Integer getCode() {
+        return code;
+    }
+    
+    public String getDescription() {
+        return description;
+    }
     
     /**
      * 根据code获取枚举

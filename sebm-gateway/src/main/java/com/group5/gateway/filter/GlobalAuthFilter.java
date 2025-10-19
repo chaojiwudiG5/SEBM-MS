@@ -38,7 +38,12 @@ public class GlobalAuthFilter implements GlobalFilter {
       "/api/borrow/v3/api-docs",
       "/api/user/v3/api-docs",
       "/api/device/v3/api-docs",
-      "/api/maintenance/v3/api-docs"
+      "/api/maintenance/v3/api-docs",
+      "/api/notification/v3/api-docs",
+      "/doc.html",
+      "/swagger-resources",
+      "/webjars/**",
+      "/favicon.ico"
   };
 
   @Override
