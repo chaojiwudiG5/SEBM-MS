@@ -29,10 +29,11 @@ public interface TemplateConverter {
     @Mapping(target = "id", ignore = true)
     @Mapping(target = "userId", source = "request", qualifiedByName = "getUserIdFromRequest")
     @Mapping(target = "status", constant = "1")
+    @Mapping(target = "isDelete", constant = "0")
     @Mapping(target = "createTime", expression = "java(getCurrentTime())")
     @Mapping(target = "updateTime", expression = "java(getCurrentTime())")
     @Mapping(target = "notificationNode", source = "createTemplateDto.notificationNode", qualifiedByName = "integerToString")
-    @Mapping(target = "notificationRole", source = "createTemplateDto.notificationRole", qualifiedByName = "integerToString")
+    @Mapping(target = "notificationRole", source = "createTemplateDto.notificationRole")
     @Mapping(target = "relateTimeOffset", source = "createTemplateDto.relateTimeOffset", qualifiedByName = "integerToLong")
     @Mapping(target = "templateContent", source = "createTemplateDto.content")
     @Mapping(target = "templateDesc", source = "createTemplateDto.templateDesc")
@@ -43,8 +44,7 @@ public interface TemplateConverter {
      * @param templatePo 模板PO
      * @return 模板VO
      */
-   @Mapping(target = "content", source = "templateContent")
-    @Mapping(target = "templateDesc", source = "templateDesc")
+    @Mapping(target = "content", source = "templateContent")
     TemplateVo toVo(TemplatePo templatePo);
 
     /**
@@ -52,6 +52,7 @@ public interface TemplateConverter {
      * @param templatePo 模板PO
      * @return 模板DTO
      */
+    @Mapping(target = "content", source = "templateContent")
     TemplateDto toDto(TemplatePo templatePo);
 
     /**

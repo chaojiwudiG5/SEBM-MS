@@ -1,5 +1,5 @@
 server:
-  port: 8084
+  port: 8085
   servlet:
     context-path: /api/notification
 spring:
@@ -52,6 +52,21 @@ spring:
     nacos:
       discovery:
         server-addr: localhost:8848
+  # Redis configuration
+  data:
+    redis:
+      host: caboose.proxy.rlwy.net
+      port: 13462
+      username: default
+      password: ekseulHMMJJMoAFIOLchTXsnRDbpMHff
+      database: 0
+      timeout: 3000ms
+      lettuce:
+        pool:
+          max-active: 8
+          max-wait: -1ms
+          max-idle: 8
+          min-idle: 0
 
 mybatis-plus:
   configuration:

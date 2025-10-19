@@ -238,7 +238,8 @@ public class BorrowRecordServiceImpl extends ServiceImpl<BorrowRecordMapper, Bor
                   com.group5.sebmcommon.enums.NotificationEventEnum.BORROW_APPLICATION_APPROVED.getCode())
               .userId(user.getId())
               .templateVars(templateVars)
-              .nodeTimestamp(System.currentTimeMillis() / 1000) // 当前时间戳（秒）
+                  // 即时通知不需要传入时间戳
+             // .nodeTimestamp(System.currentTimeMillis() / 1000) // 当前时间戳（秒）
               .build();
 
       // 发送通知
@@ -275,7 +276,8 @@ public class BorrowRecordServiceImpl extends ServiceImpl<BorrowRecordMapper, Bor
                   com.group5.sebmcommon.enums.NotificationEventEnum.RETURN_SUCCESS.getCode())
               .userId(user.getId())
               .templateVars(templateVars)
-              .nodeTimestamp(System.currentTimeMillis() / 1000)
+                  // 即时通知不需要传入时间戳
+              //.nodeTimestamp(System.currentTimeMillis() / 1000)
               .build();
 
       // 发送通知

@@ -10,6 +10,7 @@ import com.group5.sebmmodels.dto.notification.NotificationRecordQueryDto;
 import com.group5.sebmmodels.vo.NotificationRecordVo;
 import com.group5.sebmmodels.entity.NotificationRecordPo;
 import com.group5.sebmnotificationservice.service.NotificationRecordService;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -20,7 +21,8 @@ import org.springframework.web.bind.annotation.*;
  */
 @Slf4j
 @RestController
-@RequestMapping("/notification/record")
+@Tag(name = "通知记录管理", description = "通知记录查询相关接口")
+@RequestMapping("/record")
 @AllArgsConstructor
 public class NotificationRecordController {
     

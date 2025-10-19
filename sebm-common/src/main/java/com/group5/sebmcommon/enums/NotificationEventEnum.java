@@ -16,7 +16,7 @@ public enum NotificationEventEnum {
     /**
      * 即将逾期通知
      */
-    UPCOMING_OVERDUE_NOTICE(1003, "即将逾期通知", NotificationNodeEnum.DUE_DATE_REMINDER),
+   // UPCOMING_OVERDUE_NOTICE(1003, "即将逾期通知", NotificationNodeEnum.DUE_DATE_REMINDER),
 
     /**
      * 到期通知

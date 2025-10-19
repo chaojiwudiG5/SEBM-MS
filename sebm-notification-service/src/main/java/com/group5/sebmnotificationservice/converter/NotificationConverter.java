@@ -35,6 +35,7 @@ public interface NotificationConverter {
     @Mapping(target = "template", expression = "java(buildTemplateWithPlaceholders(templateDto, sendNotificationDto.getTemplateVars()))")
     @Mapping(target = "templateVars", ignore = true)
     @Mapping(target = "sendTime", ignore = true) // 发送时间由消息队列处理时设置
+    @Mapping(target = "taskId", ignore = true) // 任务ID在延时通知时由后续处理设置
     @Mapping(target = "retryCount", constant = "0")
     @Mapping(target = "maxRetryCount", constant = "3")
     @Mapping(target = "createTime", expression = "java(getCurrentTime())")
