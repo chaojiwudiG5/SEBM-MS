@@ -7,12 +7,14 @@ import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.group5.sebmcommon.exception.BusinessException;
 import com.group5.sebmcommon.exception.ErrorCode;
+import com.group5.sebmcommon.exception.ThrowUtils;
 import com.group5.sebmmodels.dto.notification.NotificationRecordQueryDto;
 import com.group5.sebmmodels.vo.NotificationRecordVo;
 import com.group5.sebmnotificationservice.dao.NotificationRecordMapper;
 import com.group5.sebmmodels.entity.NotificationRecordPo;
 import com.group5.sebmnotificationservice.enums.NotificationRecordStatusEnum;
 import com.group5.sebmnotificationservice.service.NotificationRecordService;
+import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
@@ -25,8 +27,11 @@ import java.util.stream.Collectors;
  */
 @Slf4j
 @Service
+@AllArgsConstructor
 public class NotificationRecordServiceImpl extends ServiceImpl<NotificationRecordMapper, NotificationRecordPo> 
         implements NotificationRecordService {
+
+    private final NotificationRecordMapper notificationRecordMapper;
     
     @Override
     public boolean saveNotificationRecord(Long userId, String title, String content, Integer status) {
@@ -132,6 +137,31 @@ public class NotificationRecordServiceImpl extends ServiceImpl<NotificationRecor
     }
 
     @Override
+    public boolean markAsRead(Long recordId) {
+        // 1. 查询通知记录
+        NotificationRecordPo record = this.getById(recordId);
+        ThrowUtils.throwIf(record == null, ErrorCode.NOT_FOUND_ERROR, "通知记录不存在");
+        
+        // 2. 检查是否已删除
+        ThrowUtils.throwIf(record.getIsDelete() == 1, ErrorCode.OPERATION_ERROR, "通知记录已删除");
+        
+        // 3. 检查是否已读（避免重复更新）
+        if (record.getReadStatus() == 1) {
+            log.info("通知记录已是已读状态: recordId={}", recordId);
+            return true;
+        }
+        
+        // 4. 更新已读状态
+        record.setReadStatus(1);
+        record.setUpdateTime(LocalDateTime.now());
+        boolean result = this.updateById(record);
+        ThrowUtils.throwIf(!result, ErrorCode.OPERATION_ERROR, "标记消息为已读失败");
+        
+        log.info("标记消息为已读成功: recordId={}", recordId);
+        return true;
+    }
+
+    @Override
     public boolean batchMarkAsRead(List<Long> ids) {
         try {
             UpdateWrapper<NotificationRecordPo> updateWrapper = new UpdateWrapper<>();
@@ -146,19 +176,38 @@ public class NotificationRecordServiceImpl extends ServiceImpl<NotificationRecor
         }
     }
 
+
     @Override
-    public boolean markAllAsRead(Long userId) {
-        try {
+    public boolean markAllAsRead(Long userId, Integer userRole) {
+        if (userRole == null) {
+            // 如果前端没有传入，则默认普通用户
+            userRole = 1;
+        }
+        
+        // 如果是管理员（userRole=1），则标记所有发给管理员角色的通知为已读
+        if (userRole == 1) {
+            // 通过关联查询任务表来筛选出所属角色，标记所有发给管理员角色的通知为已读
+            int affectedRows = notificationRecordMapper.markAtlAsReadByRole(0);
+            log.info("管理员标记所有发给管理员角色的未读消息为已读: affectedRows={}", affectedRows);
+            return affectedRows > 0;
+        } else {
+            // 普通用户或技工：按userId标记该用户的所有未读消息
             UpdateWrapper<NotificationRecordPo> updateWrapper = new UpdateWrapper<>();
             updateWrapper.eq("userId", userId)
+                    .eq("isDelete", 0)
                     .eq("readStatus", 0)
                     .set("readStatus", 1)
                     .set("updateTime", LocalDateTime.now());
-
-            return this.update(updateWrapper);
-        } catch (Exception e) {
-            log.error("标记全部已读时发生异常: userId={}, error={}", userId, e.getMessage(), e);
-            return false;
+            
+            boolean result = this.update(updateWrapper);
+            
+            if (result) {
+                log.info("用户标记自己的未读消息为已读成功: userId={}, userRole={}", userId, userRole);
+            } else {
+                log.warn("用户标记自己的未读消息为已读失败或无未读消息: userId={}", userId);
+            }
+            
+            return result;
         }
     }
 

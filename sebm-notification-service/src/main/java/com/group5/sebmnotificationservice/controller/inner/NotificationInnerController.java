@@ -77,16 +77,5 @@ public class NotificationInnerController implements NotificationFeignClient {
             return 0L;
         }
     }
-
-    @Override
-    public Boolean markAllAsRead(Long userId) {
-        try {
-            log.info("内部调用：标记用户所有未读消息为已读 - userId={}", userId);
-            return notificationRecordService.markAllAsRead(userId);
-        } catch (Exception e) {
-            log.error("内部调用：标记用户所有未读消息为已读失败 - userId={}", userId, e);
-            return false;
-        }
-    }
 }
 
