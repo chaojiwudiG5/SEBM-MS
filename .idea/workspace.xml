@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="37a8d32f-b840-4b4a-a84b-73762e9272e4" name="Changes" comment="commit notification" />
+    <list default="true" id="37a8d32f-b840-4b4a-a84b-73762e9272e4" name="Changes" comment="commit notification">
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -146,11 +149,11 @@
       <recent name="group5.com.service.serviceImpl" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.group5.sebmmaintenanceservice.controller" />
       <recent name="com.group5.gateway.utils" />
       <recent name="com.group5.sebmserviceclient" />
       <recent name="com.group5.sebmserviceclient.service" />
       <recent name="com.group5.device.services" />
-      <recent name="com.group5.device.services.serviceImpl" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -329,7 +332,7 @@
       <workItem from="1760621212123" duration="3715000" />
       <workItem from="1760793675811" duration="1802000" />
       <workItem from="1760938555839" duration="4215000" />
-      <workItem from="1760952669336" duration="3903000" />
+      <workItem from="1760952669336" duration="6256000" />
     </task>
     <task id="LOCAL-00001" summary="commit notification">
       <option name="closed" value="true" />
