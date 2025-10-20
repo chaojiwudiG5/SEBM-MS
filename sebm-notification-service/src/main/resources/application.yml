@@ -41,7 +41,7 @@ spring:
     publisher-returns: true
     listener:
       simple:
-        acknowledge-mode: manual
+        acknowledge-mode: auto
         retry:
           enabled: true
           max-attempts: 3
