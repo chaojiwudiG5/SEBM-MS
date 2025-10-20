@@ -8,7 +8,7 @@
         <id property="id" column="id" jdbcType="BIGINT"/>
         <result property="templateTitle" column="templateTitle" jdbcType="VARCHAR"/>
         <result property="notificationMethod" column="notificationMethod" jdbcType="VARCHAR"
-                typeHandler="com.group5.sebmnotificationservice.config.ListTypeHandler"/>
+                typeHandler="com.group5.sebmmodels.handler.ListTypeHandler"/>
         <result property="notificationNode" column="notificationNode" jdbcType="VARCHAR"/>
         <result property="notificationRole" column="notificationRole" jdbcType="VARCHAR"/>
         <result property="notificationType" column="notificationType" jdbcType="INTEGER"/>

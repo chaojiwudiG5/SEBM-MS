@@ -52,6 +52,16 @@ public class NotificationRecordVo {
     private Integer readStatus;
     
     /**
+     * 通知方式 (1-邮件, 2-短信, 3-站内信)
+     */
+    private Integer notificationMethod;
+    
+    /**
+     * 通知方式描述
+     */
+    private String notificationMethodDesc;
+    
+    /**
      * 发送时间
      */
     private LocalDateTime sendTime;

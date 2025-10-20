@@ -25,6 +25,12 @@ spring:
           uri: lb://sebm-borrow-service
           predicates:
             - Path=/api/borrow/**
+        - id: template-service
+          uri: lb://sebm-notification-service
+          predicates:
+            - Path=/api/template/**
+          filters:
+            - RewritePath=/api/template/(?<segment>.*), /api/notification/template/$\{segment}
         - id: notification-service
           uri: lb://sebm-notification-service
           predicates:

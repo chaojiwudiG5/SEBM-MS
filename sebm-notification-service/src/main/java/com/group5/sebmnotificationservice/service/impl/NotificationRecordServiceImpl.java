@@ -5,6 +5,7 @@ import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.group5.sebmcommon.enums.NotificationMethodEnum;
 import com.group5.sebmcommon.exception.BusinessException;
 import com.group5.sebmcommon.exception.ErrorCode;
 import com.group5.sebmcommon.exception.ThrowUtils;
@@ -81,18 +82,113 @@ public class NotificationRecordServiceImpl extends ServiceImpl<NotificationRecor
 
     @Override
     public Page<NotificationRecordVo> queryNotificationRecords(NotificationRecordQueryDto queryDto) {
-        // 简化实现，具体逻辑根据需要补充
-        Page<NotificationRecordPo> page = new Page<>(queryDto.getPageNumber(), queryDto.getPageSize());
-        QueryWrapper<NotificationRecordPo> queryWrapper = new QueryWrapper<>();
-        queryWrapper.eq("userId", queryDto.getUserId())
-                .eq("isDelete", 0)
-                .orderByDesc("createTime");
-        
-        Page<NotificationRecordPo> poPage = this.page(page, queryWrapper);
-        
-        Page<NotificationRecordVo> voPage = new Page<>(poPage.getCurrent(), poPage.getSize(), poPage.getTotal());
-        // VO 转换需要根据实际需求实现
-        return voPage;
+        try {
+            // 验证用户ID（必填）
+            if (queryDto.getUserId() == null && queryDto.getQueryRole() == 1) {
+                throw new BusinessException(ErrorCode.PARAMS_ERROR, "用户ID不能为空");
+            }
+
+            // 构建查询条件
+            QueryWrapper<NotificationRecordPo> queryWrapper = new QueryWrapper<>();
+
+            queryWrapper.eq("status", NotificationRecordStatusEnum.SUCCESS.getCode())
+                    .eq("isDelete", 0).eq("notificationMethod", 3);
+
+            // 根据queryRole查询不同维度的数据
+            if(queryDto.getQueryRole() == 0) {
+                // 管理员角色：查询角色为管理员的所有通知
+                // 先查询notificationRole为0的任务
+                QueryWrapper<NotificationTaskPo> taskWrapper = new QueryWrapper<>();
+                taskWrapper.eq("notificationRole", 0);
+                List<NotificationTaskPo> adminTasks = notificationTaskMapper.selectList(taskWrapper);
+
+                if (adminTasks.isEmpty()) {
+                    // 如果没有管理员角色的通知任务，返回空结果
+                    Page<NotificationRecordVo> emptyPage = new Page<>(queryDto.getPageNumber(), queryDto.getPageSize(), 0);
+                    log.info("查询管理员通知记录成功，但没有找到管理员角色的通知任务");
+                    return emptyPage;
+                }
+
+                // 获取所有管理员任务的ID
+                List<Long> adminTaskIds = adminTasks.stream()
+                        .map(NotificationTaskPo::getId)
+                        .collect(Collectors.toList());
+
+                // 查询这些任务的明细记录
+                queryWrapper.in("notificationTaskId", adminTaskIds);
+
+            } else if(queryDto.getQueryRole() == 1) {
+                // 普通用户：查询该用户的通知
+                queryWrapper.eq("userId", queryDto.getUserId());
+            }
+
+            // 增加已读状态查询
+            if(queryDto.getReadStatus() != null){
+                queryWrapper.eq("readStatus", queryDto.getReadStatus());
+            }
+
+            // 根据创建时间范围查询
+            if (queryDto.getStartTime() != null) {
+                LocalDateTime startDateTime = LocalDateTime.ofEpochSecond(
+                        queryDto.getStartTime(), 0, java.time.ZoneOffset.ofHours(8)
+                );
+                queryWrapper.ge("createTime", startDateTime);
+            }
+
+            if (queryDto.getEndTime() != null) {
+                LocalDateTime endDateTime = LocalDateTime.ofEpochSecond(
+                        queryDto.getEndTime(), 0, java.time.ZoneOffset.ofHours(8)
+                );
+                queryWrapper.le("createTime", endDateTime);
+            }
+
+            // 按创建时间降序排列
+            queryWrapper.orderByDesc("createTime");
+
+            // 分页查询
+            Page<NotificationRecordPo> page = new Page<>(queryDto.getPageNumber(), queryDto.getPageSize());
+            Page<NotificationRecordPo> resultPage = this.page(page, queryWrapper);
+
+            // 获取所有任务ID
+            List<Long> taskIds = resultPage.getRecords().stream()
+                    .map(NotificationRecordPo::getNotificationTaskId)
+                    .distinct()
+                    .collect(Collectors.toList());
+
+            // 批量查询任务信息
+            Map<Long, NotificationTaskPo> taskMap = new java.util.HashMap<>();
+            if (!taskIds.isEmpty()) {
+                List<NotificationTaskPo> tasks = notificationTaskMapper.selectBatchIds(taskIds);
+                taskMap = tasks.stream().collect(Collectors.toMap(NotificationTaskPo::getId, t -> t));
+            }
+
+            // 转换为 VO
+            Page<NotificationRecordVo> voPage = new Page<>(resultPage.getCurrent(), resultPage.getSize(), resultPage.getTotal());
+            Map<Long, NotificationTaskPo> finalTaskMap = taskMap;
+            List<NotificationRecordVo> voList = resultPage.getRecords().stream()
+                    .map(record -> convertToVo(record, finalTaskMap.get(record.getNotificationTaskId())))
+                    .collect(Collectors.toList());
+            voPage.setRecords(voList);
+
+            // 如果有标题关键词，过滤结果
+            if (StrUtil.isNotBlank(queryDto.getTitleKeyword())) {
+                voList = voList.stream()
+                        .filter(vo -> vo.getTitle() != null && vo.getTitle().contains(queryDto.getTitleKeyword()))
+                        .collect(Collectors.toList());
+                voPage.setRecords(voList);
+                voPage.setTotal(voList.size());
+            }
+
+            log.info("查询通知记录成功: queryRole={}, userId={}, total={}, current={}, size={}",
+                    queryDto.getQueryRole(), queryDto.getUserId(), voPage.getTotal(), voPage.getCurrent(), voPage.getSize());
+            return voPage;
+
+        } catch (BusinessException e) {
+            throw e;
+        } catch (Exception e) {
+            log.error("查询通知记录时发生异常: queryDto={}, error={}", queryDto, e.getMessage(), e);
+            throw new BusinessException(ErrorCode.SYSTEM_ERROR, "查询通知记录失败");
+        }
     }
 
     @Override
@@ -105,9 +201,9 @@ public class NotificationRecordServiceImpl extends ServiceImpl<NotificationRecor
             if (queryDto.getUserId() != null) {
                 queryWrapper.eq("userId", queryDto.getUserId());
             }
-            if (queryDto.getIsDelete() != null) {
-                queryWrapper.eq("isDelete", queryDto.getIsDelete());
-            }
+//            if (queryDto.getIsDelete() != null) {
+//                queryWrapper.eq("isDelete", queryDto.getIsDelete());
+//            }
             if (queryDto.getReadStatus() != null) {
                 if (queryDto.getReadStatus() == 0) {
                     queryWrapper.and(w -> w.eq("readStatus", 0).or().isNull("readStatus"));
@@ -142,6 +238,7 @@ public class NotificationRecordServiceImpl extends ServiceImpl<NotificationRecor
                 List<NotificationTaskPo> tasks = notificationTaskMapper.selectBatchIds(taskIds);
                 taskMap = tasks.stream().collect(Collectors.toMap(NotificationTaskPo::getId, t -> t));
 
+                // 如果有角色过滤条件，先过滤任务
                 if (queryDto.getNotificationRole() != null) {
                     Integer role = queryDto.getNotificationRole();
                     taskMap = taskMap.entrySet().stream()
@@ -150,21 +247,24 @@ public class NotificationRecordServiceImpl extends ServiceImpl<NotificationRecor
                 }
             }
 
-            Page<NotificationRecordVo> voPage = new Page<>(resultPage.getCurrent(), resultPage.getSize(), resultPage.getTotal());
+            // 转换VO并过滤
             Map<Long, NotificationTaskPo> finalTaskMap = taskMap;
             List<NotificationRecordVo> voList = resultPage.getRecords().stream()
                     .filter(record -> finalTaskMap.containsKey(record.getNotificationTaskId()))
                     .map(record -> convertToVo(record, finalTaskMap.get(record.getNotificationTaskId())))
+                    .filter(vo -> {
+                        // 标题关键词过滤
+                        if (StrUtil.isNotBlank(queryDto.getTitleKeyword())) {
+                            return vo.getTitle() != null && vo.getTitle().contains(queryDto.getTitleKeyword());
+                        }
+                        return true;
+                    })
                     .collect(Collectors.toList());
 
-            if (StrUtil.isNotBlank(queryDto.getTitleKeyword())) {
-                voList = voList.stream()
-                        .filter(vo -> vo.getTitle() != null && vo.getTitle().contains(queryDto.getTitleKeyword()))
-                        .collect(Collectors.toList());
-            }
-
+            // 创建返回的分页对象，保持原始分页信息
+            Page<NotificationRecordVo> voPage = new Page<>(resultPage.getCurrent(), resultPage.getSize(), resultPage.getTotal());
             voPage.setRecords(voList);
-            voPage.setTotal(voList.size());
+            // 注意：不重新设置 total，保持数据库查询的总数
 
             log.info("管理员查询所有已发送通知成功: userId={}, isDelete={}, total={}, current={}, size={}",
                     queryDto.getUserId(), queryDto.getIsDelete(), voPage.getTotal(), voPage.getCurrent(), voPage.getSize());
@@ -176,6 +276,12 @@ public class NotificationRecordServiceImpl extends ServiceImpl<NotificationRecor
     }
 
     private NotificationRecordVo convertToVo(NotificationRecordPo record, NotificationTaskPo task) {
+        // 如果 sendTime 为空，使用 updateTime 作为 sendTime
+        LocalDateTime sendTime = record.getSendTime();
+        if (sendTime == null) {
+            sendTime = record.getUpdateTime();
+        }
+        
         return NotificationRecordVo.builder()
                 .id(record.getId())
                 .userId(record.getUserId())
@@ -184,7 +290,9 @@ public class NotificationRecordServiceImpl extends ServiceImpl<NotificationRecor
                 .status(record.getStatus())
                 .statusDesc(record.getStatus() != null ? NotificationRecordStatusEnum.getByCode(record.getStatus()).getDesc() : null)
                 .readStatus(record.getReadStatus())
-                .sendTime(record.getSendTime())
+                .notificationMethod(record.getNotificationMethod())
+                .notificationMethodDesc(record.getNotificationMethod() != null ? NotificationMethodEnum.parseMethod(record.getNotificationMethod()).getDescription() : null)
+                .sendTime(sendTime)
                 .createTime(record.getCreateTime())
                 .build();
     }
@@ -318,7 +426,7 @@ public class NotificationRecordServiceImpl extends ServiceImpl<NotificationRecor
                     .userId(userId)
                     .notificationMethod(notificationMethod)
                     .status(status)
-                    .readStatus(1) // 默认已读（发送成功后用户主要看站内/邮件，记录用于历史查询）
+                    .readStatus(0) // 默认已读（发送成功后用户主要看站内/邮件，记录用于历史查询）
                     .sendTime(LocalDateTime.now())
                     .isDelete(0)
                     .createTime(LocalDateTime.now())

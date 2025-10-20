@@ -108,7 +108,7 @@ public class TemplateController {
      * @param request HTTP请求对象
      * @return 更新后的模板信息
      */
-    @PostMapping("/update")
+    @PostMapping("/updateTemplate")
     @AuthCheck(mustRole = UserRoleEnum.ADMIN)
     @Operation(summary = "更新通知模板", description = "管理员更新现有通知模板")
     public BaseResponse<TemplateVo> updateTemplate(@RequestBody @Valid UpdateTemplateDto updateTemplateDto,

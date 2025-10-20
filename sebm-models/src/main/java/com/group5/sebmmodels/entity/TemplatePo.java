@@ -31,7 +31,7 @@ public class TemplatePo {
     /**
      * 通知方式
      */
-    @TableField("notificationMethod")
+    @TableField(value = "notificationMethod", typeHandler = com.group5.sebmmodels.handler.ListTypeHandler.class)
     private List<Integer> notificationMethod;
     
     /**

@@ -76,6 +76,8 @@ resend:
 mybatis-plus:
   configuration:
     map-underscore-to-camel-case: false
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  type-handlers-package: com.group5.sebmmodels.handler
 
 aliyun:
   oss:

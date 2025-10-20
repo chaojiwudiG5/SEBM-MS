@@ -229,7 +229,8 @@ public class TemplateServiceImpl extends ServiceImpl<TemplateMapper, TemplatePo>
             log.warn("未找到通知 {} 的模板", notificationEvent);
             return null;
         }
-        log.info("找到默认模板: ID={}, 标题={}", template.getId(), template.getTemplateTitle());
+        log.info("找到默认模板: ID={}, 标题={}, 通知方式={}", 
+                template.getId(), template.getTemplateTitle(), template.getNotificationMethod());
         // PO 转 DTO
         return templateConverter.toDto(template);
     }
