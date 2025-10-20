@@ -53,7 +53,7 @@ spring:
   cloud:
     nacos:
       discovery:
-        register-enabled: false
+        server-addr: ${NACOS_ADDR:nacos.sebm-system.svc.cluster.local:8848}
   data:
     redis:
       host: caboose.proxy.rlwy.net
