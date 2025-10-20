@@ -61,7 +61,8 @@ public class RabbitMQConfig {
         SimpleRabbitListenerContainerFactory factory = new SimpleRabbitListenerContainerFactory();
         factory.setConnectionFactory(connectionFactory);
         factory.setMessageConverter(messageConverter());
-        factory.setAcknowledgeMode(AcknowledgeMode.MANUAL);
+        // 使用自动确认模式，消息处理成功后自动ack
+        factory.setAcknowledgeMode(AcknowledgeMode.AUTO);
         return factory;
     }
 
