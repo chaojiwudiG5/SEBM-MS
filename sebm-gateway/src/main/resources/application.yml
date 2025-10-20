@@ -26,7 +26,7 @@ spring:
           predicates:
             - Path=/api/borrow/**
         - id: notification-service
-          uri: lb://notification-service
+          uri: lb://sebm-notification-service
           predicates:
             - Path=/api/notification/**
         - id: maintenance-service
