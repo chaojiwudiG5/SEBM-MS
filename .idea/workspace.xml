@@ -4,32 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="37a8d32f-b840-4b4a-a84b-73762e9272e4" name="Changes" comment="commit notification">
-      <change beforePath="$PROJECT_DIR$/.github/workflows/CICD.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/CICD.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sebm-gateway/target/classes/com/group5/gateway/GatewayApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/sebm-gateway/target/classes/com/group5/gateway/GatewayApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sebm-gateway/target/classes/com/group5/gateway/filter/GlobalAuthFilter.class" beforeDir="false" afterPath="$PROJECT_DIR$/sebm-gateway/target/classes/com/group5/gateway/filter/GlobalAuthFilter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sebm-gateway/target/classes/com/group5/gateway/utils/JwtUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/sebm-gateway/target/classes/com/group5/gateway/utils/JwtUtils.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sebm-gateway/target/sebm-gateway-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/sebm-gateway/target/sebm-gateway-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sebm-gateway/target/sebm-gateway-1.0-SNAPSHOT.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/sebm-gateway/target/sebm-gateway-1.0-SNAPSHOT.jar.original" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sebm-models/src/main/java/com/group5/sebmmodels/dto/borrow/BorrowRecordQueryDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/sebm-models/src/main/java/com/group5/sebmmodels/dto/borrow/BorrowRecordQueryDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sebm-notification-service/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/sebm-notification-service/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sebm-notification-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/sebm-notification-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sebm-notification-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/sebm-notification-service/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sebm-user-service/target/classes/com/group5/user/UserServiceApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/sebm-user-service/target/classes/com/group5/user/UserServiceApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sebm-user-service/target/classes/com/group5/user/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/sebm-user-service/target/classes/com/group5/user/controller/UserController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sebm-user-service/target/classes/com/group5/user/controller/inner/UserInnerController.class" beforeDir="false" afterPath="$PROJECT_DIR$/sebm-user-service/target/classes/com/group5/user/controller/inner/UserInnerController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sebm-user-service/target/classes/com/group5/user/services/ManagerService.class" beforeDir="false" afterPath="$PROJECT_DIR$/sebm-user-service/target/classes/com/group5/user/services/ManagerService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sebm-user-service/target/classes/com/group5/user/services/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/sebm-user-service/target/classes/com/group5/user/services/UserService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sebm-user-service/target/classes/com/group5/user/services/serviceImpl/ManagerServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/sebm-user-service/target/classes/com/group5/user/services/serviceImpl/ManagerServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sebm-user-service/target/classes/com/group5/user/services/serviceImpl/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/sebm-user-service/target/classes/com/group5/user/services/serviceImpl/UserServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sebm-user-service/target/sebm-user-service-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/sebm-user-service/target/sebm-user-service-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sebm-user-service/target/sebm-user-service-1.0-SNAPSHOT.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/sebm-user-service/target/sebm-user-service-1.0-SNAPSHOT.jar.original" afterDir="false" />
-    </list>
+    <list default="true" id="37a8d32f-b840-4b4a-a84b-73762e9272e4" name="Changes" comment="commit notification" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -187,7 +162,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Docker.docker-compose.yml.sebm-notification-service: Compose Deployment">
+  <component name="RunManager" selected="Docker.sebm-maintenance-service/Dockerfile">
     <configuration default="true" type="JetRunConfigurationType">
       <module name="sebm-borrow-service" />
       <method v="2">
@@ -205,19 +180,6 @@
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.group5.gateway.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="SebmBorrowServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
-      <module name="sebm-borrow-service" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.group5.sebmborrowservice.SebmBorrowServiceApplication" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.group5.sebmborrowservice.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -272,6 +234,15 @@
       </deployment>
       <method v="2" />
     </configuration>
+    <configuration name="sebm-maintenance-service/Dockerfile" type="docker-deploy" factoryName="dockerfile" temporary="true" server-name="Docker">
+      <deployment type="dockerfile">
+        <settings>
+          <option name="buildOnly" value="true" />
+          <option name="sourceFilePath" value="sebm-maintenance-service/Dockerfile" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
     <configuration name="sebm-notification-service/Dockerfile" type="docker-deploy" factoryName="dockerfile" temporary="true" server-name="Docker">
       <deployment type="dockerfile">
         <settings>
@@ -282,21 +253,21 @@
       <method v="2" />
     </configuration>
     <list>
+      <item itemvalue="Docker.sebm-maintenance-service/Dockerfile" />
       <item itemvalue="Docker.docker-compose.yml.sebm-notification-service: Compose Deployment" />
       <item itemvalue="Docker.docker-compose.yml: Compose Deployment" />
       <item itemvalue="Docker.sebm-notification-service/Dockerfile" />
       <item itemvalue="Spring Boot.SebmNotificationServiceApplication" />
       <item itemvalue="Spring Boot.SebmMaintenanceServiceApplication" />
-      <item itemvalue="Spring Boot.SebmBorrowServiceApplication" />
       <item itemvalue="Spring Boot.GatewayApplication" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Docker.sebm-maintenance-service/Dockerfile" />
         <item itemvalue="Docker.docker-compose.yml.sebm-notification-service: Compose Deployment" />
         <item itemvalue="Docker.docker-compose.yml: Compose Deployment" />
         <item itemvalue="Docker.sebm-notification-service/Dockerfile" />
         <item itemvalue="Spring Boot.GatewayApplication" />
-        <item itemvalue="Spring Boot.SebmBorrowServiceApplication" />
       </list>
     </recent_temporary>
   </component>
@@ -333,7 +304,7 @@
       <workItem from="1760621212123" duration="3715000" />
       <workItem from="1760793675811" duration="1802000" />
       <workItem from="1760938555839" duration="4215000" />
-      <workItem from="1760952669336" duration="411000" />
+      <workItem from="1760952669336" duration="757000" />
     </task>
     <task id="LOCAL-00001" summary="commit notification">
       <option name="closed" value="true" />
