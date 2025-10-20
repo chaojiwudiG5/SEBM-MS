@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="37a8d32f-b840-4b4a-a84b-73762e9272e4" name="Changes" comment="commit notification">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sebm-notification-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/sebm-notification-service/src/main/resources/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -331,7 +332,7 @@
       <workItem from="1760621212123" duration="3715000" />
       <workItem from="1760793675811" duration="1802000" />
       <workItem from="1760938555839" duration="4215000" />
-      <workItem from="1760952669336" duration="7337000" />
+      <workItem from="1760952669336" duration="8939000" />
     </task>
     <task id="LOCAL-00001" summary="commit notification">
       <option name="closed" value="true" />
