@@ -1,4 +1,4 @@
-G:\java-code\SEBM-MS\sebm-gateway\src\main\java\com\group5\gateway\GatewayApplication.java
-G:\java-code\SEBM-MS\sebm-gateway\src\main\java\com\group5\gateway\filter\GlobalAuthFilter.java
-G:\java-code\SEBM-MS\sebm-gateway\src\main\java\com\group5\gateway\config\CorsConfig.java
-G:\java-code\SEBM-MS\sebm-gateway\src\main\java\com\group5\gateway\utils\JwtUtils.java
+/Users/mac/Desktop/Project/SEBM-MS/sebm-gateway/src/main/java/com/group5/gateway/filter/GlobalAuthFilter.java
+/Users/mac/Desktop/Project/SEBM-MS/sebm-gateway/src/main/java/com/group5/gateway/config/CorsConfig.java
+/Users/mac/Desktop/Project/SEBM-MS/sebm-gateway/src/main/java/com/group5/gateway/GatewayApplication.java
+/Users/mac/Desktop/Project/SEBM-MS/sebm-gateway/src/main/java/com/group5/gateway/utils/JwtUtils.java

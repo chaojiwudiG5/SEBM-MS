@@ -10,6 +10,8 @@ import com.group5.sebmmodels.dto.notification.NotificationRecordQueryDto;
 import com.group5.sebmmodels.vo.NotificationRecordVo;
 import com.group5.sebmmodels.entity.NotificationRecordPo;
 import com.group5.sebmnotificationservice.service.NotificationRecordService;
+import com.group5.sebmmodels.dto.notification.AdminNotificationQueryDto;
+import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
@@ -43,6 +45,23 @@ public class NotificationRecordController {
             return ResultUtils.success(result);
         } catch (Exception e) {
             log.error("查询通知记录失败: queryDto={}, error={}", queryDto, e.getMessage(), e);
+        }
+        return ResultUtils.success(null);
+    }
+    
+    /**
+     * 管理员查询所有已发送的通知记录（不受用户删除状态影响）
+     */
+    @PostMapping("/admin/listAll")
+    public BaseResponse<Page<NotificationRecordVo>> queryAllSentNotifications(
+            @RequestBody @Valid AdminNotificationQueryDto queryDto) {
+        try {
+            Page<NotificationRecordVo> result = notificationRecordService.queryAllSentNotifications(queryDto);
+            log.info("管理员查询所有已发送通知: userId={}, isDelete={}, total={}",
+                    queryDto.getUserId(), queryDto.getIsDelete(), result.getTotal());
+            return ResultUtils.success(result);
+        } catch (Exception e) {
+            log.error("管理员查询所有已发送通知失败: queryDto={}, error={}", queryDto, e.getMessage(), e);
         }
         return ResultUtils.success(null);
     }
@@ -157,6 +176,24 @@ public class NotificationRecordController {
     }
 
     /**
+     * 标记单条消息为已读
+     * @param deleteDto 包含通知记录ID的参数
+     * @return 标记结果
+     */
+    @Operation(summary = "标记单条消息为已读", description = "将指定ID的通知消息标记为已读状态")
+    @PostMapping("/markAsRead")
+    public BaseResponse<Boolean> markAsRead(@RequestBody @Valid DeleteDto deleteDto) {
+        try {
+            boolean result = notificationRecordService.markAsRead(deleteDto.getId());
+            log.info("标记单条消息为已读: id={}, result={}", deleteDto.getId(), result);
+            return ResultUtils.success(result);
+        } catch (Exception e) {
+            log.error("标记单条消息为已读失败: id={}, error={}", deleteDto.getId(), e.getMessage(), e);
+        }
+        return ResultUtils.success(false);
+    }
+
+    /**
      * 批量标记消息为已读
      * @param batchDeleteDto 批量操作参数（复用，包含ids）
      * @return 标记结果
@@ -177,16 +214,20 @@ public class NotificationRecordController {
     /**
      * 标记用户所有未读消息为已读
      * @param userId 用户ID
+     * @param userRole 用户角色
      * @return 标记结果
      */
     @PostMapping("/markAllAsRead")
-    public BaseResponse<Boolean> markAllAsRead(@RequestParam Long userId) {
+    public BaseResponse<Boolean> markAllAsRead(
+            @RequestParam Long userId,
+            @RequestParam Integer userRole) {
         try {
-            boolean result = notificationRecordService.markAllAsRead(userId);
-            log.info("标记用户所有未读消息为已读: userId={}, result={}", userId, result);
+            boolean result = notificationRecordService.markAllAsRead(userId, userRole);
+            log.info("标记用户所有未读消息为已读: userId={}, userRole={}, result={}", userId, userRole, result);
             return ResultUtils.success(result);
         } catch (Exception e) {
-            log.error("标记用户所有未读消息为已读失败: userId={}, error={}", userId, e.getMessage(), e);
+            log.error("标记用户所有未读消息为已读失败: userId={}, userRole={}, error={}", 
+                    userId, userRole, e.getMessage(), e);
         }
         return ResultUtils.success(false);
     }

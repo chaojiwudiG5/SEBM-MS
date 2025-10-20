@@ -53,13 +53,5 @@ public interface NotificationFeignClient {
      */
     @GetMapping("/unreadCount")
     Long getUnreadCount(@RequestParam("userId") Long userId);
-
-    /**
-     * 标记用户所有未读消息为已读
-     * @param userId 用户ID
-     * @return 是否标记成功
-     */
-    @PostMapping("/markAllAsRead")
-    Boolean markAllAsRead(@RequestParam("userId") Long userId);
 }
 

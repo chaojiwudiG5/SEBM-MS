@@ -1,4 +1,4 @@
-com\group5\gateway\GatewayApplication.class
-com\group5\gateway\utils\JwtUtils.class
-com\group5\gateway\filter\GlobalAuthFilter.class
-com\group5\gateway\config\CorsConfig.class
+com/group5/gateway/GatewayApplication.class
+com/group5/gateway/utils/JwtUtils.class
+com/group5/gateway/config/CorsConfig.class
+com/group5/gateway/filter/GlobalAuthFilter.class

@@ -10,7 +10,7 @@ spring:
     username: root
     password: RxAHOOQJjTtBblTpadijgyIWmArpvibI
     driver-class-name: com.mysql.cj.jdbc.Driver
-  # Mail configuration
+  # Mail configuration (Legacy - kept for backward compatibility)
   mail:
     host: smtp.gmail.com
     port: 587
@@ -27,6 +27,14 @@ spring:
           ssl:
             trust: smtp.gmail.com
 
+# Resend Email Service Configuration
+# ⚠️ 请通过环境变量设置 RESEND_API_KEY，不要直接写在这里
+# API Key 格式: re_xxxxxxxxxxxxxxxxxxxxxxxxxx
+resend:
+  api-key: ${RESEND_API_KEY:re_eZiYFxTN_DZMychBGRpAR2qDv5N9x7hB8}
+  from-email: ${RESEND_FROM_EMAIL:onboarding@resend.dev}
+  from-name: ${RESEND_FROM_NAME:SEBM Notification System}
+
   # RabbitMQ configuration for Railway deployment
   rabbitmq:
     host: hopper.proxy.rlwy.net
@@ -41,7 +49,7 @@ spring:
     publisher-returns: true
     listener:
       simple:
-        acknowledge-mode: manual
+        acknowledge-mode: auto
         retry:
           enabled: true
           max-attempts: 3

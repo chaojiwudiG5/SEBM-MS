@@ -5,6 +5,7 @@ import com.baomidou.mybatisplus.extension.service.IService;
 import com.group5.sebmmodels.dto.notification.NotificationRecordQueryDto;
 import com.group5.sebmmodels.vo.NotificationRecordVo;
 import com.group5.sebmmodels.entity.NotificationRecordPo;
+import com.group5.sebmmodels.dto.notification.AdminNotificationQueryDto;
 
 import java.util.List;
 
@@ -49,6 +50,11 @@ public interface NotificationRecordService extends IService<NotificationRecordPo
     Page<NotificationRecordVo> queryNotificationRecords(NotificationRecordQueryDto queryDto);
 
     /**
+     * 管理员查询所有已发送通知记录（不受用户删除状态影响）
+     */
+    Page<NotificationRecordVo> queryAllSentNotifications(AdminNotificationQueryDto queryDto);
+
+    /**
      * 删除单个通知记录（软删除）
      * @param id 记录ID
      * @return 是否删除成功
@@ -70,18 +76,27 @@ public interface NotificationRecordService extends IService<NotificationRecordPo
     boolean clearUserNotifications(Long userId);
 
     /**
+     * 标记单条消息为已读
+     * @param recordId 记录ID
+     * @return 是否标记成功
+     */
+    boolean markAsRead(Long recordId);
+
+    /**
      * 批量标记消息为已读
      * @param ids 记录ID列表
      * @return 是否标记成功
      */
     boolean batchMarkAsRead(List<Long> ids);
 
+
     /**
-     * 标记用户所有未读消息为已读
+     * 标记用户所有未读消息为已读（需要权限校验）
      * @param userId 用户ID
+     * @param userRole 用户角色
      * @return 是否标记成功
      */
-    boolean markAllAsRead(Long userId);
+    boolean markAllAsRead(Long userId, Integer userRole);
 
     /**
      * 创建通知记录（新版本 - 任务记录分离）
@@ -94,4 +109,5 @@ public interface NotificationRecordService extends IService<NotificationRecordPo
     boolean createRecord(Long notificationTaskId, Long userId, Integer notificationMethod, Integer status);
 
 }
+
 

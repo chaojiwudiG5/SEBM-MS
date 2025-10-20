@@ -34,4 +34,11 @@ public interface NotificationRecordMapper extends BaseMapper<NotificationRecordP
      */
     List<NotificationRecordPo> selectByTaskId(@Param("notificationTaskId") Long notificationTaskId);
 
+    /**
+     * 根据通知角色标记所有未读消息为已读
+     * @param notificationRole 通知角色 (0-管理员, 1-用户, 2-技工)
+     * @return 影响的行数
+     */
+    int markAtlAsReadByRole(@Param("notificationRole") Integer notificationRole);
+
 }
