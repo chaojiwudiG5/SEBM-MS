@@ -10,6 +10,7 @@ import com.group5.sebmmodels.dto.notification.NotificationRecordQueryDto;
 import com.group5.sebmmodels.vo.NotificationRecordVo;
 import com.group5.sebmmodels.entity.NotificationRecordPo;
 import com.group5.sebmnotificationservice.service.NotificationRecordService;
+import com.group5.sebmmodels.dto.notification.AdminNotificationQueryDto;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
@@ -44,6 +45,23 @@ public class NotificationRecordController {
             return ResultUtils.success(result);
         } catch (Exception e) {
             log.error("查询通知记录失败: queryDto={}, error={}", queryDto, e.getMessage(), e);
+        }
+        return ResultUtils.success(null);
+    }
+    
+    /**
+     * 管理员查询所有已发送的通知记录（不受用户删除状态影响）
+     */
+    @PostMapping("/admin/listAll")
+    public BaseResponse<Page<NotificationRecordVo>> queryAllSentNotifications(
+            @RequestBody @Valid AdminNotificationQueryDto queryDto) {
+        try {
+            Page<NotificationRecordVo> result = notificationRecordService.queryAllSentNotifications(queryDto);
+            log.info("管理员查询所有已发送通知: userId={}, isDelete={}, total={}",
+                    queryDto.getUserId(), queryDto.getIsDelete(), result.getTotal());
+            return ResultUtils.success(result);
+        } catch (Exception e) {
+            log.error("管理员查询所有已发送通知失败: queryDto={}, error={}", queryDto, e.getMessage(), e);
         }
         return ResultUtils.success(null);
     }

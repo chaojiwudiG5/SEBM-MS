@@ -5,6 +5,7 @@ import com.baomidou.mybatisplus.extension.service.IService;
 import com.group5.sebmmodels.dto.notification.NotificationRecordQueryDto;
 import com.group5.sebmmodels.vo.NotificationRecordVo;
 import com.group5.sebmmodels.entity.NotificationRecordPo;
+import com.group5.sebmmodels.dto.notification.AdminNotificationQueryDto;
 
 import java.util.List;
 
@@ -47,6 +48,11 @@ public interface NotificationRecordService extends IService<NotificationRecordPo
      * @return 通知记录分页数据
      */
     Page<NotificationRecordVo> queryNotificationRecords(NotificationRecordQueryDto queryDto);
+
+    /**
+     * 管理员查询所有已发送通知记录（不受用户删除状态影响）
+     */
+    Page<NotificationRecordVo> queryAllSentNotifications(AdminNotificationQueryDto queryDto);
 
     /**
      * 删除单个通知记录（软删除）
