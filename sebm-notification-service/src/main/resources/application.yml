@@ -12,6 +12,11 @@ spring:
     username: root
     password: RxAHOOQJjTtBblTpadijgyIWmArpvibI
     driver-class-name: com.mysql.cj.jdbc.Driver
+  # ✅ Nacos 放在 spring.cloud 下
+  cloud:
+    nacos:
+      discovery:
+        server-addr: ${NACOS_ADDR}
 
   mail:
     host: smtp.gmail.com
@@ -50,12 +55,6 @@ spring:
           initial-interval: 1000
           max-interval: 10000
           multiplier: 2
-
-  # ✅ Nacos 放在 spring.cloud 下
-  cloud:
-    nacos:
-      discovery:
-        server-addr: ${NACOS_ADDR}
 
   data:
     redis:
