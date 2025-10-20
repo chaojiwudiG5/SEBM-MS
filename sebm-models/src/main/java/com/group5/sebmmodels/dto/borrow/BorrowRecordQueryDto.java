@@ -3,11 +3,13 @@ package com.group5.sebmmodels.dto.borrow;
 import com.group5.sebmmodels.dto.common.PageDto;
 import jakarta.validation.constraints.NotNull;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 /**
  * 分页查询 BorrowRecord 的 DTO
  */
 @Data
+@EqualsAndHashCode(callSuper = true)
 public class BorrowRecordQueryDto extends PageDto {
 
     /**

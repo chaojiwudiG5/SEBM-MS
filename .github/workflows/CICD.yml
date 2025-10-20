@@ -46,7 +46,7 @@ jobs:
       - name: Build and Push Docker images
         run: |
           set -e
-          modules="sebm-borrow-service sebm-user-service sebm-device-service sebm-gateway sebm-maintenance-service"
+          modules="sebm-borrow-service sebm-user-service sebm-device-service sebm-gateway sebm-maintenance-service sebm-notification-service"
           for module in $modules; do
             echo "=== Building Docker image for $module ==="
             docker build \

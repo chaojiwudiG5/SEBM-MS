@@ -14,3 +14,6 @@ services:
   sebm-user-service:
     build: ./sebm-user-service
     image: sebm-user-service:latest
+  sebm-notification-service:
+    build: ./sebm-notification-service
+    image: sebm-notification-service:latest

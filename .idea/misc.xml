@@ -20,7 +20,6 @@
       <set>
         <option value="$PROJECT_DIR$/demo/pom.xml" />
         <option value="$PROJECT_DIR$/gateway/pom.xml" />
-        <option value="$PROJECT_DIR$/sebm-notification-service/pom.xml" />
       </set>
     </option>
   </component>

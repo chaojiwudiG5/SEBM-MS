@@ -51,7 +51,7 @@ spring:
   cloud:
     nacos:
       discovery:
-        server-addr: localhost:8848
+        server-addr: ${NACOS_ADDR}
   # Redis configuration
   data:
     redis:
@@ -72,6 +72,12 @@ mybatis-plus:
   configuration:
     map-underscore-to-camel-case: false
 
+aliyun:
+  oss:
+    endpoint: oss-ap-southeast-1.aliyuncs.com
+    accessKeyId: ${OSS_ACCESS_KEY_ID}
+    accessKeySecret: ${OSS_ACCESS_KEY_SECRET}
+    bucketName: sebm
 knife4j:
   enable: true
   setting:
