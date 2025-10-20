@@ -68,10 +68,10 @@ spring:
           max-wait: -1ms
           max-idle: 8
           min-idle: 0
-#resend:
-#  api-key: ${RESEND_API_KEY:re_eZiYFxTN_DZMychBGRpAR2qDv5N9x7hB8}
-#  from-email: ${RESEND_FROM_EMAIL:onboarding@resend.dev}
-#  from-name: ${RESEND_FROM_NAME:SEBM Notification System}
+resend:
+  api-key: ${RESEND_API_KEY:re_eZiYFxTN_DZMychBGRpAR2qDv5N9x7hB8}
+  from-email: ${RESEND_FROM_EMAIL:onboarding@resend.dev}
+  from-name: ${RESEND_FROM_NAME:SEBM Notification System}
 
 mybatis-plus:
   configuration:
