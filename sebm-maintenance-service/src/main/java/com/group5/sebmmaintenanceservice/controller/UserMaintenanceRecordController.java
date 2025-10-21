@@ -35,7 +35,7 @@ public class UserMaintenanceRecordController {
     @PostMapping("/report")
     public BaseResponse<UserMaintenanceRecordVo> createMaintenanceRecord(@RequestBody @Valid UserCreateDto createDto, HttpServletRequest request)
     {
-        Long userId = (Long) request.getAttribute("userId");
+        Long userId = Long.parseLong(request.getHeader("userId"));
         ThrowUtils.throwIf(userId == null, ErrorCode.NOT_LOGIN_ERROR, "login required");
         UserMaintenanceRecordVo record = userMaintenanceRecordService.createMaintenanceRecord(userId, createDto);
         log.info("User {} created maintenance record {}", userId, record);
@@ -45,7 +45,7 @@ public class UserMaintenanceRecordController {
     @PostMapping("/myList")
     public BaseResponse<List<UserMaintenanceRecordVo>> listMyRecords(@RequestBody @Valid UserQueryDto queryDto, HttpServletRequest request)
     {
-        Long userId = (Long) request.getAttribute("userId");
+        Long userId = Long.parseLong(request.getHeader("userId"));
         ThrowUtils.throwIf(userId == null, ErrorCode.NOT_LOGIN_ERROR, "login required");
         Page<UserMaintenanceRecordVo> page = userMaintenanceRecordService
                 .listUserMaintenanceRecords(userId, queryDto);
@@ -56,7 +56,7 @@ public class UserMaintenanceRecordController {
     @GetMapping("/{id}")
     public BaseResponse<UserMaintenanceRecordVo> getRecordDetail(@PathVariable("id") Long id, HttpServletRequest request)
     {
-        Long userId = (Long) request.getAttribute("userId");
+        Long userId = Long.parseLong(request.getHeader("userId"));
         ThrowUtils.throwIf(userId == null, ErrorCode.NOT_LOGIN_ERROR, "login required");
         UserMaintenanceRecordVo record = userMaintenanceRecordService
                 .getUserMaintenanceRecordDetail(userId, id);
@@ -67,7 +67,7 @@ public class UserMaintenanceRecordController {
     @PostMapping("/cancel")
     public BaseResponse<Boolean> cancelRecord(@RequestBody @Valid DeleteDto deleteDto, HttpServletRequest request)
     {
-        Long userId = (Long) request.getAttribute("userId");
+        Long userId = Long.parseLong(request.getHeader("userId"));
         ThrowUtils.throwIf(userId == null, ErrorCode.NOT_LOGIN_ERROR, "login required");
         Boolean result = userMaintenanceRecordService.cancelMaintenanceRecord(userId, deleteDto.getId());
         log.info("User {} cancelled maintenance record {}", userId, deleteDto.getId());

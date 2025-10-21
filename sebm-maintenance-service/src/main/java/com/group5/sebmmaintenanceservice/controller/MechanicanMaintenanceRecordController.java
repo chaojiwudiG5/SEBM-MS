@@ -44,7 +44,7 @@ public class MechanicanMaintenanceRecordController {
   @AuthCheck(mustRole = UserRoleEnum.TECHNICIAN)
   public BaseResponse<Page<MechanicanMaintenanceRecordVo>> listMyTasks(
       @RequestBody @Valid MechanicanQueryDto queryDto, HttpServletRequest request) {
-    Long mechanicId = (Long) request.getAttribute("userId");
+    Long mechanicId = Long.parseLong(request.getHeader("userId"));
     ThrowUtils.throwIf(mechanicId == null, ErrorCode.NOT_LOGIN_ERROR, "lopgin required");
     Page<MechanicanMaintenanceRecordVo> page = mechanicanMaintenanceRecordService
         .listMechanicMaintenanceRecords(mechanicId, queryDto);
@@ -64,7 +64,7 @@ public class MechanicanMaintenanceRecordController {
   @PostMapping("/updateStatus")
   public BaseResponse<Boolean> updateTaskStatus(@RequestBody @Valid MechanicanUpdateDto updateDto,
       HttpServletRequest request) {
-    Long mechanicId = (Long) request.getAttribute("userId");
+    Long mechanicId = Long.parseLong(request.getHeader("userId"));
     ThrowUtils.throwIf(mechanicId == null, ErrorCode.NOT_LOGIN_ERROR, "login required");
     Boolean result = mechanicanMaintenanceRecordService
         .updateMechanicMaintenanceRecord(mechanicId, updateDto);
