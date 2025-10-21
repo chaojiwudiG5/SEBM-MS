@@ -291,6 +291,7 @@ public class BorrowRecordServiceImpl extends ServiceImpl<BorrowRecordMapper, Bor
       // 通知发送失败不影响主业务流程，只记录日志
     }
   }
+
 }
 
 
